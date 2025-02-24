@@ -6,8 +6,15 @@ theme:
   name: material
   custom_dir: custom_theme/
   palette:
-    primary: grey # blue
-    accent: blue grey # indigo
+    # primary: blue
+    # accent: indigo
+  - scheme: default
+    primary: teal
+    accent: grey
+    
+  - scheme: slate  # Dark mode
+    primary: grey
+    accent: teal
   font:
     text: Roboto
   logo: static/logo.svg
