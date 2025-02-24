@@ -15,7 +15,7 @@ title: Gantt Chart
 | APR 29 - MAY 5  | Final presentation prep | User guide documentation | Demo readiness      | Classroom demonstration                         |
 
 
-
+<!-- 
 gantt
     title Project Timeline
     dateFormat  YYYY-MM-DD
@@ -62,4 +62,4 @@ gantt
     Path following algorithm        :2024-04-08, 2024-04-14
     Autonomous mode switch          :2024-04-15, 2024-04-21
     Final trajectory optimization   :2024-04-22, 2024-04-28
-    Classroom demonstration         :2024-04-29, 2024-05-05
+    Classroom demonstration         :2024-04-29, 2024-05-05 -->
