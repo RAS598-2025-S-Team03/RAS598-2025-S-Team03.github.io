@@ -47,6 +47,15 @@ The experiment involves using the UR5 to position the quadruped at a designated 
 
 ### 3.4 Sensor Integration
 
+Sensor integration is critical to our experimental setup. We plan to collect a range of sensor data (e.g., IMU, Barometer, Sonar, GPS) during operation of the BLIMP.
+
+- IMU: An inertial measurement unit that provides high-frequency data on orientation, angular velocity, and acceleration to ensure precise attitude estimation and dynamic stabilization.
+- Barometer: A pressure sensor that measures atmospheric pressure changes to accurately determine altitude variations, which is critical for maintaining vertical stability.
+- GPS: A global positioning module that delivers reliable geospatial coordinates and velocity information, essential for outdoor localization and navigation.
+- Raspberry Pi Camera: A compact imaging device that captures high-resolution visual data for localization and goal detection, thereby enhancing situational awareness.
+- Sonar: An ultrasonic sensor that emits sound waves to detect objects and measure distances in real-time, facilitating effective obstacle detection and collision avoidance.
+- ToF Sensor (LiDAR): A laser-based sensor that generates detailed three-dimensional maps of the surrounding environment, significantly improving obstacle detection and spatial mapping.
+
 ### 3.5 Prepartion
 
 ### 3.6 Final Demonstration
