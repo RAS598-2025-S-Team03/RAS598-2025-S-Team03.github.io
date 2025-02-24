@@ -36,33 +36,55 @@ Spring 2025
 
 ### 3.1 High-Level Concept and Research Question
 
-Our project aims to to develop an integrated, sensor-driven framework that enables an Biologically-inspired, Lighter-than-air, Instructional, Mechatronics Program (BLIMP) UAV to operate autonomously in dynamic and uncertain environments. The central research question is: **"How effectively can sensor data from various sensors (such as Time-of-Flight Sensor, IMU, Barometer, Camera) can be fused together to trajectory planning, and autonomous navigation capabilities of a hybrid robotic blimp system in dynamic environments?"** 
-The experiment involves using the UR5 to position the quadruped at a designated start point, triggering the quadruped to run in a specified direction, and collecting sensor data during its motion. We then broadcast this data to a server for analysis, comparing it with simulated data. The refined simulation results are subsequently applied back to the robot to evaluate improvements in performance.
+Our project aims to develop an integrated, sensor-driven framework that enables a Biologically-inspired, Lighter-than-air, Instructional, Mechatronics Program (BLIMP) UAV to operate autonomously in dynamic and uncertain environments.
+
+The central research question is: **"How effectively can sensor data from various sensors (such as Time-of-Flight Sensor, IMU, Barometer, Camera) be fused together to enhance trajectory planning and autonomous navigation capabilities of a hybrid robotic blimp system in dynamic environments?"**
   
 ![High-Level System Concept](./figures/blimp_model.JPG)  
 *Figure 1: CAD Rendering of Biologically-inspired, Lighter-than-air, Instructional, Mechatronics Program (BLIMP) UAV*
 
 ### 3.2 Sensor Integration
 
-Sensor integration in this project is approached as a systematic and multi-layered process, ensuring that the rich dataset from each sensor is effectively harnessed across all stages of development—from coding through testing to the final demonstration. In the code, sensor data is published on dedicated ROS 2 topics, where each sensor (IMU, barometer, GPS, Raspberry Pi camera, sonar, and LiDAR) continuously streams its specific measurements. This design facilitates a modular architecture where sensor outputs are processed both independently and as part of a sensor fusion algorithm, enhancing real-time decision-making and control. Various sensors would be integrated in the BLIMP structure to enable navigation autonomy such as:
+**How sensor data will be utilized in code:**
 
-- IMU: An inertial measurement unit that provides high-frequency data on orientation, angular velocity, and acceleration to ensure precise attitude estimation and dynamic stabilization.
-- Barometer: A pressure sensor that measures atmospheric pressure changes to accurately determine altitude variations, which is critical for maintaining vertical stability.
-- GPS: A global positioning module that delivers reliable geospatial coordinates and velocity information, essential for outdoor localization and navigation.
-- Raspberry Pi Camera: A compact imaging device that captures high-resolution visual data for localization and goal detection, thereby enhancing situational awareness.
-- Sonar: An ultrasonic sensor that emits sound waves to detect objects and measure distances in real-time, facilitating effective obstacle detection and collision avoidance.
-- ToF Sensor (LiDAR): A laser-based sensor that generates detailed three-dimensional maps of the surrounding environment, significantly improving obstacle detection and spatial mapping.
+Sensor integration follows a systematic, multi-layered approach to harness data effectively throughout development. In our code, we'll publish sensor data on dedicated ROS 2 topics, where each sensor (IMU, barometer, GPS, Raspberry Pi camera, sonar, and LiDAR) continuously streams measurements. This modular architecture allows sensor outputs to be processed both independently and as part of a sensor fusion algorithm, enhancing real-time decision-making and control.
+
+**Sensors to be integrated:**
+
+- IMU: Provides high-frequency data on orientation, angular velocity, and acceleration for precise attitude estimation and stabilization
+- Barometer: Measures atmospheric pressure changes to determine altitude variations for vertical stability
+- GPS: Delivers geospatial coordinates and velocity information for outdoor localization and navigation
+- Raspberry Pi Camera: Captures visual data for localization and goal detection
+- Sonar: Emits sound waves to detect objects and measure distances for obstacle detection
+- ToF Sensor (LiDAR): Generates 3D maps of surroundings for improved obstacle detection and mapping
+
+**How sensors will be used during testing:**
 
 During testing, individual sensor outputs are validated using ROS 2 tools like rqt_plot and ros2 topic echo, ensuring that each sensor is correctly calibrated and operating within expected parameters. This stage not only verifies the performance of the sensors in isolation but also provides critical feedback for refining sensor fusion strategies. The testing phase includes both controlled indoor experiments and field trials, allowing the team to observe how sensor data influences the system’s stability, localization accuracy, and obstacle detection in varying environments.
+
+**How sensors will be used in final demonstration:**
 
 In the final demonstration, the real-time integration of sensor data is pivotal. The IMU contributes to precise orientation control, while the barometer maintains altitude, and the GPS offers robust localization. Simultaneously, the Raspberry Pi camera supports visual goal detection and aids in dynamic decision-making, and the sonar along with LiDAR enhance the system's ability to detect and avoid obstacles. This cohesive sensor data integration not only drives the autonomous control loops—enabling adaptive trajectory planning and responsive mode switching between manual and autonomous controls—but also showcases the system’s comprehensive ability to operate reliably in real-world, dynamic scenarios.
 
 
 ### 3.3 Interaction and Interface Development
 
-The behavior of the robot is designed to be influenced through a dual-mode control strategy complemented by a comprehensive graphical user interface. In manual mode, users can directly adjust the robot’s throttle, direction, and altitude via a joystick, allowing for precise, hands-on control. In autonomous mode, the robot employs trajectory planning algorithms based on goal positions detected by the onboard camera, with a dedicated joystick button facilitating seamless mode switching between manual and autonomous operations.
+**How we plan to influence robot behavior:**
 
-For interfacing, we are developing a robust GUI based on ROS that serves multiple functions. It will provide real-time visualization of sensor data—including IMU, barometer, GPS, camera, sonar, and LiDAR outputs—ensuring that the operator has complete situational awareness. Additionally, the GUI will display the current control status (manual or autonomous), present a live camera feed with an overlay indicating goal detection, and log performance data for subsequent analysis. This design not only enables immediate interaction during operation but also supports detailed post-mission reviews.
+The robot will use a dual-mode control strategy:
+
+- **Manual Mode**: Users can directly adjust throttle, direction, and altitude via joystick for precise control
+- **Autonomous Mode**: The robot employs trajectory planning algorithms based on goal positions detected by the onboard camera
+- A dedicated joystick button will facilitate seamless switching between manual and autonomous operations
+
+
+**Interfaces for viewing, interaction, and data storage:**
+
+We are developing a robust GUI based on ROS that will:
+- Provide real-time visualization of all sensor data (IMU, barometer, GPS, camera, sonar, LiDAR)
+- Display current control status (manual or autonomous)
+- Present a live camera feed with overlay indicating goal detection
+- Log performance data for subsequent analysis
 
 ### 3.4 Control and Autonomy
 
