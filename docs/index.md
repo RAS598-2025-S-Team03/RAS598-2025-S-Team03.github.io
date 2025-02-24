@@ -1,4 +1,5 @@
-# AeroFusion: Autonomous Control for Biologically-inspired, Lighter-than-air, Instructional, Mechatronics Program (BLIMP) Navigation and Sensor Integration Platform
+# AeroFusion 
+Autonomous Control for Biologically-inspired, Lighter-than-air, Instructional, Mechatronics Program (BLIMP) Navigation and Sensor Integration Platform
 
 ## 1. Repository Structure Review
 
@@ -11,20 +12,24 @@ Before diving into the project details, we reviewed the cloned template to under
 ## 2. Title / Home Page
 
 **Project Name:**  
+
 _AeroFusion: Autonomous BLIMP Navigation and Sensor Integration Platform_
 
 **Team Number:**  
+
 Team 03
 
 **Team Members:**  
+
 - Nihar Masurkar
 - Prajjwal Dutta
-- Sai Srinivas Tatwik Meesala
+- [Sai Srinivas Tatwik Meesala](https://tatwik19.github.io/)
 
 **Semester and Year:**  
 Spring 2025
 
-**University, Class, and Professor:**  
+**University, Class, and Professor:**
+
 - **University:** Arizona State University  
 - **Class:** RAS 598: Experimentation and Deployment of Robotic Systems
 - **Professor:** Dr. Daniel M. Aukes 
