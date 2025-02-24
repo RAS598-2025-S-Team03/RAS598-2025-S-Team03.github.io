@@ -73,9 +73,10 @@ In the final demonstration, the real-time integration of sensor data is pivotal.
 
 The robot will use a dual-mode control strategy:
 
-- **Manual Mode**: Users can directly adjust throttle, direction, and altitude via joystick for precise control
+- **Manual Mode**: Users can directly adjust throttle, direction, and altitude via joystick for precise control.
+
 - **Autonomous Mode**: The robot employs trajectory planning algorithms based on goal positions detected by the onboard camera
-- A dedicated joystick button will facilitate seamless switching between manual and autonomous operations
+- A dedicated joystick button will facilitate seamless switching between manual and autonomous operations.
 
 
 **Interfaces for viewing, interaction, and data storage:**
