@@ -35,10 +35,24 @@ Spring 2025
 
 ### 3.1 High-Level Concept and Research Question
 
-Our project aims to to develop an integrated, sensor-driven framework that enables an Biologically-inspired, Lighter-than-air, Instructional, Mechatronics Program (BLIMP) UAV to operate autonomously in dynamic and uncertain environments. 
-
-integrate a UR5 robotic arm with a quadruped robot to facilitate advanced experimental setups. The central research question is: **"How effectively can sensor data and simulation models be integrated to enhance the real-time control and autonomy of a hybrid robotic system?"**  
+Our project aims to to develop an integrated, sensor-driven framework that enables an Biologically-inspired, Lighter-than-air, Instructional, Mechatronics Program (BLIMP) UAV to operate autonomously in dynamic and uncertain environments. The central research question is: **"How effectively can sensor data from various sensors (such as Time-of-Flight Sensor, IMU, Barometer, Camera) can be fused together to trajectory planning, and autonomous navigation capabilities of a hybrid robotic blimp system in dynamic environments?"** 
 The experiment involves using the UR5 to position the quadruped at a designated start point, triggering the quadruped to run in a specified direction, and collecting sensor data during its motion. We then broadcast this data to a server for analysis, comparing it with simulated data. The refined simulation results are subsequently applied back to the robot to evaluate improvements in performance.
   
 ![High-Level System Concept](./figures/blimp_model.JPG)  
 *Figure 1: CAD Rendering of Biologically-inspired, Lighter-than-air, Instructional, Mechatronics Program (BLIMP) UAV*
+
+### 3.2 Interaction and Interface Development
+
+### 3.3 Control and Autonomy
+
+### 3.4 Sensor Integration
+
+### 3.5 Prepartion
+
+### 3.6 Final Demonstration
+
+### 3.7 Impact of the Work
+
+### 3.8 Advising
+
+## 4. Weekly Milestones (Weeks 7-16)
