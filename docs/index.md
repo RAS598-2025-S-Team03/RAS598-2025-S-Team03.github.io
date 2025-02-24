@@ -50,9 +50,13 @@ The central research question is: **"How effectively can sensor data from variou
 Sensor integration in our project follows a comprehensive, multi-layered approach to ensure that data from each sensor is effectively utilized across all development stages. In our codebase, we've want to implement a modular architecture where sensor data is published on dedicated ROS2 topics. Each sensor continuously streams its specific measurements, allowing for both independent processing and integrated sensor fusion.
 
 Our code utilizes a hierarchical data processing pipeline:
+
 1. **Data Acquisition Layer**: Handles raw sensor input collection at appropriate sampling rates.
+
 2. **Filtering Layer**: Applies Kalman filtering and other noise reduction techniques.
+
 3. **Fusion Layer**: Combines multiple sensor inputs for comprehensive state estimation.
+
 4. **Decision Layer**: Processes fused data to inform navigation and control decisions.
 
 #### How will you use sensors during testing?
@@ -105,17 +109,20 @@ This hybrid approach provides flexibility while maintaining safety and mission o
 We are developing a comprehensive GUI based on ROS that serves multiple functions:
 
 1. **Real-time Data Visualization**: 
+
    - Sensor data dashboards displaying IMU, barometer, GPS, camera, sonar, and LiDAR outputs
    - Interactive 3D map showing current position, trajectory, and detected obstacles
    - System status indicators including battery levels, motor outputs, and connection quality
 
 2. **Control Interface**:
+
    - Mode selection panel (manual/autonomous)
    - Manual control input visualization
    - Goal setting and waypoint management tools
    - Parameter adjustment sliders for tuning control algorithms
 
 3. **Data Logging and Analysis**:
+
    - Comprehensive time-stamped data recording of all sensor inputs
    - Performance metrics tracking including stability measures and navigation accuracy
    - Export functionality for post-mission analysis
