@@ -1,4 +1,4 @@
-# Home
+# AeroFusion: Autonomous BLIMP Navigation and Sensor Integration Platform
 
 ## 1. Repository Structure Review
 
