@@ -1,6 +1,6 @@
-site_name: EGR314 Report Template
-site_url: https://embedded-systems-design.github.io/template_report
-repo_url: https://github.com/embedded-systems-design/template_report
+site_name: RAS598-2025-S-Team03
+site_url: https://RAS598-2025-S-Team03.github.io
+repo_url: https://github.com/RAS598-2025-S-Team03/RAS598-2025-S-Team03.github.io
 edit_uri: edit/main/docs/
 theme:
   name: material
@@ -59,7 +59,7 @@ extra_javascript:
 not_in_nav: |
   static
   
-copyright: "Copyright &copy; 2024 team-name-here"
+copyright: "Copyright &copy; 2024 RAS598: Team 3"
 
 extra:
   generator: false
