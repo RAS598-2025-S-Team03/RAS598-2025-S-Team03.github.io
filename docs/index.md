@@ -88,7 +88,7 @@ In our final demonstration, real-time integration of sensor data will be paramou
 
 This comprehensive sensor array will drive the autonomous control loops, enabling adaptive trajectory planning and responsive mode switching between manual and autonomous control. The demonstration will showcase how our fusion algorithms synthesize this diverse data to create a cohesive understanding of the environment, allowing the BLIMP to navigate reliably in dynamic, real-world scenarios.
 
-### 3.3 Interaction and Interface Development
+### 3.3 Interface Development
 
 #### How do you plan on influencing the behavior of your robot?
 
