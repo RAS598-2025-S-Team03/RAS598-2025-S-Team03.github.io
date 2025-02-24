@@ -1,4 +1,4 @@
-# AeroFusion: Autonomous Control for Biologically-inspired, Lighter-than-air, Instructional, Mechatronics Program (BLIMP) Navigation and Sensor Integration Platform
+# Home
 
 ## 1. Repository Structure Review
 
