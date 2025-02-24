@@ -52,11 +52,8 @@ Sensor integration in our project follows a comprehensive, multi-layered approac
 Our code utilizes a hierarchical data processing pipeline:
 
 1. **Data Acquisition Layer**: Handles raw sensor input collection at appropriate sampling rates.
-
 2. **Filtering Layer**: Applies Kalman filtering and other noise reduction techniques.
-
 3. **Fusion Layer**: Combines multiple sensor inputs for comprehensive state estimation.
-
 4. **Decision Layer**: Processes fused data to inform navigation and control decisions.
 
 #### How will you use sensors during testing?
@@ -140,17 +137,20 @@ This integrated interface will not only enable immediate interaction during oper
 Our system implements a multi-tiered approach to connect sensor feedback across both low-level control and high-level decision-making processes:
 
 **Low-Level Control Integration:**
+
 - **Stabilization Loop**: IMU and barometer data feed directly into PID controllers that maintain attitude and altitude stability at 100Hz.
 - **Motor Control**: Sensor-derived error signals adjust motor outputs to compensate for environmental disturbances.
 - **Sensor Fusion**: Extended Kalman Filter combines IMU, barometer, and GPS data to provide accurate state estimation for the control system.
 
 **High-Level Decision Making:**
+
 - **Environment Mapping**: LiDAR and camera data construct a dynamic 3D representation of the environment.
 - **Path Planning**: A* algorithm utilizes the environmental map to generate efficient trajectories around obstacles.
 - **Goal Recognition**: Computer vision algorithms process camera feeds to identify navigation targets.
 - **Mode Selection**: Sensor data informs autonomous decisions about when to switch between different control behaviors.
 
 **Cross-Level Integration:**
+
 - **Adaptive Parameter Tuning**: High-level processes adjust low-level control parameters based on environmental conditions.
 - **Hierarchical State Machine**: Coordinates transitions between operational modes based on sensor-detected events.
 - **Performance Monitoring**: Continuous evaluation of control effectiveness informs strategic decision adjustments.
@@ -203,11 +203,13 @@ Throughout the demonstration, we will explain the sensor fusion algorithms, cont
 #### What resources will you need?
 
 **Facility Requirements:**
+
 - Large indoor space (such as TECH 162) with at least 10m × 10m × 5m clearance.
 - Power outlets for equipment charging and operation.
 - Adequate lighting for camera-based navigation.
 
 **Equipment Needs:**
+
 - Laptop with ROS2 and our custom GUI for system monitoring and control
 - Remote SSH capabilities for system access and troubleshooting
 - Joystick for manual control demonstrations and emergency override
@@ -220,19 +222,23 @@ Throughout the demonstration, we will explain the sensor fusion algorithms, cont
 Our system is designed with adaptability as a core principle to handle environmental variability:
 
 **Atmospheric Changes:**
+
 - Barometric pressure fluctuations will be compensated through dynamic altitude calculation adjustments
 - Temperature variations affecting sensor readings will be automatically calibrated through periodic reference checks
 
 **Lighting Conditions:**
+
 - The camera vision system employs adaptive exposure and contrast enhancement algorithms
 - Multiple visual recognition approaches (feature-based and neural network) provide redundancy across lighting conditions
 
 **Dynamic Obstacles:**
+
 - Real-time LiDAR scanning continuously updates the environmental map
 - Obstacle avoidance algorithms recalculate trajectories at 5Hz to respond to moving objects
 - Sonar provides redundant close-range detection for last-moment collision avoidance
 
 **Wind and Air Currents:**
+
 - IMU feedback detects unexpected orientation changes caused by air currents
 - PID controllers dynamically adjust motor outputs to compensate for external forces
 - Wind estimation algorithms adapt control parameters based on observed disturbance patterns
@@ -244,22 +250,26 @@ This multi-layered approach ensures the BLIMP remains stable and responsive even
 Our testing and evaluation strategy follows a rigorous multi-stage approach:
 
 **1. Unit Testing:**
+
 - **Sensor Validation**: Each sensor undergoes individual calibration and accuracy verification against known reference values
 - **Control Module Testing**: Isolated testing of individual control algorithms with simulated inputs
 - **Component Integration**: Verification of communication between adjacent system components
 
 **2. System Integration Testing:**
+
 - **Sensor Fusion Accuracy**: Comparison of fused state estimates against ground truth measurements
 - **Control Loop Stability**: Evaluation of system response to controlled disturbances
 - **Resource Utilization**: Monitoring of CPU, memory, and network usage during operation
 
 **3. Functional Testing:**
+
 - **Hovering Stability**: Quantitative measurement of position and attitude variance during stationary flight
 - **Navigation Accuracy**: Evaluation of path-following precision against predetermined routes
 - **Obstacle Avoidance**: Success rate in detecting and navigating around obstacles of varying sizes and positions
 - **Goal Recognition**: Accuracy and response time in identifying and moving toward visual targets
 
 **4. Performance Metrics:**
+
 - Position accuracy: Target < 30cm deviation from planned path
 - Altitude stability: ±10cm during stable hover
 - Obstacle detection: 100% detection rate for objects >20cm at distances up to 3m
@@ -275,12 +285,15 @@ These comprehensive testing protocols will verify both individual component func
 This project represents a significant opportunity for both technical advancement and educational development:
 
 **Technical Skill Development:**
+
 This work will significantly enhance our practical skills by providing hands-on experience with ROS2; a cornerstone platform for modern robotics applications. Thorugh this we will gain invaluable expertise in autonomous navigation, trajectory planning, and real-time sensor fusion for accurate localization. The project's interdisciplinary nature will drive us to bridge the gap between theoretical knowledge and practical implementation, developing skills that are directly transferable to industry applications.
 
 **Course Development Contributions:**
+
 The AeroFusion platform will serve as a replicable template for future autonomous blimp initiatives in the course. Our documented development process, including challenges and solutions, will provide a comprehensive case study for sensor-based control systems in unconventional UAVs. The modular nature of our design allows for incremental complexity in future course offerings, where students could focus on improving specific subsystems while maintaining overall functionality.
 
 **Expanded Learning Horizons:**
+
 This project will naturally drive us to explore advanced material beyond the standard curriculum, including:
 - Adaptive control strategies for under-actuated systems
 - Machine learning approaches to environmental perception
@@ -293,4 +306,18 @@ Beyond immediate educational benefits, this work lays the foundation for further
 
 ### 3.8 Advising
 
+#### Advisor:
+Dr. Xi Yu (Faculty Advisor)
+
+Lab Space: TECH 189
+
+#### Required Resources:
+
+- Guidance on trajectory planning algorithms.
+- Access to high-precision GPS modules.
+- Assistance in debugging sensor fusion issues.
+
+The team anticipates learning more about multi-sensor fusion algorithms, adaptive control strategies for dynamic environments, and real-time embedded system debugging.
+
 ## 4. Weekly Milestones (Weeks 7-16)
+(Pls. check Gannt Chart)
