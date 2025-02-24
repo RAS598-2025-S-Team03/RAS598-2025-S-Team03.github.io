@@ -8,10 +8,11 @@ theme:
   palette:
     # primary: blue
     # accent: indigo
-  - scheme: default
-    primary: teal
-    accent: grey
     
+  # - scheme: default
+  #   primary: teal
+  #   accent: grey
+
   - scheme: slate  # Dark mode
     primary: grey
     accent: teal
