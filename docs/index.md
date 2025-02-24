@@ -1,8 +1,10 @@
-# AeroFusion: Autonomous BLIMP Navigation and Sensor Integration Platform
+# Home
+
+## AeroFusion: Autonomous BLIMP Navigation and Sensor Integration Platform
 
 ## 1. Repository Structure Review
 
-Before diving into the project details, we reviewed the cloned template to understand how the folder structure translates to the website. We removed all markdown pages except for **index.md** to prepare the report. This clean setup ensures that our final website only displays the main home page, keeping the structure clear and uncluttered.
+Before diving into the project details, we reviewed the cloned [template](https://embedded-systems-design.github.io/fork-report-website/)  to understand how the folder structure translates to the website. We removed all markdown pages except for **index.md** to prepare the report. This clean setup ensures that our final website only displays the main home page, keeping the structure clear and uncluttered.
 
 ## 2. Home Page
 
@@ -77,7 +79,15 @@ Understanding UAV control dynamics and the use of remote SSH to access the Raspb
 
 ### 3.6 Final Demonstration
 
+To demonstrate the work in class, the blimp will autonomously maintain stable altitude using GPS, IMU, and Barometer data, while navigating towards a goal as detected by the camera. It will also incorporate feedback from LiDAR and sonar for obstacle detection and avoidance in real-time. In terms of resources, a large indoor space (such as TECH 189) or an outdoor test site will be required for ample maneuvering space. Equipment needed includes a laptop with ROS 2 for monitoring, remote SSH for system access, a joystick for manual control, and the blimp itself, fully set up for flight. As environmental conditions vary, the robot will adapt its altitude control to account for wind changes and utilize real-time feedback from LiDAR and sonar for obstacle avoidance. This ensures the robot remains stable and responsive, even in a changing environment. The testing and evaluation plan will involve a multi-stage approach: 
+1. **Unit Testing**: Ensuring each sensor produces accurate data on its own. 
+2. **System Testing**: Validating how well the sensors work together and ensuring proper data integration. 
+3. **Functional Testing**: Verifying that the blimp performs as expected during navigation and control, checking for stability and accurate goal localization
+
+
 ### 3.7 Impact of the Work
+
+This project will significantly enhance our practical skills by providing hands-on experience with ROS 2—a cornerstone for modern robotics applications. It offers an invaluable opportunity to delve into autonomous navigation and trajectory planning while mastering the complexities of real-time sensor fusion for accurate localization. Beyond technical skills, the work promises to contribute to course development by serving as a replicable template for future autonomous blimp initiatives and by offering a detailed case study on sensor-based control systems in unconventional UAVs. By addressing these advanced topics, the project will drive us to explore new material, from adaptive control strategies to the integration of diverse sensor data, thereby broadening our understanding of both theoretical and practical aspects of robotics.
 
 ### 3.8 Advising
 
