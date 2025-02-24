@@ -78,6 +78,10 @@ In our final demonstration, real-time integration of sensor data will be paramou
 - **Sonar**: Offers proximity detection for immediate collision avoidance
 - **ToF Sensor (LiDAR)**: Creates detailed 3D environmental maps for navigation planning
 
+
+![Sensor Block Diagram](./figures/placeholder_image.png)  
+*Figure 2: Professional mockup of the BLIMP control and monitoring interface*
+
 This comprehensive sensor array will drive the autonomous control loops, enabling adaptive trajectory planning and responsive mode switching between manual and autonomous control. The demonstration will showcase how our fusion algorithms synthesize this diverse data to create a cohesive understanding of the environment, allowing the BLIMP to navigate reliably in dynamic, real-world scenarios.
 
 ### 3.3 Interaction and Interface Development
@@ -117,14 +121,8 @@ We are developing a comprehensive GUI based on ROS that serves multiple function
    - Export functionality for post-mission analysis
    - Replay capabilities for reviewing flight data
 
----
-
-**Insert figure here**
-
-![Interface Mockup](./figures/interface_mockup.png)  
+![Interface Mockup](./figures/placeholder_image.png)  
 *Figure 2: Professional mockup of the BLIMP control and monitoring interface*
-
----
 
 This integrated interface will not only enable immediate interaction during operation but also support detailed post-mission analysis and system refinement.
 
