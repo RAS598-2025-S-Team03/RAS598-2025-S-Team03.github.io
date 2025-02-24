@@ -924,11 +924,21 @@ Spring 2025</p>
 <h3 id="32-sensor-integration">3.2 Sensor Integration</h3>
 <h4 id="how-will-you-utilize-sensor-data-collected-from-the-robot-in-your-code">How will you utilize sensor data collected from the robot in your code?</h4>
 <p>Sensor integration in our project follows a comprehensive, multi-layered approach to ensure that data from each sensor is effectively utilized across all development stages. In our codebase, we've want to implement a modular architecture where sensor data is published on dedicated ROS2 topics. Each sensor continuously streams its specific measurements, allowing for both independent processing and integrated sensor fusion.</p>
-<p>Our code utilizes a hierarchical data processing pipeline:
-1. <strong>Data Acquisition Layer</strong>: Handles raw sensor input collection at appropriate sampling rates.
-2. <strong>Filtering Layer</strong>: Applies Kalman filtering and other noise reduction techniques.
-3. <strong>Fusion Layer</strong>: Combines multiple sensor inputs for comprehensive state estimation.
-4. <strong>Decision Layer</strong>: Processes fused data to inform navigation and control decisions.</p>
+<p>Our code utilizes a hierarchical data processing pipeline:</p>
+<ol>
+<li>
+<p><strong>Data Acquisition Layer</strong>: Handles raw sensor input collection at appropriate sampling rates.</p>
+</li>
+<li>
+<p><strong>Filtering Layer</strong>: Applies Kalman filtering and other noise reduction techniques.</p>
+</li>
+<li>
+<p><strong>Fusion Layer</strong>: Combines multiple sensor inputs for comprehensive state estimation.</p>
+</li>
+<li>
+<p><strong>Decision Layer</strong>: Processes fused data to inform navigation and control decisions.</p>
+</li>
+</ol>
 <h4 id="how-will-you-use-sensors-during-testing">How will you use sensors during testing?</h4>
 <p>During testing, we will validate individual sensor outputs using ROS2 tools like rqt_plot and ros2 topic echo. This methodical approach ensures each sensor is correctly calibrated and operating within expected parameters. Our testing protocol includes:</p>
 <ul>
@@ -973,8 +983,12 @@ Spring 2025</p>
 <h4 id="what-interfaces-do-you-plan-on-developing-and-using-to-permit-viewing-interaction-and-storing-data">What interfaces do you plan on developing and using to permit viewing, interaction, and storing data?</h4>
 <p>We are developing a comprehensive GUI based on ROS that serves multiple functions:</p>
 <ol>
-<li><strong>Real-time Data Visualization</strong>: </li>
-<li>Sensor data dashboards displaying IMU, barometer, GPS, camera, sonar, and LiDAR outputs</li>
+<li>
+<p><strong>Real-time Data Visualization</strong>: </p>
+</li>
+<li>
+<p>Sensor data dashboards displaying IMU, barometer, GPS, camera, sonar, and LiDAR outputs</p>
+</li>
 <li>Interactive 3D map showing current position, trajectory, and detected obstacles</li>
 <li>
 <p>System status indicators including battery levels, motor outputs, and connection quality</p>
@@ -982,7 +996,9 @@ Spring 2025</p>
 <li>
 <p><strong>Control Interface</strong>:</p>
 </li>
-<li>Mode selection panel (manual/autonomous)</li>
+<li>
+<p>Mode selection panel (manual/autonomous)</p>
+</li>
 <li>Manual control input visualization</li>
 <li>Goal setting and waypoint management tools</li>
 <li>
@@ -991,7 +1007,9 @@ Spring 2025</p>
 <li>
 <p><strong>Data Logging and Analysis</strong>:</p>
 </li>
-<li>Comprehensive time-stamped data recording of all sensor inputs</li>
+<li>
+<p>Comprehensive time-stamped data recording of all sensor inputs</p>
+</li>
 <li>Performance metrics tracking including stability measures and navigation accuracy</li>
 <li>Export functionality for post-mission analysis</li>
 <li>Replay capabilities for reviewing flight data</li>
