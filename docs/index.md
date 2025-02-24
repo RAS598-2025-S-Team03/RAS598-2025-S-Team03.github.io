@@ -39,7 +39,6 @@ Our project aims to to develop an integrated, sensor-driven framework that enabl
 
 integrate a UR5 robotic arm with a quadruped robot to facilitate advanced experimental setups. The central research question is: **"How effectively can sensor data and simulation models be integrated to enhance the real-time control and autonomy of a hybrid robotic system?"**  
 The experiment involves using the UR5 to position the quadruped at a designated start point, triggering the quadruped to run in a specified direction, and collecting sensor data during its motion. We then broadcast this data to a server for analysis, comparing it with simulated data. The refined simulation results are subsequently applied back to the robot to evaluate improvements in performance.
-
-> **Figure 1:** _High-Level System Concept_  
-> ![High-Level System Concept](./figures/system_concept.png)  
-> *Figure 1: CAD Rendering of Biologically-inspired, Lighter-than-air, Instructional, Mechatronics Program (BLIMP) UAV*
+  
+![High-Level System Concept](./figures/blimp_model.JPG)  
+*Figure 1: CAD Rendering of Biologically-inspired, Lighter-than-air, Instructional, Mechatronics Program (BLIMP) UAV*
