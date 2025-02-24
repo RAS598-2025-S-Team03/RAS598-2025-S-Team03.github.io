@@ -1,90 +1,45 @@
+# AeroFusion: Autonomous Control for Biologically-inspired, Lighter-than-air, Instructional, Mechatronics Program (BLIMP) Navigation and Sensor Integration Platform
+
+## 1. Repository Structure Review
+
+## Introduction
+
+Before diving into the project details, we reviewed the cloned template to understand how the folder structure translates to the website. We removed all markdown pages except for **index.md** to prepare the report. This clean setup ensures that our final website only displays the main home page, keeping the structure clear and uncluttered.
+
 ---
-title: Welcome
-tags:
-- tag1
-- tag2
+
+## 2. Title / Home Page
+
+**Project Name:**  
+_AeroFusion: Autonomous BLIMP Navigation and Sensor Integration Platform_
+
+**Team Number:**  
+Team 03
+
+**Team Members:**  
+- Nihar Masurkar
+- Prajjwal Dutta
+- Sai Srinivas Tatwik Meesala
+
+**Semester and Year:**  
+Spring 2025
+
+**University, Class, and Professor:**  
+- **University:** Arizona State University  
+- **Class:** RAS 598: Experimentation and Deployment of Robotic Systems
+- **Professor:** Dr. Daniel M. Aukes 
+
 ---
 
-## Et poposcerat rursus ad magnus premit
+## 3. Project Plan
 
-Lorem markdownum gradus, qui largis, nec pater pleno: fatum. Adspexit cursus
-cur, aut in adhuc crimina **habebat**: pro.
+### 3.1 High-Level Concept and Research Question
 
-- Et ducimus
-- Prosecta hinc nix vidi rettulit cum sitim
-- Has in tonitribus tenebrae Romane mirantum resupina
-- Figuras et dextram
+Our project aims to to develop an integrated, sensor-driven framework that enables an Biologically-inspired, Lighter-than-air, Instructional, Mechatronics Program (BLIMP) UAV to operate autonomously in dynamic and uncertain environments. 
 
-## Esse quoque sedem plena nunc iecur
+integrate a UR5 robotic arm with a quadruped robot to facilitate advanced experimental setups. The central research question is: **"How effectively can sensor data and simulation models be integrated to enhance the real-time control and autonomy of a hybrid robotic system?"**  
+The experiment involves using the UR5 to position the quadruped at a designated start point, triggering the quadruped to run in a specified direction, and collecting sensor data during its motion. We then broadcast this data to a server for analysis, comparing it with simulated data. The refined simulation results are subsequently applied back to the robot to evaluate improvements in performance.
 
-Possemque suos dumque. Deum recta rogantem, inquinat facta gigantas; ego nisi
-mea. Nec tamen quae gravem, potens, [cognoscendo
-scripta](http://vidit-lumine.io/sinusdeum). *Nihil ventis Aeneae* probat.
-
-1. listum primo
-
-    discusso el codex:
-
-        if (pimProgressiveMashup(recursive_upnp_barcraft, seo) == file.station_leaf(
-                optical + 1, compact_docking)) {
-            rt_programming_system(udpScraping, marketRegularMetal,
-                    threadingNuiRoom);
-            vlogVaporwarePage += 5 + xhtmlDiskReader;
-            access.kbps_footer.dialogZettabyte(3, cloud_midi_spoofing, ipad_macro);
-        }
-        if (maskProcessorKbps(programming, user, cache_web) >= file *
-                publishingDual) {
-            hibernate.flash_network -= 4;
-            bar = goodput_flash;
-            streaming = voip_flatbed - 1;
-        } else {
-            clipCd(jquery, 55 - -1, touchscreen);
-            plagiarism_command_e = cleanHardIcio;
-            recursion = checksum;
-        }
-        clock(roomCaptcha, 2);
-
-2. listum secundum
-
-    > warningum alertum
-
-3. listum adnauseum
-
-## Pondus ante Ialysios vultu exasperat loqui sanguine
-
-Iacere non, quis nimbis. Dumque tibi minora clamabat contigit vacant, sepulcro
-coniugis quae; mihi! Solent adeste faventibus, perque penates, currere in quater
-Odrysius ferro, vota, vero mittat crinibus, quae. Hanc mundi, ipse vultu voce
-sub quae heros forsitan imagine in tecum Cephalus? Formosissimus vela; vapore
-oris, aera, utendum ostendisse regnum Centaurorum elice.
-
-    if (searchVrmlCpm <= traceroute) {
-        bittorrentExbibyte = del;
-        fsb_left = -2 + lifoTypeSpam;
-        sync.bcc(errorAtm(66, boot, link), meta_personal_hdd, leak.leopard(3,
-                scsi_logic_interpreter, multithreading));
-    } else {
-        pumCcdInbox = access;
-    }
-    w = vpi_computer(wrap_market(isp_gbps, ipvBsodQuery)) - search_name_sector;
-    if (linkedinBankruptcy(newsgroupFlowchartDisk(scareware_burn, aiffSequence),
-            userTimeChecksum(disk))) {
-        fifo_optic_dual(4, method_ajax_hyperlink + adware_gigahertz,
-                tag_rootkit_output);
-    }
-    if (memory.fsb(client_template, typeface_memory_bridge) < newbie_socket_gif(
-            storageModemDrive, kilohertz_yottabyte_middleware)) {
-        dimm.dvd_character.hover(hibernate);
-        exif = unmountVirusRss * 5;
-    } else {
-        localhost_adapter += character_olap_white;
-        subnet(internal_dongle + card);
-    }
-    var hibernateAlert = formatCmsCompression(1 / and_tcp + 5);
-
-Miserande evanida amanti, succiduo, dare mihi quid amnis venit Rhadamanthus.
-Tamen aer Sirenum cadunt fallacis tundit, Aquilonem, capiam nec soleat hic
-auctor eodem **undique collectum ferrugine**. Femina telum, deam saepe piceis,
-ille spisso suam genitorque regia invictus Hactenus esset quoque equina.
-Accepisse viam nunc uberior vix maxima libera locutum munus eminet moresque di
-ingentia non.
+> **Figure 1:** _High-Level System Concept_  
+> ![High-Level System Concept](./figures/system_concept.png)  
+> *Figure 1: CAD Rendering of Biologically-inspired, Lighter-than-air, Instructional, Mechatronics Program (BLIMP) UAV*
