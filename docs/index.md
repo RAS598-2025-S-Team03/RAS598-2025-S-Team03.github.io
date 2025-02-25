@@ -83,6 +83,22 @@ In our final demonstration, real-time integration of sensor data will be paramou
 ![Sensor Block Diagram](./figures/placeholder_image.png)  
 *Figure 2: BLIMP Sensor Connection Block Diagram*
 
+
+#### GUI Mockup for ROS-based Sensor Visualization
+
+Our ROS-based GUI can be enhanced to include real-time streaming of sensor topics, providing a comprehensive visualization tool for debugging and monitoring system performance. The interface should includes:
+
+- **Live Sensor Data Feeds**: Displaying IMU, barometer, GPS, sonar, and camera outputs.
+- **Real-Time 3D Mapping**: Visualization of detected obstacles and planned trajectories.
+- **System Status Indicators**: Battery levels, motor commands, and control mode (manual/autonomous).
+- **Logging & Playback**: Time-stamped data recording for post-mission analysis.
+
+![GUI Mockup](./figures/GUI_mockup.jpg)  
+*Figure 3: Enhanced GUI for ROS-based Sensor Streaming and Control*
+
+These updates ensure that our sensor fusion and autonomy modules operate efficiently, providing real-time insights into the BLIMP's state during both testing and deployment.
+
+
 This comprehensive sensor array will drive the autonomous control loops, enabling adaptive trajectory planning and responsive mode switching between manual and autonomous control. The demonstration will showcase how our fusion algorithms synthesize this diverse data to create a cohesive understanding of the environment, allowing the BLIMP to navigate reliably in dynamic, real-world scenarios.
 
 ### 3.3 Interface Development
@@ -127,8 +143,6 @@ We are developing a comprehensive GUI based on ROS that serves multiple function
    - Export functionality for post-mission analysis
    - Replay capabilities for reviewing flight data
 
-![Interface Mockup](./figures/placeholder_image.png)  
-*Figure 3: Mockup Diagram for Sensor Data Visualization in GUI*
 
 This integrated interface will not only enable immediate interaction during operation but also support detailed post-mission analysis and system refinement.
 
