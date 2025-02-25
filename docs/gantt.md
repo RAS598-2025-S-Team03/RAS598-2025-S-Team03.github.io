@@ -19,7 +19,7 @@ title: Gantt Chart
 
 ## Gantt Chart 
 
-```mermaid
+<!-- ```mermaid
 %%{init: {'themeVariables': {'opacity': '1'}}}%%
 gantt
     title Project Timeline (March - May)
@@ -68,5 +68,30 @@ gantt
     Autonomous mode switch          :2025-04-15, 7d
     Final trajectory optimization   :2025-04-22, 7d
     Classroom demonstration         :2025-04-29, 7d
+``` -->
+
+```mermaid
+%%{init: {'themeVariables': {'opacity': '1'}}}%%
+gantt
+    title Simplified Project Timeline (March - May)
+    dateFormat  YYYY-MM-DD
+
+    section Hardware & Sensors
+    Hardware setup & testing       :done, 2025-03-04, 14d
+    System wiring & integration    :2025-03-25, 7d
+    Flight tests & optimization    :2025-04-01, 14d
+    Final refinements & demo prep  :2025-04-15, 14d
+    
+    section Software & Interface
+    GUI design & mockups           :done, 2025-03-04, 14d
+    ROS integration & visualization:active, 2025-03-18, 14d
+    UI development & testing       :2025-04-08, 14d
+    Documentation & finalization   :2025-04-22, 7d
+
+    section Controls & Autonomy
+    Manual control & tuning        :done, 2025-03-04, 14d
+    Stability & trajectory planning:active, 2025-03-18, 14d
+    Autonomy & path following      :2025-04-08, 14d
+    Final optimization & demo      :2025-04-22, 7d
 ```
 
