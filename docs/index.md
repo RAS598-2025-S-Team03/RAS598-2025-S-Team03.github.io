@@ -80,7 +80,7 @@ In our final demonstration, real-time integration of sensor data will be paramou
 - **ToF Sensor (LiDAR)**: Creates detailed 3D environmental maps for navigation planning
 
 
-![Sensor Block Diagram](./figures/placeholder_image.png)  
+![Sensor Block Diagram](./figures/blimp_block_diagram.png)  
 *Figure 2: BLIMP Sensor Connection Block Diagram*
 
 
