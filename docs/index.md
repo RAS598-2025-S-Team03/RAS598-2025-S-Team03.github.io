@@ -72,13 +72,10 @@ These tests will be conducted in both controlled indoor environments and field t
 
 In our final demonstration, real-time integration of sensor data will be paramount. Each sensor will play a specific role in enabling autonomous operation:
 
-- **IMU**: Provides orientation control with 6-DoF motion tracking at 200Hz
-- **Barometer**: Maintains precise altitude control through atmospheric pressure monitoring
-- **GPS**: Enables robust outdoor localization with meter-level accuracy
-- **Raspberry Pi Camera**: Supports visual goal detection and obstacle recognition at 30fps
-- **Sonar**: Offers proximity detection for immediate collision avoidance
-- **ToF Sensor (LiDAR)**: Creates detailed 3D environmental maps for navigation planning
-
+- **IMU**: Provides orientation control with 6-DoF motion tracking at 200Hz.
+- **Barometer**: Maintains precise altitude control through atmospheric pressure monitoring.
+- **Raspberry Pi Camera**: Supports visual goal detection and obstacle recognition at 30fps.
+- **ToF Sensor (LiDAR)**: Creates detailed 3D environmental maps for navigation planning.
 
 ![Sensor Block Diagram](./figures/blimp_block_diagram.png)  
 *Figure 2: BLIMP Sensor Connection Block Diagram*
@@ -88,7 +85,7 @@ In our final demonstration, real-time integration of sensor data will be paramou
 
 Our ROS-based GUI can be enhanced to include real-time streaming of sensor topics, providing a comprehensive visualization tool for debugging and monitoring system performance. The interface should includes:
 
-- **Live Sensor Data Feeds**: Displaying IMU, barometer, GPS, sonar, and camera outputs.
+- **Live Sensor Data Feeds**: Displaying IMU, barometer, and camera outputs.
 - **Real-Time 3D Mapping**: Visualization of detected obstacles and planned trajectories.
 - **System Status Indicators**: Battery levels, motor commands, and control mode (manual/autonomous).
 - **Logging & Playback**: Time-stamped data recording for post-mission analysis.
@@ -123,27 +120,27 @@ We are developing a comprehensive GUI based on ROS that serves multiple function
 
 1. **Real-time Data Visualization**: 
 
-   - Sensor data dashboards displaying IMU, barometer, GPS, camera, sonar, and LiDAR outputs
-   - Interactive 3D map showing current position, trajectory, and detected obstacles
-   - System status indicators including battery levels, motor outputs, and connection quality
+   - Sensor data dashboards displaying IMU, barometer, GPS, camera, sonar, and LiDAR outputs.
+   - Interactive 3D map showing current position, trajectory, and detected obstacles.
+   - System status indicators including battery levels, motor outputs, and connection quality.
  
 <br>
 
 2. **Control Interface**:
 
-   - Mode selection panel (manual/autonomous)
-   - Manual control input visualization
-   - Goal setting and waypoint management tools
-   - Parameter adjustment sliders for tuning control algorithms
+   - Mode selection panel (manual/autonomous).
+   - Manual control input visualization.
+   - Goal setting and waypoint management tools.
+   - Parameter adjustment sliders for tuning control algorithms.
 
 <br>
 
 3. **Data Logging and Analysis**:
 
-   - Comprehensive time-stamped data recording of all sensor inputs
-   - Performance metrics tracking including stability measures and navigation accuracy
-   - Export functionality for post-mission analysis
-   - Replay capabilities for reviewing flight data
+   - Comprehensive time-stamped data recording of all sensor inputs.
+   - Performance metrics tracking including stability measures and navigation accuracy.
+   - Export functionality for post-mission analysis.
+   - Replay capabilities for reviewing flight data.
 
 This integrated interface will not only enable immediate interaction during operation but also support detailed post-mission analysis and system refinement.
 
@@ -227,12 +224,12 @@ Throughout the demonstration, we will explain the sensor fusion algorithms, cont
 
 **Equipment Needs:**
 
-- Laptop with ROS2 and our custom GUI for system monitoring and control
-- Remote SSH capabilities for system access and troubleshooting
-- Joystick for manual control demonstrations and emergency override
-- Fully assembled BLIMP with all sensors integrated and calibrated
-- Visual markers and obstacles for navigation challenges
-- Backup batteries and emergency repair kit
+- Laptop with ROS2 and our custom GUI for system monitoring and control.
+- Remote SSH capabilities for system access and troubleshooting.
+- Joystick for manual control demonstrations and emergency override.
+- Fully assembled BLIMP with all sensors integrated and calibrated.
+- Visual markers and obstacles for navigation challenges.
+- Backup batteries and emergency repair kit.
 
 #### Conditions change in any environment. How will your robot handle variability in its environment?
 
@@ -240,25 +237,25 @@ Our system is designed with adaptability as a core principle to handle environme
 
 **Atmospheric Changes:**
 
-- Barometric pressure fluctuations will be compensated through dynamic altitude calculation adjustments
-- Temperature variations affecting sensor readings will be automatically calibrated through periodic reference checks
+- Barometric pressure fluctuations will be compensated through dynamic altitude calculation adjustments.
+- Temperature variations affecting sensor readings will be automatically calibrated through periodic reference checks.
 
 **Lighting Conditions:**
 
-- The camera vision system employs adaptive exposure and contrast enhancement algorithms
-- Multiple visual recognition approaches (feature-based and neural network) provide redundancy across lighting conditions
+- The camera vision system employs adaptive exposure and contrast enhancement algorithms.
+- Multiple visual recognition approaches (feature-based and neural network) provide redundancy across lighting conditions.
 
 **Dynamic Obstacles:**
 
-- Real-time LiDAR scanning continuously updates the environmental map
-- Obstacle avoidance algorithms recalculate trajectories at 5Hz to respond to moving objects
-- Sonar provides redundant close-range detection for last-moment collision avoidance
+- Real-time LiDAR scanning continuously updates the environmental map.
+- Obstacle avoidance algorithms recalculate trajectories at 5Hz to respond to moving objects.
+- Sonar provides redundant close-range detection for last-moment collision avoidance.
 
 **Wind and Air Currents:**
 
-- IMU feedback detects unexpected orientation changes caused by air currents
-- PID controllers dynamically adjust motor outputs to compensate for external forces
-- Wind estimation algorithms adapt control parameters based on observed disturbance patterns
+- IMU feedback detects unexpected orientation changes caused by air currents.
+- PID controllers dynamically adjust motor outputs to compensate for external forces.
+- Wind estimation algorithms adapt control parameters based on observed disturbance patterns.
 
 This multi-layered approach ensures the BLIMP remains stable and responsive even as environmental conditions change during operation.
 
@@ -268,22 +265,22 @@ Our testing and evaluation strategy follows a rigorous multi-stage approach:
 
 **1. Unit Testing:**
 
-- **Sensor Validation**: Each sensor undergoes individual calibration and accuracy verification against known reference values
-- **Control Module Testing**: Isolated testing of individual control algorithms with simulated inputs
-- **Component Integration**: Verification of communication between adjacent system components
+- **Sensor Validation**: Each sensor undergoes individual calibration and accuracy verification against known reference values.
+- **Control Module Testing**: Isolated testing of individual control algorithms with simulated inputs.
+- **Component Integration**: Verification of communication between adjacent system components.
 
 **2. System Integration Testing:**
 
-- **Sensor Fusion Accuracy**: Comparison of fused state estimates against ground truth measurements
-- **Control Loop Stability**: Evaluation of system response to controlled disturbances
-- **Resource Utilization**: Monitoring of CPU, memory, and network usage during operation
+- **Sensor Fusion Accuracy**: Comparison of fused state estimates against ground truth measurements.
+- **Control Loop Stability**: Evaluation of system response to controlled disturbances.
+- **Resource Utilization**: Monitoring of CPU, memory, and network usage during operation.
 
 **3. Functional Testing:**
 
-- **Hovering Stability**: Quantitative measurement of position and attitude variance during stationary flight
-- **Navigation Accuracy**: Evaluation of path-following precision against predetermined routes
-- **Obstacle Avoidance**: Success rate in detecting and navigating around obstacles of varying sizes and positions
-- **Goal Recognition**: Accuracy and response time in identifying and moving toward visual targets
+- **Hovering Stability**: Quantitative measurement of position and attitude variance during stationary flight.
+- **Navigation Accuracy**: Evaluation of path-following precision against predetermined routes.
+- **Obstacle Avoidance**: Success rate in detecting and navigating around obstacles of varying sizes and positions.
+- **Goal Recognition**: Accuracy and response time in identifying and moving toward visual targets.
 
 **4. Performance Metrics:**
 
@@ -312,11 +309,11 @@ The AeroFusion platform will serve as a replicable template for future autonomou
 **Expanded Learning Horizons:**
 
 This project will naturally drive us to explore advanced material beyond the standard curriculum, including:
-- Adaptive control strategies for under-actuated systems
-- Machine learning approaches to environmental perception
-- Energy-efficient computing for embedded systems
-- Human-robot interaction design principles
-- Robust engineering practices for field-deployable systems
+- Adaptive control strategies for under-actuated systems.
+- Machine learning approaches to environmental perception.
+- Energy-efficient computing for embedded systems.
+- Human-robot interaction design principles.
+- Robust engineering practices for field-deployable systems.
 
 **Long-Term Impact:**
 Beyond immediate educational benefits, this work lays the foundation for further research into lighter-than-air autonomous vehicles for applications including environmental monitoring, infrastructure inspection, and emergency response. The sensor fusion techniques we develop may inform approaches to similar challenges in other robotic domains, creating knowledge transfer opportunities across the field.
