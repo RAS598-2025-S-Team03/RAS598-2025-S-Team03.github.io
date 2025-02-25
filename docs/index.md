@@ -20,7 +20,7 @@ Team 03
 
 - Nihar Masurkar
 - Prajjwal Dutta
-- [Sai Srinivas Tatwik Meesala](https://tatwik19.github.io/)
+- Sai Srinivas Tatwik Meesala
 
 **Semester and Year:**  
 Spring 2025
@@ -29,7 +29,7 @@ Spring 2025
 
 - **University:** Arizona State University  
 - **Class:** RAS 598: Experimentation and Deployment of Robotic Systems
-- **Professor:** Dr. Daniel M. Aukes 
+- **Professor:** Dr. Daniel Aukes 
 
 
 ## 3. Project Plan
@@ -81,7 +81,7 @@ In our final demonstration, real-time integration of sensor data will be paramou
 
 
 ![Sensor Block Diagram](./figures/placeholder_image.png)  
-*Figure 2: Professional mockup of the BLIMP control and monitoring interface*
+*Figure 2: BLIMP Sensor Connection Block Diagram*
 
 This comprehensive sensor array will drive the autonomous control loops, enabling adaptive trajectory planning and responsive mode switching between manual and autonomous control. The demonstration will showcase how our fusion algorithms synthesize this diverse data to create a cohesive understanding of the environment, allowing the BLIMP to navigate reliably in dynamic, real-world scenarios.
 
@@ -126,7 +126,7 @@ We are developing a comprehensive GUI based on ROS that serves multiple function
    - Replay capabilities for reviewing flight data
 
 ![Interface Mockup](./figures/placeholder_image.png)  
-*Figure 2: Professional mockup of the BLIMP control and monitoring interface*
+*Figure 3: Mockup Diagram for Sensor Data Visualization in GUI*
 
 This integrated interface will not only enable immediate interaction during operation but also support detailed post-mission analysis and system refinement.
 
