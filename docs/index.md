@@ -111,12 +111,14 @@ We are developing a comprehensive GUI based on ROS that serves multiple function
    - Interactive 3D map showing current position, trajectory, and detected obstacles
    - System status indicators including battery levels, motor outputs, and connection quality
 
+
 2. **Control Interface**:
 
    - Mode selection panel (manual/autonomous)
    - Manual control input visualization
    - Goal setting and waypoint management tools
    - Parameter adjustment sliders for tuning control algorithms
+
 
 3. **Data Logging and Analysis**:
 
