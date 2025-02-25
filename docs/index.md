@@ -126,7 +126,8 @@ We are developing a comprehensive GUI based on ROS that serves multiple function
    - Sensor data dashboards displaying IMU, barometer, GPS, camera, sonar, and LiDAR outputs
    - Interactive 3D map showing current position, trajectory, and detected obstacles
    - System status indicators including battery levels, motor outputs, and connection quality
-
+ 
+<br>
 
 2. **Control Interface**:
 
@@ -135,6 +136,7 @@ We are developing a comprehensive GUI based on ROS that serves multiple function
    - Goal setting and waypoint management tools
    - Parameter adjustment sliders for tuning control algorithms
 
+<br>
 
 3. **Data Logging and Analysis**:
 
@@ -142,7 +144,6 @@ We are developing a comprehensive GUI based on ROS that serves multiple function
    - Performance metrics tracking including stability measures and navigation accuracy
    - Export functionality for post-mission analysis
    - Replay capabilities for reviewing flight data
-
 
 This integrated interface will not only enable immediate interaction during operation but also support detailed post-mission analysis and system refinement.
 
