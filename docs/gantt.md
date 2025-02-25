@@ -17,22 +17,52 @@ title: Gantt Chart
 
 ## Gantt Chart Representation 
 
-```mermaid
 gantt
-    title Project Timeline (Weeks 7-16)
+    title Project Timeline (March - May)
     dateFormat  YYYY-MM-DD
-    section Planning
-    Finalizing Scope :active, milestone1, 2025-02-24, 7d
-    section Implementation
-    ROS2 Setup :active, milestone2, 2025-03-03, 7d
-    Object Detection :milestone3, 2025-03-10, 7d
-    Speech Recognition :milestone4, 2025-03-17, 7d
-    Navigation Testing :milestone5, 2025-03-24, 7d
-    Integrate & Debug :milestone6, 2025-03-31, 7d
-    section Testing & Deployment
-    Real-World Testing :milestone7, 2025-04-07, 7d
-    Final Prep :milestone8, 2025-04-14, 7d
-    Document & Review :milestone9, 2025-04-21, 7d
-    Final Demonstration :milestone10, 2025-04-28, 6d
-```
+    
+    section Hardware
+    Finalize hardware setup         :done, 2024-03-04, 7d
+    Battery & power testing         :done, 2024-03-11, 7d
+    ESC & motor tests               :active, 2024-03-18, 7d
+    Full system wiring check        :2024-03-25, 7d
+    First flight test               :2024-04-01, 7d
+    Propeller optimization          :2024-04-08, 7d
+    Flight test refinements         :2024-04-15, 7d
+    Demo preparation                :2024-04-22, 7d
+    Final presentation prep         :2024-04-29, 7d
+    
+    section Interface
+    Initial GUI design              :done, 2024-03-04, 7d
+    GUI mockup                      :done, 2024-03-11, 7d
+    GUI ROS integration             :active, 2024-03-18, 7d
+    Live sensor visualization       :2024-03-25, 7d
+    Data storage setup              :2024-04-01, 7d
+    GUI live map view               :2024-04-08, 7d
+    Control panel UI                :2024-04-15, 7d
+    UI testing                      :2024-04-22, 7d
+    User guide documentation        :2024-04-29, 7d
+    
+    section Sensors
+    IMU & GPS testing               :done, 2024-03-04, 7d
+    LiDAR & sonar setup             :done, 2024-03-11, 7d
+    Sensor data logging             :active, 2024-03-18, 7d
+    Sensor calibration              :2024-03-25, 7d
+    Sensor fusion start             :2024-04-01, 7d
+    Camera processing               :2024-04-08, 7d
+    Final sensor tuning             :2024-04-15, 7d
+    Validation tests                :2024-04-22, 7d
+    Demo readiness                  :2024-04-29, 7d
+    
+    section Controls & Autonomy
+    Basic manual control            :done, 2024-03-04, 7d
+    Joystick control tuning         :done, 2024-03-11, 7d
+    Altitude stabilization          :active, 2024-03-18, 7d
+    Basic trajectory planning       :2024-03-25, 7d
+    PID tuning for stability        :2024-04-01, 7d
+    Path following algorithm        :2024-04-08, 7d
+    Autonomous mode switch          :2024-04-15, 7d
+    Final trajectory optimization   :2024-04-22, 7d
+    Classroom demonstration         :2024-04-29, 7d
+
 
