@@ -562,15 +562,16 @@
 </tbody>
 </table>
 <h2 id="gantt-chart">Gantt Chart</h2>
-<pre class="mermaid"><code>%%{init: {'themeVariables': {'opacity': '1'}}}%%
+<!-- ```mermaid
+%%{init: {'themeVariables': {'opacity': '1'}}}%%
 gantt
     title Project Timeline (March - May)
     dateFormat  YYYY-MM-DD
 
     section Hardware
     Finalize hardware setup         :done, 2025-03-04, 7d
-    Battery &amp; power testing         :done, 2025-03-11, 7d
-    ESC &amp; motor tests               :active, 2025-03-18, 7d
+    Battery & power testing         :done, 2025-03-11, 7d
+    ESC & motor tests               :active, 2025-03-18, 7d
     Full system wiring check        :2025-03-25, 7d
     First flight test               :2025-04-01, 7d
     Propeller optimization          :2025-04-08, 7d
@@ -590,8 +591,8 @@ gantt
     User guide documentation        :2025-04-29, 7d
 
     section Sensors
-    IMU &amp; GPS testing               :done, 2025-03-04, 7d
-    LiDAR &amp; sonar setup             :done, 2025-03-11, 7d
+    IMU & GPS testing               :done, 2025-03-04, 7d
+    LiDAR & sonar setup             :done, 2025-03-11, 7d
     Sensor data logging             :active, 2025-03-18, 7d
     Sensor calibration              :2025-03-25, 7d
     Sensor fusion start             :2025-04-01, 7d
@@ -600,7 +601,7 @@ gantt
     Validation tests                :2025-04-22, 7d
     Demo readiness                  :2025-04-29, 7d
 
-    section Controls &amp; Autonomy
+    section Controls & Autonomy
     Basic manual control            :done, 2025-03-04, 7d
     Joystick control tuning         :done, 2025-03-11, 7d
     Altitude stabilization          :active, 2025-03-18, 7d
@@ -609,7 +610,31 @@ gantt
     Path following algorithm        :2025-04-08, 7d
     Autonomous mode switch          :2025-04-15, 7d
     Final trajectory optimization   :2025-04-22, 7d
-    Classroom demonstration         :2025-04-29, 7d</code></pre>
+    Classroom demonstration         :2025-04-29, 7d
+``` -->
+
+<pre class="mermaid"><code>%%{init: {'themeVariables': {'opacity': '1'}}}%%
+gantt
+    title Simplified Project Timeline (March - May)
+    dateFormat  YYYY-MM-DD
+
+    section Hardware &amp; Sensors
+    Hardware setup &amp; testing       :done, 2025-03-04, 14d
+    System wiring &amp; integration    :2025-03-25, 7d
+    Flight tests &amp; optimization    :2025-04-01, 14d
+    Final refinements &amp; demo prep  :2025-04-15, 14d
+
+    section Software &amp; Interface
+    GUI design &amp; mockups           :done, 2025-03-04, 14d
+    ROS integration &amp; visualization:active, 2025-03-18, 14d
+    UI development &amp; testing       :2025-04-08, 14d
+    Documentation &amp; finalization   :2025-04-22, 7d
+
+    section Controls &amp; Autonomy
+    Manual control &amp; tuning        :done, 2025-03-04, 14d
+    Stability &amp; trajectory planning:active, 2025-03-18, 14d
+    Autonomy &amp; path following      :2025-04-08, 14d
+    Final optimization &amp; demo      :2025-04-22, 7d</code></pre>
 
 
 
