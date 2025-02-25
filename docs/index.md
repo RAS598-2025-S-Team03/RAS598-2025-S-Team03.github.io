@@ -94,7 +94,7 @@ Our ROS-based GUI can be enhanced to include real-time streaming of sensor topic
 - **Logging & Playback**: Time-stamped data recording for post-mission analysis.
 
 ![GUI Mockup](./figures/GUI_mockup.jpg)  
-*Figure 3: Enhanced GUI for ROS-based Sensor Streaming and Control*
+*Figure 3: Initial Idea for a ROS-based GUI to visualize the sensor data*
 
 These updates ensure that our sensor fusion and autonomy modules operate efficiently, providing real-time insights into the BLIMP's state during both testing and deployment.
 
