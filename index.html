@@ -1012,19 +1012,17 @@ Spring 2025</p>
 <h4 id="how-will-you-use-sensors-in-your-final-demonstration">How will you use sensors in your final demonstration?</h4>
 <p>In our final demonstration, real-time integration of sensor data will be paramount. Each sensor will play a specific role in enabling autonomous operation:</p>
 <ul>
-<li><strong>IMU</strong>: Provides orientation control with 6-DoF motion tracking at 200Hz</li>
-<li><strong>Barometer</strong>: Maintains precise altitude control through atmospheric pressure monitoring</li>
-<li><strong>GPS</strong>: Enables robust outdoor localization with meter-level accuracy</li>
-<li><strong>Raspberry Pi Camera</strong>: Supports visual goal detection and obstacle recognition at 30fps</li>
-<li><strong>Sonar</strong>: Offers proximity detection for immediate collision avoidance</li>
-<li><strong>ToF Sensor (LiDAR)</strong>: Creates detailed 3D environmental maps for navigation planning</li>
+<li><strong>IMU</strong>: Provides orientation control with 6-DoF motion tracking at 200Hz.</li>
+<li><strong>Barometer</strong>: Maintains precise altitude control through atmospheric pressure monitoring.</li>
+<li><strong>Raspberry Pi Camera</strong>: Supports visual goal detection and obstacle recognition at 30fps.</li>
+<li><strong>ToF Sensor (LiDAR)</strong>: Creates detailed 3D environmental maps for navigation planning.</li>
 </ul>
 <p><a class="glightbox" href="figures/blimp_block_diagram.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Sensor Block Diagram" src="figures/blimp_block_diagram.png" /></a><br />
 <em>Figure 2: BLIMP Sensor Connection Block Diagram</em></p>
 <h4 id="gui-mockup-for-ros-based-sensor-visualization">GUI Mockup for ROS-based Sensor Visualization</h4>
 <p>Our ROS-based GUI can be enhanced to include real-time streaming of sensor topics, providing a comprehensive visualization tool for debugging and monitoring system performance. The interface should includes:</p>
 <ul>
-<li><strong>Live Sensor Data Feeds</strong>: Displaying IMU, barometer, GPS, sonar, and camera outputs.</li>
+<li><strong>Live Sensor Data Feeds</strong>: Displaying IMU, barometer, and camera outputs.</li>
 <li><strong>Real-Time 3D Mapping</strong>: Visualization of detected obstacles and planned trajectories.</li>
 <li><strong>System Status Indicators</strong>: Battery levels, motor commands, and control mode (manual/autonomous).</li>
 <li><strong>Logging &amp; Playback</strong>: Time-stamped data recording for post-mission analysis.</li>
@@ -1058,10 +1056,10 @@ Spring 2025</p>
 <p><strong>Real-time Data Visualization</strong>: </p>
 </li>
 <li>
-<p>Sensor data dashboards displaying IMU, barometer, GPS, camera, sonar, and LiDAR outputs</p>
+<p>Sensor data dashboards displaying IMU, barometer, GPS, camera, sonar, and LiDAR outputs.</p>
 </li>
-<li>Interactive 3D map showing current position, trajectory, and detected obstacles</li>
-<li>System status indicators including battery levels, motor outputs, and connection quality</li>
+<li>Interactive 3D map showing current position, trajectory, and detected obstacles.</li>
+<li>System status indicators including battery levels, motor outputs, and connection quality.</li>
 </ol>
 <p><br></p>
 <ol>
@@ -1069,11 +1067,11 @@ Spring 2025</p>
 <p><strong>Control Interface</strong>:</p>
 </li>
 <li>
-<p>Mode selection panel (manual/autonomous)</p>
+<p>Mode selection panel (manual/autonomous).</p>
 </li>
-<li>Manual control input visualization</li>
-<li>Goal setting and waypoint management tools</li>
-<li>Parameter adjustment sliders for tuning control algorithms</li>
+<li>Manual control input visualization.</li>
+<li>Goal setting and waypoint management tools.</li>
+<li>Parameter adjustment sliders for tuning control algorithms.</li>
 </ol>
 <p><br></p>
 <ol>
@@ -1081,11 +1079,11 @@ Spring 2025</p>
 <p><strong>Data Logging and Analysis</strong>:</p>
 </li>
 <li>
-<p>Comprehensive time-stamped data recording of all sensor inputs</p>
+<p>Comprehensive time-stamped data recording of all sensor inputs.</p>
 </li>
-<li>Performance metrics tracking including stability measures and navigation accuracy</li>
-<li>Export functionality for post-mission analysis</li>
-<li>Replay capabilities for reviewing flight data</li>
+<li>Performance metrics tracking including stability measures and navigation accuracy.</li>
+<li>Export functionality for post-mission analysis.</li>
+<li>Replay capabilities for reviewing flight data.</li>
 </ol>
 <p>This integrated interface will not only enable immediate interaction during operation but also support detailed post-mission analysis and system refinement.</p>
 <h3 id="34-control-and-autonomy">3.4 Control and Autonomy</h3>
@@ -1156,58 +1154,58 @@ Spring 2025</p>
 </ul>
 <p><strong>Equipment Needs:</strong></p>
 <ul>
-<li>Laptop with ROS2 and our custom GUI for system monitoring and control</li>
-<li>Remote SSH capabilities for system access and troubleshooting</li>
-<li>Joystick for manual control demonstrations and emergency override</li>
-<li>Fully assembled BLIMP with all sensors integrated and calibrated</li>
-<li>Visual markers and obstacles for navigation challenges</li>
-<li>Backup batteries and emergency repair kit</li>
+<li>Laptop with ROS2 and our custom GUI for system monitoring and control.</li>
+<li>Remote SSH capabilities for system access and troubleshooting.</li>
+<li>Joystick for manual control demonstrations and emergency override.</li>
+<li>Fully assembled BLIMP with all sensors integrated and calibrated.</li>
+<li>Visual markers and obstacles for navigation challenges.</li>
+<li>Backup batteries and emergency repair kit.</li>
 </ul>
 <h4 id="conditions-change-in-any-environment-how-will-your-robot-handle-variability-in-its-environment">Conditions change in any environment. How will your robot handle variability in its environment?</h4>
 <p>Our system is designed with adaptability as a core principle to handle environmental variability:</p>
 <p><strong>Atmospheric Changes:</strong></p>
 <ul>
-<li>Barometric pressure fluctuations will be compensated through dynamic altitude calculation adjustments</li>
-<li>Temperature variations affecting sensor readings will be automatically calibrated through periodic reference checks</li>
+<li>Barometric pressure fluctuations will be compensated through dynamic altitude calculation adjustments.</li>
+<li>Temperature variations affecting sensor readings will be automatically calibrated through periodic reference checks.</li>
 </ul>
 <p><strong>Lighting Conditions:</strong></p>
 <ul>
-<li>The camera vision system employs adaptive exposure and contrast enhancement algorithms</li>
-<li>Multiple visual recognition approaches (feature-based and neural network) provide redundancy across lighting conditions</li>
+<li>The camera vision system employs adaptive exposure and contrast enhancement algorithms.</li>
+<li>Multiple visual recognition approaches (feature-based and neural network) provide redundancy across lighting conditions.</li>
 </ul>
 <p><strong>Dynamic Obstacles:</strong></p>
 <ul>
-<li>Real-time LiDAR scanning continuously updates the environmental map</li>
-<li>Obstacle avoidance algorithms recalculate trajectories at 5Hz to respond to moving objects</li>
-<li>Sonar provides redundant close-range detection for last-moment collision avoidance</li>
+<li>Real-time LiDAR scanning continuously updates the environmental map.</li>
+<li>Obstacle avoidance algorithms recalculate trajectories at 5Hz to respond to moving objects.</li>
+<li>Sonar provides redundant close-range detection for last-moment collision avoidance.</li>
 </ul>
 <p><strong>Wind and Air Currents:</strong></p>
 <ul>
-<li>IMU feedback detects unexpected orientation changes caused by air currents</li>
-<li>PID controllers dynamically adjust motor outputs to compensate for external forces</li>
-<li>Wind estimation algorithms adapt control parameters based on observed disturbance patterns</li>
+<li>IMU feedback detects unexpected orientation changes caused by air currents.</li>
+<li>PID controllers dynamically adjust motor outputs to compensate for external forces.</li>
+<li>Wind estimation algorithms adapt control parameters based on observed disturbance patterns.</li>
 </ul>
 <p>This multi-layered approach ensures the BLIMP remains stable and responsive even as environmental conditions change during operation.</p>
 <h4 id="testing-evaluation-plan-please-describe-how-you-can-verify-your-system-is-working-as-expected">Testing &amp; Evaluation plan: Please describe how you can verify your system is working as expected</h4>
 <p>Our testing and evaluation strategy follows a rigorous multi-stage approach:</p>
 <p><strong>1. Unit Testing:</strong></p>
 <ul>
-<li><strong>Sensor Validation</strong>: Each sensor undergoes individual calibration and accuracy verification against known reference values</li>
-<li><strong>Control Module Testing</strong>: Isolated testing of individual control algorithms with simulated inputs</li>
-<li><strong>Component Integration</strong>: Verification of communication between adjacent system components</li>
+<li><strong>Sensor Validation</strong>: Each sensor undergoes individual calibration and accuracy verification against known reference values.</li>
+<li><strong>Control Module Testing</strong>: Isolated testing of individual control algorithms with simulated inputs.</li>
+<li><strong>Component Integration</strong>: Verification of communication between adjacent system components.</li>
 </ul>
 <p><strong>2. System Integration Testing:</strong></p>
 <ul>
-<li><strong>Sensor Fusion Accuracy</strong>: Comparison of fused state estimates against ground truth measurements</li>
-<li><strong>Control Loop Stability</strong>: Evaluation of system response to controlled disturbances</li>
-<li><strong>Resource Utilization</strong>: Monitoring of CPU, memory, and network usage during operation</li>
+<li><strong>Sensor Fusion Accuracy</strong>: Comparison of fused state estimates against ground truth measurements.</li>
+<li><strong>Control Loop Stability</strong>: Evaluation of system response to controlled disturbances.</li>
+<li><strong>Resource Utilization</strong>: Monitoring of CPU, memory, and network usage during operation.</li>
 </ul>
 <p><strong>3. Functional Testing:</strong></p>
 <ul>
-<li><strong>Hovering Stability</strong>: Quantitative measurement of position and attitude variance during stationary flight</li>
-<li><strong>Navigation Accuracy</strong>: Evaluation of path-following precision against predetermined routes</li>
-<li><strong>Obstacle Avoidance</strong>: Success rate in detecting and navigating around obstacles of varying sizes and positions</li>
-<li><strong>Goal Recognition</strong>: Accuracy and response time in identifying and moving toward visual targets</li>
+<li><strong>Hovering Stability</strong>: Quantitative measurement of position and attitude variance during stationary flight.</li>
+<li><strong>Navigation Accuracy</strong>: Evaluation of path-following precision against predetermined routes.</li>
+<li><strong>Obstacle Avoidance</strong>: Success rate in detecting and navigating around obstacles of varying sizes and positions.</li>
+<li><strong>Goal Recognition</strong>: Accuracy and response time in identifying and moving toward visual targets.</li>
 </ul>
 <p><strong>4. Performance Metrics:</strong></p>
 <ul>
@@ -1227,11 +1225,11 @@ Spring 2025</p>
 <p>The AeroFusion platform will serve as a replicable template for future autonomous blimp initiatives in the course. Our documented development process, including challenges and solutions, will provide a comprehensive case study for sensor-based control systems in unconventional UAVs. The modular nature of our design allows for incremental complexity in future course offerings, where students could focus on improving specific subsystems while maintaining overall functionality.</p>
 <p><strong>Expanded Learning Horizons:</strong></p>
 <p>This project will naturally drive us to explore advanced material beyond the standard curriculum, including:
-- Adaptive control strategies for under-actuated systems
-- Machine learning approaches to environmental perception
-- Energy-efficient computing for embedded systems
-- Human-robot interaction design principles
-- Robust engineering practices for field-deployable systems</p>
+- Adaptive control strategies for under-actuated systems.
+- Machine learning approaches to environmental perception.
+- Energy-efficient computing for embedded systems.
+- Human-robot interaction design principles.
+- Robust engineering practices for field-deployable systems.</p>
 <p><strong>Long-Term Impact:</strong>
 Beyond immediate educational benefits, this work lays the foundation for further research into lighter-than-air autonomous vehicles for applications including environmental monitoring, infrastructure inspection, and emergency response. The sensor fusion techniques we develop may inform approaches to similar challenges in other robotic domains, creating knowledge transfer opportunities across the field.</p>
 <h3 id="38-advising">3.8 Advising</h3>
