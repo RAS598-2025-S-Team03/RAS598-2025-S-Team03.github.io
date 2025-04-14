@@ -523,8 +523,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#please-describe-how-will-you-demonstrate-your-work-in-class" class="md-nav__link">
-    Please describe how will you demonstrate your work in class
+  <a href="#please-describe-how-you-will-demonstrate-your-work-in-class" class="md-nav__link">
+    Please describe how you will demonstrate your work in class
   </a>
   
 </li>
@@ -846,8 +846,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#please-describe-how-will-you-demonstrate-your-work-in-class" class="md-nav__link">
-    Please describe how will you demonstrate your work in class
+  <a href="#please-describe-how-you-will-demonstrate-your-work-in-class" class="md-nav__link">
+    Please describe how you will demonstrate your work in class
   </a>
   
 </li>
@@ -963,7 +963,7 @@
 <h1 id="home">Home</h1>
 <h2 id="aerofusion-autonomous-blimp-navigation-and-sensor-integration-platform">AeroFusion: Autonomous BLIMP Navigation and Sensor Integration Platform</h2>
 <h2 id="1-repository-structure-review">1. Repository Structure Review</h2>
-<p>Before diving into the project details, we reviewed the cloned <a href="https://embedded-systems-design.github.io/fork-report-website/">template</a>  to understand how the folder structure translates to the website. We removed all markdown pages except for <strong>index.md</strong> to prepare the report. This clean setup ensures that our final website only displays the main home page, keeping the structure clear and uncluttered.</p>
+<p>Before diving into the project details, we reviewed the cloned <a href="https://embedded-systems-design.github.io/fork-report-website/">template</a> to understand how the folder structure translates to the website. To prepare the report, we removed all markdown pages except for <strong>index.md</strong>. This clean setup ensures that the final website only displays the main home page, keeping the structure clear and uncluttered.</p>
 <h2 id="2-home-page">2. Home Page</h2>
 <p><strong>Project Name:</strong>  </p>
 <p><em>AeroFusion: Autonomous BLIMP Navigation and Sensor Integration Platform</em></p>
@@ -985,14 +985,14 @@ Spring 2025</p>
 </ul>
 <h2 id="3-project-plan">3. Project Plan</h2>
 <h3 id="31-high-level-concept-and-research-question">3.1 High-Level Concept and Research Question</h3>
-<p>Our project aims to develop an integrated, sensor-driven framework that enables a Biologically-inspired, Lighter-than-air, Instructional, Mechatronics Program (BLIMP) UAV to operate autonomously in dynamic and uncertain environments.</p>
-<p>The central research question is: <strong>"How effectively can sensor data from various sensors (such as Time-of-Flight Sensor, IMU, Barometer, Camera) be fused together to enhance trajectory planning and autonomous navigation capabilities of a hybrid robotic blimp system in dynamic environments?"</strong></p>
+<p>The project aims to develop an integrated, sensor-driven framework that enables a Biologically-inspired, Lighter-than-air, Instructional, Mechatronics Program (BLIMP) UAV to operate autonomously in dynamic and uncertain environments.</p>
+<p>The central research question is: <strong>"How effectively can sensor data from various sensors (such as Time-of-Flight Sensor, IMU, Barometer, Camera) be fused to enhance trajectory planning and autonomous navigation capabilities of a hybrid robotic blimp system in dynamic environments?"</strong></p>
 <p><a class="glightbox" href="figures/blimp_model.JPG" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="High-Level System Concept" src="figures/blimp_model.JPG" /></a><br />
 <em>Figure 1: CAD Rendering of Biologically-inspired, Lighter-than-air, Instructional, Mechatronics Program (BLIMP) UAV</em></p>
 <h3 id="32-sensor-integration">3.2 Sensor Integration</h3>
 <h4 id="how-will-you-utilize-sensor-data-collected-from-the-robot-in-your-code">How will you utilize sensor data collected from the robot in your code?</h4>
-<p>Sensor integration in our project follows a comprehensive, multi-layered approach to ensure that data from each sensor is effectively utilized across all development stages. In our codebase, we've want to implement a modular architecture where sensor data is published on dedicated ROS2 topics. Each sensor continuously streams its specific measurements, allowing for both independent processing and integrated sensor fusion.</p>
-<p>Our code utilizes a hierarchical data processing pipeline:</p>
+<p>Sensor integration in the project adopts a comprehensive, multi-layered approach to ensure effective utilization of data from each sensor across all development stages. The team aims to implement a modular architecture in the codebase where sensor data is published on dedicated ROS2 topics. Each sensor continuously streams its specific measurements, facilitating both independent processing and integrated sensor fusion.</p>
+<p>The code utilizes a hierarchical data processing pipeline:</p>
 <ol>
 <li><strong>Data Acquisition Layer</strong>: Handles raw sensor input collection at appropriate sampling rates.</li>
 <li><strong>Filtering Layer</strong>: Applies Kalman filtering and other noise reduction techniques.</li>
@@ -1000,7 +1000,7 @@ Spring 2025</p>
 <li><strong>Decision Layer</strong>: Processes fused data to inform navigation and control decisions.</li>
 </ol>
 <h4 id="how-will-you-use-sensors-during-testing">How will you use sensors during testing?</h4>
-<p>During testing, we will validate individual sensor outputs using ROS2 tools like rqt_plot and ros2 topic echo. This methodical approach ensures each sensor is correctly calibrated and operating within expected parameters. Our testing protocol includes:</p>
+<p>During testing, the team will validate individual sensor outputs using ROS2 tools like rqt_plot and ros2 topic echo. This methodical approach ensures each sensor is correctly calibrated and operating within expected parameters. The testing protocol includes:</p>
 <ul>
 <li><strong>Sensor Isolation Tests</strong>: Verifying each sensor's accuracy and reliability independently.</li>
 <li><strong>Calibration Verification</strong>: Ensuring sensors maintain accuracy across varying conditions.</li>
@@ -1010,7 +1010,7 @@ Spring 2025</p>
 </ul>
 <p>These tests will be conducted in both controlled indoor environments and field trials, allowing us to observe how sensor data influences the system's stability, localization accuracy, and obstacle detection capabilities in diverse settings.</p>
 <h4 id="how-will-you-use-sensors-in-your-final-demonstration">How will you use sensors in your final demonstration?</h4>
-<p>In our final demonstration, real-time integration of sensor data will be paramount. Each sensor will play a specific role in enabling autonomous operation:</p>
+<p>In the final demonstration, real-time integration of sensor data will be paramount. Each sensor will play a specific role in enabling autonomous operation:</p>
 <ul>
 <li><strong>IMU</strong>: Provides orientation control with 6-DoF motion tracking at 200Hz.</li>
 <li><strong>Barometer</strong>: Maintains precise altitude control through atmospheric pressure monitoring.</li>
@@ -1020,7 +1020,7 @@ Spring 2025</p>
 <p><a class="glightbox" href="figures/blimp_block_diagram.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Sensor Block Diagram" src="figures/blimp_block_diagram.png" /></a><br />
 <em>Figure 2: BLIMP Sensor Connection Block Diagram</em></p>
 <h4 id="gui-mockup-for-ros-based-sensor-visualization">GUI Mockup for ROS-based Sensor Visualization</h4>
-<p>Our ROS-based GUI can be enhanced to include real-time streaming of sensor topics, providing a comprehensive visualization tool for debugging and monitoring system performance. The interface should includes:</p>
+<p>The ROS-based GUI can be enhanced to include real-time streaming of sensor topics, providing a comprehensive visualization tool for debugging and monitoring system performance. The interface should include:</p>
 <ul>
 <li><strong>Live Sensor Data Feeds</strong>: Displaying IMU, barometer, and camera outputs.</li>
 <li><strong>Real-Time 3D Mapping</strong>: Visualization of detected obstacles and planned trajectories.</li>
@@ -1029,17 +1029,17 @@ Spring 2025</p>
 </ul>
 <p><a class="glightbox" href="figures/GUI_mockup.jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="GUI Mockup" src="figures/GUI_mockup.jpg" /></a><br />
 <em>Figure 3: Initial Idea for a ROS-based GUI to visualize the sensor data</em></p>
-<p>These updates ensure that our sensor fusion and autonomy modules operate efficiently, providing real-time insights into the BLIMP's state during both testing and deployment.</p>
-<p>This comprehensive sensor array will drive the autonomous control loops, enabling adaptive trajectory planning and responsive mode switching between manual and autonomous control. The demonstration will showcase how our fusion algorithms synthesize this diverse data to create a cohesive understanding of the environment, allowing the BLIMP to navigate reliably in dynamic, real-world scenarios.</p>
+<p>These updates ensure that the sensor fusion and autonomy modules operate efficiently, providing real-time insights into the BLIMP's state during both testing and deployment.</p>
+<p>This comprehensive sensor array will drive the autonomous control loops, enabling adaptive trajectory planning and responsive mode switching between manual and autonomous control. The demonstration will showcase how the fusion algorithms synthesize this diverse data to create a cohesive understanding of the environment, allowing the BLIMP to navigate reliably in dynamic, real-world scenarios.</p>
 <h3 id="33-interface-development">3.3 Interface Development</h3>
 <h4 id="how-do-you-plan-on-influencing-the-behavior-of-your-robot">How do you plan on influencing the behavior of your robot?</h4>
-<p>The behavior of our BLIMP will be influenced through a sophisticated dual-mode control strategy that balances user input with autonomous decision-making. We've designed:</p>
+<p>The behavior of the BLIMP will be influenced through a sophisticated dual-mode control strategy that balances user input with autonomous decision-making. The team has designed:</p>
 <ol>
 <li>
-<p><strong>Manual Control Mode</strong>: Users can precisely adjust the robot's throttle, direction, and altitude via a joystick interface, allowing for direct control during setup, testing, and emergency situations.</p>
+<p><strong>Manual Control Mode</strong>: Users can precisely adjust the robot's throttle, direction, and altitude via a joystick interface, allowing for direct control during setup, testing, and emergencies.</p>
 </li>
 <li>
-<p><strong>Autonomous Mode</strong>: The robot will employ advanced trajectory planning algorithms based on goal positions detected by the onboard camera. The system will continuously process sensor data to maintain stable flight while navigating toward objectives.</p>
+<p><strong>Autonomous Mode</strong>: The robot will employ advanced trajectory planning algorithms based on goal positions detected by the onboard camera. The system will continuously process sensor data to maintain a stable flight while navigating toward objectives.</p>
 </li>
 <li>
 <p><strong>Mode Switching</strong>: A dedicated joystick button will facilitate seamless transitions between manual and autonomous operations, ensuring operators can quickly regain control if needed.</p>
@@ -1081,14 +1081,14 @@ Spring 2025</p>
 <li>
 <p>Comprehensive time-stamped data recording of all sensor inputs.</p>
 </li>
-<li>Performance metrics tracking including stability measures and navigation accuracy.</li>
+<li>Performance metrics tracking, including stability measures and navigation accuracy.</li>
 <li>Export functionality for post-mission analysis.</li>
 <li>Replay capabilities for reviewing flight data.</li>
 </ol>
 <p>This integrated interface will not only enable immediate interaction during operation but also support detailed post-mission analysis and system refinement.</p>
 <h3 id="34-control-and-autonomy">3.4 Control and Autonomy</h3>
 <h4 id="how-do-you-plan-on-connecting-feedback-from-sensors-to-your-controller-in-higher-level-decision-making-processes-or-both">How do you plan on connecting feedback from sensors to your controller, in higher-level decision-making processes, or both?</h4>
-<p>Our system implements a multi-tiered approach to connect sensor feedback across both low-level control and high-level decision-making processes:</p>
+<p>The system implements a multi-tiered approach to connect sensor feedback across both low-level control and high-level decision-making processes:</p>
 <p><strong>Low-Level Control Integration:</strong></p>
 <ul>
 <li><strong>Stabilization Loop</strong>: IMU and barometer data feed directly into PID controllers that maintain attitude and altitude stability at 100Hz.</li>
@@ -1111,7 +1111,7 @@ Spring 2025</p>
 <p>This comprehensive approach ensures sensor data flows seamlessly between tactical (moment-to-moment) and strategic (goal-oriented) layers of the system, enabling both responsive control and intelligent decision-making.</p>
 <h3 id="35-preparation-needs">3.5 Preparation Needs</h3>
 <h4 id="what-do-you-need-to-know-to-be-successful">What do you need to know to be successful?</h4>
-<p>To achieve complete autonomy of the BLIMP, we need comprehensive understanding of several interrelated technical areas:</p>
+<p>To achieve complete autonomy of the BLIMP, the team needs a comprehensive understanding of several interrelated technical areas:</p>
 <ol>
 <li><strong>Sensor Fusion Algorithms</strong>: Advanced techniques for integrating heterogeneous sensor data into coherent state estimates.</li>
 <li><strong>Aerodynamics of Lighter-than-Air Vehicles</strong>: Understanding the unique physics governing blimp movement and stability.</li>
@@ -1122,7 +1122,7 @@ Spring 2025</p>
 <li><strong>Power Management</strong>: Strategies for maximizing flight time through efficient use of limited onboard energy.</li>
 </ol>
 <h4 id="which-of-those-topics-do-you-need-covered-in-class">Which of those topics do you need covered in class?</h4>
-<p>For optimal project success, we would benefit from classroom coverage of:</p>
+<p>For optimal project success, the team would benefit from classroom coverage of:</p>
 <ol>
 <li><strong>Advanced PID Tuning Strategies</strong>: Practical methods for optimizing control parameters in multi-input, multi-output systems.</li>
 <li><strong>Model Predictive Control (MPC)</strong>: Theoretical foundations and implementation techniques in ROS for predictive navigation.</li>
@@ -1134,17 +1134,17 @@ Spring 2025</p>
 </ol>
 <p>These topics would provide the technical foundation required to successfully integrate sensor data and advanced control algorithms into a cohesive autonomous system.</p>
 <h3 id="36-final-demonstration">3.6 Final Demonstration</h3>
-<h4 id="please-describe-how-will-you-demonstrate-your-work-in-class">Please describe how will you demonstrate your work in class</h4>
-<p>Our final demonstration will showcase the BLIMP's autonomous capabilities in a comprehensive flight test. The system will:</p>
+<h4 id="please-describe-how-you-will-demonstrate-your-work-in-class">Please describe how you will demonstrate your work in class</h4>
+<p>The final demonstration will showcase the BLIMP's autonomous capabilities in a comprehensive flight test. The system will:</p>
 <ol>
 <li>Take off and achieve stable hovering using barometer and IMU feedback.</li>
 <li>Identify visual targets placed throughout the demonstration area.</li>
 <li>Plan and execute an efficient trajectory toward these targets while maintaining altitude.</li>
 <li>Detect and navigate around obstacles in its path using LiDAR and sonar data.</li>
 <li>Demonstrate seamless switching between autonomous navigation and manual control.</li>
-<li>Display real-time sensor data, decision-making processes, and system status via our GUI.</li>
+<li>Display real-time sensor data, decision-making processes, and system status via the GUI.</li>
 </ol>
-<p>Throughout the demonstration, we will explain the sensor fusion algorithms, control strategies, and decision-making processes occurring in real-time, highlighting how the different components work together to achieve autonomous operation.</p>
+<p>Throughout the demonstration, the team will explain the sensor fusion algorithms, control strategies, and decision-making processes occurring in real-time, highlighting how the different components work together to achieve autonomous operation.</p>
 <h4 id="what-resources-will-you-need">What resources will you need?</h4>
 <p><strong>Facility Requirements:</strong></p>
 <ul>
@@ -1154,7 +1154,7 @@ Spring 2025</p>
 </ul>
 <p><strong>Equipment Needs:</strong></p>
 <ul>
-<li>Laptop with ROS2 and our custom GUI for system monitoring and control.</li>
+<li>Laptop with ROS2 and the custom GUI for system monitoring and control.</li>
 <li>Remote SSH capabilities for system access and troubleshooting.</li>
 <li>Joystick for manual control demonstrations and emergency override.</li>
 <li>Fully assembled BLIMP with all sensors integrated and calibrated.</li>
@@ -1162,7 +1162,7 @@ Spring 2025</p>
 <li>Backup batteries and emergency repair kit.</li>
 </ul>
 <h4 id="conditions-change-in-any-environment-how-will-your-robot-handle-variability-in-its-environment">Conditions change in any environment. How will your robot handle variability in its environment?</h4>
-<p>Our system is designed with adaptability as a core principle to handle environmental variability:</p>
+<p>The system is designed with adaptability as a core principle to handle environmental variability:</p>
 <p><strong>Atmospheric Changes:</strong></p>
 <ul>
 <li>Barometric pressure fluctuations will be compensated through dynamic altitude calculation adjustments.</li>
@@ -1187,7 +1187,7 @@ Spring 2025</p>
 </ul>
 <p>This multi-layered approach ensures the BLIMP remains stable and responsive even as environmental conditions change during operation.</p>
 <h4 id="testing-evaluation-plan-please-describe-how-you-can-verify-your-system-is-working-as-expected">Testing &amp; Evaluation plan: Please describe how you can verify your system is working as expected</h4>
-<p>Our testing and evaluation strategy follows a rigorous multi-stage approach:</p>
+<p>The testing and evaluation strategy follows a rigorous multi-stage approach:</p>
 <p><strong>1. Unit Testing:</strong></p>
 <ul>
 <li><strong>Sensor Validation</strong>: Each sensor undergoes individual calibration and accuracy verification against known reference values.</li>
@@ -1215,14 +1215,14 @@ Spring 2025</p>
 <li>Battery efficiency: &gt;15 minutes of autonomous operation</li>
 <li>Control latency: &lt;50ms from sensor input to actuator response</li>
 </ul>
-<p>These comprehensive testing protocols will verify both individual component functionality and overall system performance against our design specifications.</p>
+<p>These comprehensive testing protocols will verify both individual component functionality and overall system performance against the design specifications.</p>
 <h3 id="37-impact-of-the-work">3.7 Impact of the Work</h3>
 <h4 id="provide-a-short-passage-about-the-impact-of-this-work-how-it-will-drive-you-to-learn-new-material-how-it-could-contribute-to-course-development-what-topics-it-will-encourage-learning-of-etc-and-any-other-important-points-not-addressed-above">Provide a short passage about the impact of this work, how it will drive you to learn new material, how it could contribute to course development, what topics it will encourage learning of, etc., and any other important points not addressed above</h4>
 <p>This project represents a significant opportunity for both technical advancement and educational development:</p>
 <p><strong>Technical Skill Development:</strong></p>
-<p>This work will significantly enhance our practical skills by providing hands-on experience with ROS2; a cornerstone platform for modern robotics applications. Thorugh this we will gain invaluable expertise in autonomous navigation, trajectory planning, and real-time sensor fusion for accurate localization. The project's interdisciplinary nature will drive us to bridge the gap between theoretical knowledge and practical implementation, developing skills that are directly transferable to industry applications.</p>
+<p>This work will significantly enhance the practical skills by providing hands-on experience with ROS2, a cornerstone platform for modern robotics applications. The team members will gain invaluable expertise in autonomous navigation, trajectory planning, and real-time sensor fusion for accurate localization. The project's interdisciplinary nature will drive us to bridge the gap between theoretical knowledge and practical implementation, developing skills that are directly transferable to industry applications.</p>
 <p><strong>Course Development Contributions:</strong></p>
-<p>The AeroFusion platform will serve as a replicable template for future autonomous blimp initiatives in the course. Our documented development process, including challenges and solutions, will provide a comprehensive case study for sensor-based control systems in unconventional UAVs. The modular nature of our design allows for incremental complexity in future course offerings, where students could focus on improving specific subsystems while maintaining overall functionality.</p>
+<p>The AeroFusion platform will serve as a replicable template for future autonomous blimp initiatives in the course. The documented development process, including challenges and solutions, will provide a comprehensive case study for sensor-based control systems in unconventional UAVs. The modular nature of the design allows for incremental complexity in future course offerings, where students could focus on improving specific subsystems while maintaining overall functionality.</p>
 <p><strong>Expanded Learning Horizons:</strong></p>
 <p>This project will naturally drive us to explore advanced material beyond the standard curriculum, including:
 - Adaptive control strategies for under-actuated systems.
@@ -1328,8 +1328,8 @@ Beyond immediate educational benefits, this work lays the foundation for further
 </tbody>
 </table>
 <p><strong>Legend:</strong>
-- ✅ = Completed
-- 🔄 = In Progress
+- ✅ = Completed<br />
+- 🔄 = In Progress<br />
 - 🕒 = Pending</p>
 
 
