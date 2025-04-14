@@ -352,6 +352,7 @@ The team anticipates learning more about multi-sensor fusion algorithms, adaptiv
 | 16   | Final fixes and mounting upgrades   | Bugfix and code cleanup           | Final demo rehearsal & testing       | 🕒     |
 
 **Legend:**
+
 - ✅ = Completed  
 - 🔄 = In Progress  
 - 🕒 = Pending
