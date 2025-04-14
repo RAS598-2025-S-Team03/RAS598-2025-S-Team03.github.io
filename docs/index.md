@@ -351,7 +351,7 @@ The team anticipates learning more about multi-sensor fusion algorithms, adaptiv
 | 15   | Refine hardware from flight data    | UI polish & final features        | Autonomous flight path tuning        | 🕒     |
 | 16   | Final fixes and mounting upgrades   | Bugfix and code cleanup           | Final demo rehearsal & testing       | 🕒     |
 
-**Legend:**
+**Legend:**  
 
 - ✅ = Completed  
 - 🔄 = In Progress  
