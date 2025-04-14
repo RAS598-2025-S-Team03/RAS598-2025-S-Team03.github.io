@@ -4,7 +4,7 @@
 
 ## 1. Repository Structure Review
 
-Before diving into the project details, we reviewed the cloned [template](https://embedded-systems-design.github.io/fork-report-website/)  to understand how the folder structure translates to the website. We removed all markdown pages except for **index.md** to prepare the report. This clean setup ensures that our final website only displays the main home page, keeping the structure clear and uncluttered.
+Before diving into the project details, we reviewed the cloned [template](https://embedded-systems-design.github.io/fork-report-website/) to understand how the folder structure translates to the website. To prepare the report, we removed all markdown pages except for **index.md**. This clean setup ensures that the final website only displays the main home page, keeping the structure clear and uncluttered.
 
 ## 2. Home Page
 
@@ -36,9 +36,9 @@ Spring 2025
 
 ### 3.1 High-Level Concept and Research Question
 
-Our project aims to develop an integrated, sensor-driven framework that enables a Biologically-inspired, Lighter-than-air, Instructional, Mechatronics Program (BLIMP) UAV to operate autonomously in dynamic and uncertain environments.
+The project aims to develop an integrated, sensor-driven framework that enables a Biologically-inspired, Lighter-than-air, Instructional, Mechatronics Program (BLIMP) UAV to operate autonomously in dynamic and uncertain environments.
 
-The central research question is: **"How effectively can sensor data from various sensors (such as Time-of-Flight Sensor, IMU, Barometer, Camera) be fused together to enhance trajectory planning and autonomous navigation capabilities of a hybrid robotic blimp system in dynamic environments?"**
+The central research question is: **"How effectively can sensor data from various sensors (such as Time-of-Flight Sensor, IMU, Barometer, Camera) be fused to enhance trajectory planning and autonomous navigation capabilities of a hybrid robotic blimp system in dynamic environments?"**
   
 ![High-Level System Concept](./figures/blimp_model.JPG)  
 *Figure 1: CAD Rendering of Biologically-inspired, Lighter-than-air, Instructional, Mechatronics Program (BLIMP) UAV*
@@ -47,9 +47,9 @@ The central research question is: **"How effectively can sensor data from variou
 
 #### How will you utilize sensor data collected from the robot in your code?
 
-Sensor integration in our project follows a comprehensive, multi-layered approach to ensure that data from each sensor is effectively utilized across all development stages. In our codebase, we've want to implement a modular architecture where sensor data is published on dedicated ROS2 topics. Each sensor continuously streams its specific measurements, allowing for both independent processing and integrated sensor fusion.
+Sensor integration in the project adopts a comprehensive, multi-layered approach to ensure effective utilization of data from each sensor across all development stages. The team aims to implement a modular architecture in the codebase where sensor data is published on dedicated ROS2 topics. Each sensor continuously streams its specific measurements, facilitating both independent processing and integrated sensor fusion.
 
-Our code utilizes a hierarchical data processing pipeline:
+The code utilizes a hierarchical data processing pipeline:
 
 1. **Data Acquisition Layer**: Handles raw sensor input collection at appropriate sampling rates.
 2. **Filtering Layer**: Applies Kalman filtering and other noise reduction techniques.
@@ -58,7 +58,7 @@ Our code utilizes a hierarchical data processing pipeline:
 
 #### How will you use sensors during testing?
 
-During testing, we will validate individual sensor outputs using ROS2 tools like rqt_plot and ros2 topic echo. This methodical approach ensures each sensor is correctly calibrated and operating within expected parameters. Our testing protocol includes:
+During testing, the team will validate individual sensor outputs using ROS2 tools like rqt_plot and ros2 topic echo. This methodical approach ensures each sensor is correctly calibrated and operating within expected parameters. The testing protocol includes:
 
 - **Sensor Isolation Tests**: Verifying each sensor's accuracy and reliability independently.
 - **Calibration Verification**: Ensuring sensors maintain accuracy across varying conditions.
@@ -70,7 +70,7 @@ These tests will be conducted in both controlled indoor environments and field t
 
 #### How will you use sensors in your final demonstration?
 
-In our final demonstration, real-time integration of sensor data will be paramount. Each sensor will play a specific role in enabling autonomous operation:
+In the final demonstration, real-time integration of sensor data will be paramount. Each sensor will play a specific role in enabling autonomous operation:
 
 - **IMU**: Provides orientation control with 6-DoF motion tracking at 200Hz.
 - **Barometer**: Maintains precise altitude control through atmospheric pressure monitoring.
@@ -83,7 +83,7 @@ In our final demonstration, real-time integration of sensor data will be paramou
 
 #### GUI Mockup for ROS-based Sensor Visualization
 
-Our ROS-based GUI can be enhanced to include real-time streaming of sensor topics, providing a comprehensive visualization tool for debugging and monitoring system performance. The interface should includes:
+The ROS-based GUI can be enhanced to include real-time streaming of sensor topics, providing a comprehensive visualization tool for debugging and monitoring system performance. The interface should include:
 
 - **Live Sensor Data Feeds**: Displaying IMU, barometer, and camera outputs.
 - **Real-Time 3D Mapping**: Visualization of detected obstacles and planned trajectories.
@@ -93,20 +93,20 @@ Our ROS-based GUI can be enhanced to include real-time streaming of sensor topic
 ![GUI Mockup](./figures/GUI_mockup.jpg)  
 *Figure 3: Initial Idea for a ROS-based GUI to visualize the sensor data*
 
-These updates ensure that our sensor fusion and autonomy modules operate efficiently, providing real-time insights into the BLIMP's state during both testing and deployment.
+These updates ensure that the sensor fusion and autonomy modules operate efficiently, providing real-time insights into the BLIMP's state during both testing and deployment.
 
 
-This comprehensive sensor array will drive the autonomous control loops, enabling adaptive trajectory planning and responsive mode switching between manual and autonomous control. The demonstration will showcase how our fusion algorithms synthesize this diverse data to create a cohesive understanding of the environment, allowing the BLIMP to navigate reliably in dynamic, real-world scenarios.
+This comprehensive sensor array will drive the autonomous control loops, enabling adaptive trajectory planning and responsive mode switching between manual and autonomous control. The demonstration will showcase how the fusion algorithms synthesize this diverse data to create a cohesive understanding of the environment, allowing the BLIMP to navigate reliably in dynamic, real-world scenarios.
 
 ### 3.3 Interface Development
 
 #### How do you plan on influencing the behavior of your robot?
 
-The behavior of our BLIMP will be influenced through a sophisticated dual-mode control strategy that balances user input with autonomous decision-making. We've designed:
+The behavior of the BLIMP will be influenced through a sophisticated dual-mode control strategy that balances user input with autonomous decision-making. The team has designed:
 
-1. **Manual Control Mode**: Users can precisely adjust the robot's throttle, direction, and altitude via a joystick interface, allowing for direct control during setup, testing, and emergency situations.
+1. **Manual Control Mode**: Users can precisely adjust the robot's throttle, direction, and altitude via a joystick interface, allowing for direct control during setup, testing, and emergencies.
 
-2. **Autonomous Mode**: The robot will employ advanced trajectory planning algorithms based on goal positions detected by the onboard camera. The system will continuously process sensor data to maintain stable flight while navigating toward objectives.
+2. **Autonomous Mode**: The robot will employ advanced trajectory planning algorithms based on goal positions detected by the onboard camera. The system will continuously process sensor data to maintain a stable flight while navigating toward objectives.
 
 3. **Mode Switching**: A dedicated joystick button will facilitate seamless transitions between manual and autonomous operations, ensuring operators can quickly regain control if needed.
 
@@ -138,7 +138,7 @@ We are developing a comprehensive GUI based on ROS that serves multiple function
 3. **Data Logging and Analysis**:
 
    - Comprehensive time-stamped data recording of all sensor inputs.
-   - Performance metrics tracking including stability measures and navigation accuracy.
+   - Performance metrics tracking, including stability measures and navigation accuracy.
    - Export functionality for post-mission analysis.
    - Replay capabilities for reviewing flight data.
 
@@ -148,7 +148,7 @@ This integrated interface will not only enable immediate interaction during oper
 
 #### How do you plan on connecting feedback from sensors to your controller, in higher-level decision-making processes, or both?
 
-Our system implements a multi-tiered approach to connect sensor feedback across both low-level control and high-level decision-making processes:
+The system implements a multi-tiered approach to connect sensor feedback across both low-level control and high-level decision-making processes:
 
 **Low-Level Control Integration:**
 
@@ -175,7 +175,7 @@ This comprehensive approach ensures sensor data flows seamlessly between tactica
 
 #### What do you need to know to be successful?
 
-To achieve complete autonomy of the BLIMP, we need comprehensive understanding of several interrelated technical areas:
+To achieve complete autonomy of the BLIMP, the team needs a comprehensive understanding of several interrelated technical areas:
 
 1. **Sensor Fusion Algorithms**: Advanced techniques for integrating heterogeneous sensor data into coherent state estimates.
 2. **Aerodynamics of Lighter-than-Air Vehicles**: Understanding the unique physics governing blimp movement and stability.
@@ -187,7 +187,7 @@ To achieve complete autonomy of the BLIMP, we need comprehensive understanding o
 
 #### Which of those topics do you need covered in class?
 
-For optimal project success, we would benefit from classroom coverage of:
+For optimal project success, the team would benefit from classroom coverage of:
 
 1. **Advanced PID Tuning Strategies**: Practical methods for optimizing control parameters in multi-input, multi-output systems.
 2. **Model Predictive Control (MPC)**: Theoretical foundations and implementation techniques in ROS for predictive navigation.
@@ -201,18 +201,18 @@ These topics would provide the technical foundation required to successfully int
 
 ### 3.6 Final Demonstration
 
-#### Please describe how will you demonstrate your work in class
+#### Please describe how you will demonstrate your work in class
 
-Our final demonstration will showcase the BLIMP's autonomous capabilities in a comprehensive flight test. The system will:
+The final demonstration will showcase the BLIMP's autonomous capabilities in a comprehensive flight test. The system will:
 
 1. Take off and achieve stable hovering using barometer and IMU feedback.
 2. Identify visual targets placed throughout the demonstration area.
 3. Plan and execute an efficient trajectory toward these targets while maintaining altitude.
 4. Detect and navigate around obstacles in its path using LiDAR and sonar data.
 5. Demonstrate seamless switching between autonomous navigation and manual control.
-6. Display real-time sensor data, decision-making processes, and system status via our GUI.
+6. Display real-time sensor data, decision-making processes, and system status via the GUI.
 
-Throughout the demonstration, we will explain the sensor fusion algorithms, control strategies, and decision-making processes occurring in real-time, highlighting how the different components work together to achieve autonomous operation.
+Throughout the demonstration, the team will explain the sensor fusion algorithms, control strategies, and decision-making processes occurring in real-time, highlighting how the different components work together to achieve autonomous operation.
 
 #### What resources will you need?
 
@@ -224,7 +224,7 @@ Throughout the demonstration, we will explain the sensor fusion algorithms, cont
 
 **Equipment Needs:**
 
-- Laptop with ROS2 and our custom GUI for system monitoring and control.
+- Laptop with ROS2 and the custom GUI for system monitoring and control.
 - Remote SSH capabilities for system access and troubleshooting.
 - Joystick for manual control demonstrations and emergency override.
 - Fully assembled BLIMP with all sensors integrated and calibrated.
@@ -233,7 +233,7 @@ Throughout the demonstration, we will explain the sensor fusion algorithms, cont
 
 #### Conditions change in any environment. How will your robot handle variability in its environment?
 
-Our system is designed with adaptability as a core principle to handle environmental variability:
+The system is designed with adaptability as a core principle to handle environmental variability:
 
 **Atmospheric Changes:**
 
@@ -261,7 +261,7 @@ This multi-layered approach ensures the BLIMP remains stable and responsive even
 
 #### Testing & Evaluation plan: Please describe how you can verify your system is working as expected
 
-Our testing and evaluation strategy follows a rigorous multi-stage approach:
+The testing and evaluation strategy follows a rigorous multi-stage approach:
 
 **1. Unit Testing:**
 
@@ -290,7 +290,7 @@ Our testing and evaluation strategy follows a rigorous multi-stage approach:
 - Battery efficiency: >15 minutes of autonomous operation
 - Control latency: <50ms from sensor input to actuator response
 
-These comprehensive testing protocols will verify both individual component functionality and overall system performance against our design specifications.
+These comprehensive testing protocols will verify both individual component functionality and overall system performance against the design specifications.
 
 ### 3.7 Impact of the Work
 
@@ -300,11 +300,11 @@ This project represents a significant opportunity for both technical advancement
 
 **Technical Skill Development:**
 
-This work will significantly enhance our practical skills by providing hands-on experience with ROS2; a cornerstone platform for modern robotics applications. Thorugh this we will gain invaluable expertise in autonomous navigation, trajectory planning, and real-time sensor fusion for accurate localization. The project's interdisciplinary nature will drive us to bridge the gap between theoretical knowledge and practical implementation, developing skills that are directly transferable to industry applications.
+This work will significantly enhance the practical skills by providing hands-on experience with ROS2, a cornerstone platform for modern robotics applications. The team members will gain invaluable expertise in autonomous navigation, trajectory planning, and real-time sensor fusion for accurate localization. The project's interdisciplinary nature will drive us to bridge the gap between theoretical knowledge and practical implementation, developing skills that are directly transferable to industry applications.
 
 **Course Development Contributions:**
 
-The AeroFusion platform will serve as a replicable template for future autonomous blimp initiatives in the course. Our documented development process, including challenges and solutions, will provide a comprehensive case study for sensor-based control systems in unconventional UAVs. The modular nature of our design allows for incremental complexity in future course offerings, where students could focus on improving specific subsystems while maintaining overall functionality.
+The AeroFusion platform will serve as a replicable template for future autonomous blimp initiatives in the course. The documented development process, including challenges and solutions, will provide a comprehensive case study for sensor-based control systems in unconventional UAVs. The modular nature of the design allows for incremental complexity in future course offerings, where students could focus on improving specific subsystems while maintaining overall functionality.
 
 **Expanded Learning Horizons:**
 
@@ -350,6 +350,6 @@ The team anticipates learning more about multi-sensor fusion algorithms, adaptiv
 | 16   | Address any hardware issues       | Fix any software bugs         | Final system testing and demo      | 🕒     |
 
 **Legend:**
-- ✅ = Completed
-- 🔄 = In Progress
+- ✅ = Completed  
+- 🔄 = In Progress  
 - 🕒 = Pending
