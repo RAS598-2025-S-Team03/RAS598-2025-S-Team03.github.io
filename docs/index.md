@@ -336,18 +336,20 @@ The team anticipates learning more about multi-sensor fusion algorithms, adaptiv
 ## 4. Weekly Milestones (Weeks 7-16)
 
 
-| Week | Hardware                          | Software                      | Testing                            | Status |
-|------|-----------------------------------|-------------------------------|------------------------------------|--------|
-| 7    | Set up core hardware components   | Create basic user interface   | Test basic sensors (IMU, GPS)      | ✅     |
-| 8    | Test power systems and batteries  | Develop interface mockups     | Install and test distance sensors  | 🔄     |
-| 9    | Test motors and speed controllers | Connect interface to ROS      | Begin data collection from sensors | 🕒     |
-| 10   | Complete all system connections   | Add real-time sensor displays | Calibrate all sensors              | 🕒     |
-| 11   | Conduct first test flight         | Set up data storage           | Begin combining sensor data        | 🕒     |
-| 12   | Improve propeller performance     | Add map view to interface     | Set up camera processing           | 🕒     |
-| 13   | Refine flight performance         | Complete control panel        | Final sensor adjustments           | 🕒     |
-| 14   | Prepare for demonstration         | Test user interface           | Optimize autonomous flight paths   | 🕒     |
-| 15   | Finalize presentation materials   | Complete documentation        | Prepare for classroom demo         | 🕒     |
-| 16   | Address any hardware issues       | Fix any software bugs         | Final system testing and demo      | 🕒     |
+## ✅ Updated Weekly Milestones (Weeks 7–16)
+
+| Week | Hardware                            | Software                          | Testing                              | Status |
+|------|-------------------------------------|-----------------------------------|--------------------------------------|--------|
+| 7    | Set up core hardware components     | Create basic user interface       | Test basic sensors (IMU, GPS)        | ✅     |
+| 8    | Test power systems and batteries    | Develop interface mockups         | Install and test distance sensors    | ✅     |
+| 9    | Test motors and speed controllers   | Connect interface to ROS          | Begin data collection from sensors   | ✅     |
+| 10   | Extend hardware setup, wiring       | Add real-time sensor displays     | Calibrate initial sensors            | ✅     |
+| 11   | Complete system integration         | Set up data storage + logging     | Begin combining sensor inputs        | ✅     |
+| 12   | Start motor tuning + prop checks    | Add map view to interface         | Initial static testing of camera     | ✅     |
+| 13   | Prep for flight & safety checks     | Finalize ROS visualization setup  | Validate sensor fusion               | 🔄     |
+| 14   | Conduct **initial flight tests** ✈️  | Basic control tuning via interface| Monitor live telemetry, adjust logs  | 🔄     |
+| 15   | Refine hardware from flight data    | UI polish & final features        | Autonomous flight path tuning        | 🕒     |
+| 16   | Final fixes and mounting upgrades   | Bugfix and code cleanup           | Final demo rehearsal & testing       | 🕒     |
 
 **Legend:**
 - ✅ = Completed  
