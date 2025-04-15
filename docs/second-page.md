@@ -30,7 +30,7 @@ The camera provides vision-based input used primarily for high-level object dete
 
 ---
 
-## ## Object Detection and Tracking
+## Object Detection and Tracking
 
 The team trained a custom **YOLOv5s** model to detect olive-colored balloons, which are the objects of interest.
 
@@ -41,6 +41,10 @@ The team trained a custom **YOLOv5s** model to detect olive-colored balloons, wh
 - Inference time: ~20ms (GPU), <100ms (CPU)
 
 Upon detection, the team calculate the centroid of the balloon and convert it to **relative pixel coordinates** with the frame’s center as origin. This allows quadrant classification (`Q1–Q4`) and distance estimation.  
+
+![Balloon Detection Using YOLOv5](./figures/output_detection.png)  
+*Figure 1: Real-time detection of the green target balloon using a custom-trained YOLOv5 model with quadrant-based localization.*
+
 
 The team used the object's position relative to the center to command differential drive actions. As the object nears the center, the blimp slows down and halts when it reaches a defined "success zone."
 
@@ -56,6 +60,10 @@ The object tracking strategy is based on the **distance between the detected obj
 4. When the object enters a predefined central "success zone", the task is marked complete and the blimp halts.
 
 This behavior mimics a form of visual servoing, using object position rather than absolute coordinates to navigate.
+
+![Target-Based Command Generation](./figures/detection_location.png)  
+*Figure 2: Directional movement commands are generated based on the detected position of the target balloon within the camera frame.*
+
 
 ## Low-Level and High-Level Autonomy
 
@@ -139,6 +147,37 @@ graph TD
     MotionPlanner --> Actuators
 ```
 <!-- # Need: rqt graph..... -->
+
+## GUI Update
+
+The current Graphical User Interface (GUI) has been developed using a ROS 2 WebSocket-based architecture to support real-time visualization and control of the aerial robot during operation. The primary motivation for adopting this architecture stemmed from limitations observed during early testing—specifically, significant latency and bandwidth constraints when streaming video data directly from the onboard Raspberry Pi via conventional tools such as RQT or VNC.
+
+To address this, the team implemented the GUI as a lightweight web-based interface that runs on a remote laptop and communicates with the ROS 2 ecosystem on the Raspberry Pi using rosbridge_server over WebSockets. This setup allows bidirectional data exchange between ROS 2 nodes and the browser using JSON-formatted ROS messages, enabling flexible interaction with ROS topics and services in real time.
+
+The GUI was built using:
+
+- HTML/CSS/JavaScript for the front-end structure and styling
+
+- roslibjs to establish WebSocket communication with ROS 2 topics and services
+
+- rosbridge_server as the ROS 2 backend middleware bridge that translates between ROS messages and WebSocket traffic
+
+This approach allows for:
+
+- Live visualization of camera streams (via web_video_server or MJPEG)
+
+- Real-time IMU and telemetry display
+
+- Joystick or button-based command publishing for manual control
+
+- Status monitoring and diagnostic readouts
+
+By offloading GUI rendering and interaction to a browser, the Raspberry Pi’s limited resources are preserved for essential ROS 2 computation and sensor integration tasks. The result is a responsive and lightweight GUI that operates efficiently over a network connection—even when the robot is airborne.
+
+![ROS 2 WebSocket-Controlled Interface](./figures/blimp_gui.png)  
+*Figure 3: Real-time sensor and control interface for the BLIMP, developed using roslibjs and rosbridge_server over WebSockets.*
+
+
 
 <h2>📹 Balloon Tracking Demo</h2>
 
