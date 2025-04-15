@@ -178,14 +178,10 @@ By offloading the GUI rendering to a browser, onboard compute resources are rese
 <h2>📹 Balloon Tracking Demo</h2>
 
 <video controls autoplay muted loop playsinline width="640" height="360" style="border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.2);">
-  <source src="/videos/balloon_detection.mp4" type="video/mp4">
+  <source src="./videos/balloon_detection.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
-<video autoplay muted loop playsinline width="640" height="360" style="border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.2);">
-  <source src="/videos/balloon_detection.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
 
 ## Summary
 
