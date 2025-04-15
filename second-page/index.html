@@ -534,22 +534,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#need-rqt-graph" class="md-nav__link">
-    Need: rqt graph.....
-  </a>
-  
-    <nav class="md-nav" aria-label="Need: rqt graph.....">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#summary" class="md-nav__link">
     Summary
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -722,22 +709,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#need-rqt-graph" class="md-nav__link">
-    Need: rqt graph.....
-  </a>
-  
-    <nav class="md-nav" aria-label="Need: rqt graph.....">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#summary" class="md-nav__link">
     Summary
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -763,6 +737,8 @@
   
   
 
+
+  <h1>Current Project Status</h1>
 
 <h2 id="team-assignment-4">Team Assignment 4</h2>
 <p>Since the last milestone, the team has made substantial progress in developing both the sensing and autonomy stack. the primary focus is building a system that can identify and track an <strong>olive-colored balloon</strong> in real time, navigate toward it using differential drive, and determine success based on proximity to the center of the camera frame.</p>
@@ -869,7 +845,15 @@
     QuadrantLogic --&gt; MotionPlanner
     Stabilizer --&gt; MotionPlanner
     MotionPlanner --&gt; Actuators</code></pre>
-<h1 id="need-rqt-graph">Need: rqt graph.....</h1>
+<!-- # Need: rqt graph..... -->
+
+<h2>📹 Balloon Tracking Demo</h2>
+
+<video autoplay muted loop playsinline width="640" height="360" style="border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.2);">
+  <source src="./videos/ballon_detection.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
 <h2 id="summary">Summary</h2>
 <p>The system can now: </p>
 <ul>
@@ -880,6 +864,7 @@
 </ul>
 <p>Next Goals:</p>
 <ul>
+<li>Fully synchronize the GUI to work with the camera detection nodes along with the motor control nodes</li>
 <li>Integrate PID control for smoother navigation</li>
 <li>Add fallback logic if the object is lost</li>
 <li>Tune the success detection thresholds</li>
