@@ -6,7 +6,7 @@ title: Current Project Status
 
 Since the last milestone, the team has made substantial progress in developing both the sensing and autonomy stack. the primary focus is building a system that can identify and track an **olive-colored balloon** in real time, navigate toward it using differential drive, and determine success based on proximity to the center of the camera frame.
 
-This work integrates multiple sensing modalities: camera, IMU, and barometer alongside autonomous behavior through ROS2 nodes and coordinated control logic.
+This work integrates multiple sensing modalities: camera, and IMU alongside autonomous behavior through ROS2 nodes and coordinated control logic.
 
 ---
 
@@ -16,9 +16,8 @@ The team is currently using three primary sensors:
 
 - **Camera (USB webcam)** for image acquisition and target detection
 - **ICM20948 IMU** for measuring orientation and motion
-- **Barometer** for height estimation and stabilization
 
-The IMU and barometer data undergo filtering and fusion, providing stable orientation and altitude feedback. The camera provides vision-based input used primarily for high-level object detection and tracking.
+The camera provides vision-based input used primarily for high-level object detection and tracking.
 
 ### Active ROS Topics (place holder)
 
@@ -27,10 +26,7 @@ The IMU and barometer data undergo filtering and fusion, providing stable orient
 /blimp/detected_position  # YOLO-based balloon detection 
 /imu/data_raw             # IMU (gyro, accel, fused orientation) 
 /imu/mag                  # Magnetometer readings 
-/barometer/pressure       # Altitude estimation
 ```
-
-The fusion of IMU and barometer data allows for stable low-level control, while the camera provides the primary input for high-level decision-making.
 
 ---
 
@@ -67,12 +63,12 @@ This behavior mimics a form of visual servoing, using object position rather tha
 
 Low-level autonomy includes all real-time control and stabilization functions:
 
-- **IMU + Barometer Fusion**: Estimating attitude (roll, pitch, yaw) and height.
+- **IMU**: Estimating attitude (roll, pitch, yaw)
 - **Sensor Filtering**:
   - Low-pass filters on accelerometer data to reduce noise
   - Complementary filters for fusing orientation data
-- **PID Control (planned)**: For motor and throttle regulation.
-- **Motor Feedback (encoders)**: Used for velocity and position tracking.
+- **PID Control (planned)**: For servo and throttle regulation.
+- **Servo Feedback (encoders)**: Used for velocity and position tracking.
 
 ### High-Level Autonomy
 
@@ -83,7 +79,7 @@ High-level autonomy focuses on decision-making and planning:
 - **Movement control**: Commands based on detected quadrant
 - **Goal logic**:  
   - If object is off-center → adjust orientation and move
-  - If object is centered → stop motors and flag task as completed
+  - If object is centered → stop servos and flag task as completed
 - **Fallback logic** (planned): Handle scenarios where the object leaves the frame
 
 ---
@@ -103,12 +99,7 @@ Effective autonomy depends on reliable sensor input. Here’s how the team will 
 - **Sensor Fusion**: Combining gyro, accel, and mag data using complementary filters.
 - **Filtering**: Low-pass filtering for accel and magnetometer data; high-pass to correct gyro drift.
 
-### Barometer
-
-- **Smoothing**: Simple moving average to eliminate spikes.
-- **Correlation**: Used alongside IMU for stable vertical state estimation.
-
-### Motors
+### Servos
 
 - **PID Controllers (planned)**: For consistent and smooth motion.
 - **Encoder Feedback**: To adjust velocity in real time.
@@ -122,8 +113,8 @@ Sensor data feeds into both short-term (control) and long-term (behavioral) deci
 
 ### Low-Level Decisions
 
-- Set PWM/motor speeds based on position errors
-- Adjust throttle for altitude using barometer
+- Set PWM/servo speeds based on position errors
+- Adjust throttle for altitude
 - Stabilize yaw using IMU orientation
 - Apply real-time filters for smoother control
 
@@ -143,7 +134,6 @@ graph TD
     Camera -->|/image_raw| YOLOv5_Detector
     YOLOv5_Detector -->|/blimp/detected_position| QuadrantLogic
     IMU -->|/imu/data_raw| Stabilizer
-    Barometer -->|/barometer/pressure| Stabilizer
     QuadrantLogic --> MotionPlanner
     Stabilizer --> MotionPlanner
     MotionPlanner --> Actuators
@@ -157,7 +147,7 @@ The system can now:
 - Detect and track a balloon in real time
 - Move toward the object using differential drive
 - Halt autonomously when a success zone is reached
-- Publish and use filtered sensor data from IMU and barometer
+- Publish and use filtered sensor data from IMU
 
 Next Goals:
 
