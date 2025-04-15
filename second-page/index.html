@@ -426,7 +426,7 @@
       
         <li class="md-nav__item">
   <a href="#object-detection-and-tracking" class="md-nav__link">
-    ## Object Detection and Tracking
+    Object Detection and Tracking
   </a>
   
 </li>
@@ -529,6 +529,13 @@
         <li class="md-nav__item">
   <a href="#updated-sensor-flowchart" class="md-nav__link">
     Updated Sensor Flowchart
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gui-update" class="md-nav__link">
+    GUI Update
   </a>
   
 </li>
@@ -601,7 +608,7 @@
       
         <li class="md-nav__item">
   <a href="#object-detection-and-tracking" class="md-nav__link">
-    ## Object Detection and Tracking
+    Object Detection and Tracking
   </a>
   
 </li>
@@ -709,6 +716,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#gui-update" class="md-nav__link">
+    GUI Update
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#summary" class="md-nav__link">
     Summary
   </a>
@@ -758,7 +772,7 @@
 /imu/mag                  # Magnetometer readings 
 </code></pre></div>
 <hr />
-<h2 id="object-detection-and-tracking">## Object Detection and Tracking</h2>
+<h2 id="object-detection-and-tracking">Object Detection and Tracking</h2>
 <p>The team trained a custom <strong>YOLOv5s</strong> model to detect olive-colored balloons, which are the objects of interest.</p>
 <p><strong>Training details:</strong><br />
 - Platform: Roboflow + local training
@@ -766,6 +780,8 @@
 - mAP@0.5: ~96%
 - Inference time: ~20ms (GPU), &lt;100ms (CPU)</p>
 <p>Upon detection, the team calculate the centroid of the balloon and convert it to <strong>relative pixel coordinates</strong> with the frame’s center as origin. This allows quadrant classification (<code>Q1–Q4</code>) and distance estimation.  </p>
+<p><a class="glightbox" href="../figures/output_detection.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Balloon Detection Using YOLOv5" src="../figures/output_detection.png" /></a><br />
+<em>Figure 1: Real-time detection of the green target balloon using a custom-trained YOLOv5 model with quadrant-based localization.</em></p>
 <p>The team used the object's position relative to the center to command differential drive actions. As the object nears the center, the blimp slows down and halts when it reaches a defined "success zone."</p>
 <hr />
 <h2 id="object-tracking-and-success-criteria">Object Tracking and Success Criteria</h2>
@@ -777,6 +793,8 @@
 <li>When the object enters a predefined central "success zone", the task is marked complete and the blimp halts.</li>
 </ol>
 <p>This behavior mimics a form of visual servoing, using object position rather than absolute coordinates to navigate.</p>
+<p><a class="glightbox" href="../figures/detection_location.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Target-Based Command Generation" src="../figures/detection_location.png" /></a><br />
+<em>Figure 2: Directional movement commands are generated based on the detected position of the target balloon within the camera frame.</em></p>
 <h2 id="low-level-and-high-level-autonomy">Low-Level and High-Level Autonomy</h2>
 <h3 id="low-level-autonomy">Low-Level Autonomy</h3>
 <p>Low-level autonomy includes all real-time control and stabilization functions:</p>
@@ -847,6 +865,39 @@
     MotionPlanner --&gt; Actuators</code></pre>
 <!-- # Need: rqt graph..... -->
 
+<h2 id="gui-update">GUI Update</h2>
+<p>The current Graphical User Interface (GUI) has been developed using a ROS 2 WebSocket-based architecture to support real-time visualization and control of the aerial robot during operation. The primary motivation for adopting this architecture stemmed from limitations observed during early testing—specifically, significant latency and bandwidth constraints when streaming video data directly from the onboard Raspberry Pi via conventional tools such as RQT or VNC.</p>
+<p>To address this, the team implemented the GUI as a lightweight web-based interface that runs on a remote laptop and communicates with the ROS 2 ecosystem on the Raspberry Pi using rosbridge_server over WebSockets. This setup allows bidirectional data exchange between ROS 2 nodes and the browser using JSON-formatted ROS messages, enabling flexible interaction with ROS topics and services in real time.</p>
+<p>The GUI was built using:</p>
+<ul>
+<li>
+<p>HTML/CSS/JavaScript for the front-end structure and styling</p>
+</li>
+<li>
+<p>roslibjs to establish WebSocket communication with ROS 2 topics and services</p>
+</li>
+<li>
+<p>rosbridge_server as the ROS 2 backend middleware bridge that translates between ROS messages and WebSocket traffic</p>
+</li>
+</ul>
+<p>This approach allows for:</p>
+<ul>
+<li>
+<p>Live visualization of camera streams (via web_video_server or MJPEG)</p>
+</li>
+<li>
+<p>Real-time IMU and telemetry display</p>
+</li>
+<li>
+<p>Joystick or button-based command publishing for manual control</p>
+</li>
+<li>
+<p>Status monitoring and diagnostic readouts</p>
+</li>
+</ul>
+<p>By offloading GUI rendering and interaction to a browser, the Raspberry Pi’s limited resources are preserved for essential ROS 2 computation and sensor integration tasks. The result is a responsive and lightweight GUI that operates efficiently over a network connection—even when the robot is airborne.</p>
+<p><a class="glightbox" href="../figures/blimp_gui.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="ROS 2 WebSocket-Controlled Interface" src="../figures/blimp_gui.png" /></a><br />
+<em>Figure 3: Real-time sensor and control interface for the BLIMP, developed using roslibjs and rosbridge_server over WebSockets.</em></p>
 <h2>📹 Balloon Tracking Demo</h2>
 
 <video controls autoplay muted loop playsinline width="640" height="360" style="border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.2);">
