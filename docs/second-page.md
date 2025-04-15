@@ -11,7 +11,7 @@ This work integrates multiple sensing modalities: camera, and IMU alongside auto
 ---
 
 ## Sensor Integration and Filtering
-
+ 
 The team is currently using three primary sensors:
 
 - **Camera (USB webcam)** for image acquisition and target detection
@@ -138,7 +138,15 @@ graph TD
     Stabilizer --> MotionPlanner
     MotionPlanner --> Actuators
 ```
-# Need: rqt graph.....
+<!-- # Need: rqt graph..... -->
+
+<h2>📹 Balloon Tracking Demo</h2>
+
+<video autoplay muted loop playsinline width="640" height="360" style="border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.2);">
+  <source src="./videos/ballon_detection.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
 
 ## Summary
 
@@ -151,6 +159,7 @@ The system can now:
 
 Next Goals:
 
+- Fully synchronize the GUI to work with the camera detection nodes along with the motor control nodes
 - Integrate PID control for smoother navigation
 - Add fallback logic if the object is lost
 - Tune the success detection thresholds
