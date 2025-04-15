@@ -779,7 +779,7 @@
 - Dataset: Collected in variable lighting/backgrounds
 - mAP@0.5: ~96%
 - Inference time: ~20ms (GPU), &lt;100ms (CPU)</p>
-<p>Upon detection, the team calculate the centroid of the balloon and convert it to <strong>relative pixel coordinates</strong> with the frame’s center as origin. This allows quadrant classification (<code>Q1–Q4</code>) and distance estimation.  </p>
+<p>Upon detection, the model calculates the centroid of the balloon and converts it to <strong>relative pixel coordinates</strong>, using the frame's center as the origin. This enables both quadrant classification (<code>Q1–Q4</code>) and distance estimation.</p>
 <p><a class="glightbox" href="../figures/output_detection.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Balloon Detection Using YOLOv5" src="../figures/output_detection.png" /></a><br />
 <em>Figure 1: Real-time detection of the green target balloon using a custom-trained YOLOv5 model with quadrant-based localization.</em></p>
 <p>The team used the object's position relative to the center to command differential drive actions. As the object nears the center, the blimp slows down and halts when it reaches a defined "success zone."</p>
@@ -866,36 +866,22 @@
 <!-- # Need: rqt graph..... -->
 
 <h2 id="gui-update">GUI Update</h2>
-<p>The current Graphical User Interface (GUI) has been developed using a ROS 2 WebSocket-based architecture to support real-time visualization and control of the aerial robot during operation. The primary motivation for adopting this architecture stemmed from limitations observed during early testing—specifically, significant latency and bandwidth constraints when streaming video data directly from the onboard Raspberry Pi via conventional tools such as RQT or VNC.</p>
-<p>To address this, the team implemented the GUI as a lightweight web-based interface that runs on a remote laptop and communicates with the ROS 2 ecosystem on the Raspberry Pi using rosbridge_server over WebSockets. This setup allows bidirectional data exchange between ROS 2 nodes and the browser using JSON-formatted ROS messages, enabling flexible interaction with ROS topics and services in real time.</p>
-<p>The GUI was built using:</p>
+<p>The current graphical user interface (GUI) is designed using a ROS 2 WebSocket-based architecture to enable real-time monitoring and control of the aerial robot. This approach was selected due to performance limitations observed during early tests—particularly latency and bandwidth issues with direct streaming from the onboard Raspberry Pi using tools like RQT or VNC.</p>
+<p>To overcome these constraints, the team developed a lightweight, browser-accessible GUI that interfaces with ROS 2 via rosbridge_server and roslibjs. This setup allows for JSON-based communication over WebSockets, facilitating seamless interaction with ROS topics, services, and messages.</p>
+<p>Technologies used:</p>
 <ul>
-<li>
-<p>HTML/CSS/JavaScript for the front-end structure and styling</p>
-</li>
-<li>
-<p>roslibjs to establish WebSocket communication with ROS 2 topics and services</p>
-</li>
-<li>
-<p>rosbridge_server as the ROS 2 backend middleware bridge that translates between ROS messages and WebSocket traffic</p>
-</li>
+<li>HTML/CSS/JavaScript: For layout, styling, and interactivity</li>
+<li>roslibjs: For WebSocket communication with ROS 2</li>
+<li>rosbridge_server: Acts as a middleware bridge translating ROS messages into JSON</li>
 </ul>
-<p>This approach allows for:</p>
+<p>Features supported:</p>
 <ul>
-<li>
-<p>Live visualization of camera streams (via web_video_server or MJPEG)</p>
-</li>
-<li>
-<p>Real-time IMU and telemetry display</p>
-</li>
-<li>
-<p>Joystick or button-based command publishing for manual control</p>
-</li>
-<li>
-<p>Status monitoring and diagnostic readouts</p>
-</li>
+<li>Live video streaming from the onboard camera (via MJPEG)</li>
+<li>Real-time visualization of IMU data and telemetry</li>
+<li>Manual control inputs using buttons or joystick events</li>
+<li>System diagnostics and status monitoring</li>
 </ul>
-<p>By offloading GUI rendering and interaction to a browser, the Raspberry Pi’s limited resources are preserved for essential ROS 2 computation and sensor integration tasks. The result is a responsive and lightweight GUI that operates efficiently over a network connection—even when the robot is airborne.</p>
+<p>By offloading the GUI rendering to a browser, onboard compute resources are reserved for mission-critical ROS 2 tasks. This results in a responsive, low-latency interface suitable for remote deployment.</p>
 <p><a class="glightbox" href="../figures/blimp_gui.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="ROS 2 WebSocket-Controlled Interface" src="../figures/blimp_gui.png" /></a><br />
 <em>Figure 3: Real-time sensor and control interface for the BLIMP, developed using roslibjs and rosbridge_server over WebSockets.</em></p>
 <h2>📹 Balloon Tracking Demo</h2>
@@ -906,20 +892,20 @@
 </video>
 
 <h2 id="summary">Summary</h2>
-<p>The system can now: </p>
+<p>The system is now capable of:</p>
 <ul>
-<li>Detect and track a balloon in real time</li>
-<li>Move toward the object using differential drive</li>
-<li>Halt autonomously when a success zone is reached</li>
-<li>Publish and use filtered sensor data from IMU</li>
+<li>Detecting and tracking a balloon in real time</li>
+<li>Navigating toward the balloon using differential drive</li>
+<li>Halting autonomously upon reaching the success zone</li>
+<li>Publishing and processing filtered IMU sensor data</li>
 </ul>
-<p>Next Goals:</p>
+<p>Next Steps:</p>
 <ul>
-<li>Fully synchronize the GUI to work with the camera detection nodes along with the motor control nodes</li>
-<li>Integrate PID control for smoother navigation</li>
-<li>Add fallback logic if the object is lost</li>
-<li>Tune the success detection thresholds</li>
-<li>Record and analyze system performance using rosbag</li>
+<li>Fully synchronize GUI with detection and motor control nodes</li>
+<li>Implement PID control for smoother and more stable navigation</li>
+<li>Add fallback mechanisms when the target is lost</li>
+<li>Fine-tune success detection thresholds</li>
+<li>Log and evaluate system performance using rosbag</li>
 </ul>
 
 
