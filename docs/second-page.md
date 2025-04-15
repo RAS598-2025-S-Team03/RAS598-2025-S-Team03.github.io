@@ -143,7 +143,7 @@ graph TD
 <h2>📹 Balloon Tracking Demo</h2>
 
 <video autoplay muted loop playsinline width="640" height="360" style="border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.2);">
-  <source src="./videos/ballon_detection.mp4" type="video/mp4">
+  <source src="/videos/ballon_detection.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
