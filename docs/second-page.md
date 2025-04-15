@@ -40,7 +40,8 @@ The team trained a custom **YOLOv5s** model to detect olive-colored balloons, wh
 - mAP@0.5: ~96%
 - Inference time: ~20ms (GPU), <100ms (CPU)
 
-Upon detection, the team calculate the centroid of the balloon and convert it to **relative pixel coordinates** with the frame’s center as origin. This allows quadrant classification (`Q1–Q4`) and distance estimation.  
+Upon detection, the model calculates the centroid of the balloon and converts it to **relative pixel coordinates**, using the frame's center as the origin. This enables both quadrant classification (`Q1–Q4`) and distance estimation.
+ 
 
 ![Balloon Detection Using YOLOv5](./figures/output_detection.png)  
 *Figure 1: Real-time detection of the green target balloon using a custom-trained YOLOv5 model with quadrant-based localization.*
@@ -150,29 +151,24 @@ graph TD
 
 ## GUI Update
 
-The current Graphical User Interface (GUI) has been developed using a ROS 2 WebSocket-based architecture to support real-time visualization and control of the aerial robot during operation. The primary motivation for adopting this architecture stemmed from limitations observed during early testing—specifically, significant latency and bandwidth constraints when streaming video data directly from the onboard Raspberry Pi via conventional tools such as RQT or VNC.
+The current graphical user interface (GUI) is designed using a ROS 2 WebSocket-based architecture to enable real-time monitoring and control of the aerial robot. This approach was selected due to performance limitations observed during early tests—particularly latency and bandwidth issues with direct streaming from the onboard Raspberry Pi using tools like RQT or VNC.
 
-To address this, the team implemented the GUI as a lightweight web-based interface that runs on a remote laptop and communicates with the ROS 2 ecosystem on the Raspberry Pi using rosbridge_server over WebSockets. This setup allows bidirectional data exchange between ROS 2 nodes and the browser using JSON-formatted ROS messages, enabling flexible interaction with ROS topics and services in real time.
+To overcome these constraints, the team developed a lightweight, browser-accessible GUI that interfaces with ROS 2 via rosbridge_server and roslibjs. This setup allows for JSON-based communication over WebSockets, facilitating seamless interaction with ROS topics, services, and messages.
 
-The GUI was built using:
+Technologies used:
 
-- HTML/CSS/JavaScript for the front-end structure and styling
+- HTML/CSS/JavaScript: For layout, styling, and interactivity
+- roslibjs: For WebSocket communication with ROS 2
+- rosbridge_server: Acts as a middleware bridge translating ROS messages into JSON
 
-- roslibjs to establish WebSocket communication with ROS 2 topics and services
+Features supported:
 
-- rosbridge_server as the ROS 2 backend middleware bridge that translates between ROS messages and WebSocket traffic
+- Live video streaming from the onboard camera (via MJPEG)
+- Real-time visualization of IMU data and telemetry
+- Manual control inputs using buttons or joystick events
+- System diagnostics and status monitoring
 
-This approach allows for:
-
-- Live visualization of camera streams (via web_video_server or MJPEG)
-
-- Real-time IMU and telemetry display
-
-- Joystick or button-based command publishing for manual control
-
-- Status monitoring and diagnostic readouts
-
-By offloading GUI rendering and interaction to a browser, the Raspberry Pi’s limited resources are preserved for essential ROS 2 computation and sensor integration tasks. The result is a responsive and lightweight GUI that operates efficiently over a network connection—even when the robot is airborne.
+By offloading the GUI rendering to a browser, onboard compute resources are reserved for mission-critical ROS 2 tasks. This results in a responsive, low-latency interface suitable for remote deployment.
 
 ![ROS 2 WebSocket-Controlled Interface](./figures/blimp_gui.png)  
 *Figure 3: Real-time sensor and control interface for the BLIMP, developed using roslibjs and rosbridge_server over WebSockets.*
@@ -189,17 +185,17 @@ By offloading GUI rendering and interaction to a browser, the Raspberry Pi’s l
 
 ## Summary
 
-The system can now: 
+The system is now capable of:
 
-- Detect and track a balloon in real time
-- Move toward the object using differential drive
-- Halt autonomously when a success zone is reached
-- Publish and use filtered sensor data from IMU
+- Detecting and tracking a balloon in real time
+- Navigating toward the balloon using differential drive
+- Halting autonomously upon reaching the success zone
+- Publishing and processing filtered IMU sensor data
 
-Next Goals:
+Next Steps:
 
-- Fully synchronize the GUI to work with the camera detection nodes along with the motor control nodes
-- Integrate PID control for smoother navigation
-- Add fallback logic if the object is lost
-- Tune the success detection thresholds
-- Record and analyze system performance using rosbag
+- Fully synchronize GUI with detection and motor control nodes
+- Implement PID control for smoother and more stable navigation
+- Add fallback mechanisms when the target is lost
+- Fine-tune success detection thresholds
+- Log and evaluate system performance using rosbag
