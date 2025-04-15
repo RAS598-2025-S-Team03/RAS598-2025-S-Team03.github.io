@@ -488,15 +488,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#barometer" class="md-nav__link">
-    Barometer
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#motors" class="md-nav__link">
-    Motors
+  <a href="#servos" class="md-nav__link">
+    Servos
   </a>
   
 </li>
@@ -683,15 +676,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#barometer" class="md-nav__link">
-    Barometer
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#motors" class="md-nav__link">
-    Motors
+  <a href="#servos" class="md-nav__link">
+    Servos
   </a>
   
 </li>
@@ -780,24 +766,21 @@
 
 <h2 id="team-assignment-4">Team Assignment 4</h2>
 <p>Since the last milestone, the team has made substantial progress in developing both the sensing and autonomy stack. the primary focus is building a system that can identify and track an <strong>olive-colored balloon</strong> in real time, navigate toward it using differential drive, and determine success based on proximity to the center of the camera frame.</p>
-<p>This work integrates multiple sensing modalities: camera, IMU, and barometer alongside autonomous behavior through ROS2 nodes and coordinated control logic.</p>
+<p>This work integrates multiple sensing modalities: camera, and IMU alongside autonomous behavior through ROS2 nodes and coordinated control logic.</p>
 <hr />
 <h2 id="sensor-integration-and-filtering">Sensor Integration and Filtering</h2>
 <p>The team is currently using three primary sensors:</p>
 <ul>
 <li><strong>Camera (USB webcam)</strong> for image acquisition and target detection</li>
 <li><strong>ICM20948 IMU</strong> for measuring orientation and motion</li>
-<li><strong>Barometer</strong> for height estimation and stabilization</li>
 </ul>
-<p>The IMU and barometer data undergo filtering and fusion, providing stable orientation and altitude feedback. The camera provides vision-based input used primarily for high-level object detection and tracking.</p>
+<p>The camera provides vision-based input used primarily for high-level object detection and tracking.</p>
 <h3 id="active-ros-topics-place-holder">Active ROS Topics (place holder)</h3>
 <div class="highlight"><pre><span></span><code>/image_raw                # Camera feed 
 /blimp/detected_position  # YOLO-based balloon detection 
 /imu/data_raw             # IMU (gyro, accel, fused orientation) 
 /imu/mag                  # Magnetometer readings 
-/barometer/pressure       # Altitude estimation
 </code></pre></div>
-<p>The fusion of IMU and barometer data allows for stable low-level control, while the camera provides the primary input for high-level decision-making.</p>
 <hr />
 <h2 id="object-detection-and-tracking">## Object Detection and Tracking</h2>
 <p>The team trained a custom <strong>YOLOv5s</strong> model to detect olive-colored balloons, which are the objects of interest.</p>
@@ -822,12 +805,12 @@
 <h3 id="low-level-autonomy">Low-Level Autonomy</h3>
 <p>Low-level autonomy includes all real-time control and stabilization functions:</p>
 <ul>
-<li><strong>IMU + Barometer Fusion</strong>: Estimating attitude (roll, pitch, yaw) and height.</li>
+<li><strong>IMU</strong>: Estimating attitude (roll, pitch, yaw)</li>
 <li><strong>Sensor Filtering</strong>:</li>
 <li>Low-pass filters on accelerometer data to reduce noise</li>
 <li>Complementary filters for fusing orientation data</li>
-<li><strong>PID Control (planned)</strong>: For motor and throttle regulation.</li>
-<li><strong>Motor Feedback (encoders)</strong>: Used for velocity and position tracking.</li>
+<li><strong>PID Control (planned)</strong>: For servo and throttle regulation.</li>
+<li><strong>Servo Feedback (encoders)</strong>: Used for velocity and position tracking.</li>
 </ul>
 <h3 id="high-level-autonomy">High-Level Autonomy</h3>
 <p>High-level autonomy focuses on decision-making and planning:</p>
@@ -837,7 +820,7 @@
 <li><strong>Movement control</strong>: Commands based on detected quadrant</li>
 <li><strong>Goal logic</strong>:  </li>
 <li>If object is off-center → adjust orientation and move</li>
-<li>If object is centered → stop motors and flag task as completed</li>
+<li>If object is centered → stop servos and flag task as completed</li>
 <li><strong>Fallback logic</strong> (planned): Handle scenarios where the object leaves the frame</li>
 </ul>
 <hr />
@@ -854,12 +837,7 @@
 <li><strong>Sensor Fusion</strong>: Combining gyro, accel, and mag data using complementary filters.</li>
 <li><strong>Filtering</strong>: Low-pass filtering for accel and magnetometer data; high-pass to correct gyro drift.</li>
 </ul>
-<h3 id="barometer">Barometer</h3>
-<ul>
-<li><strong>Smoothing</strong>: Simple moving average to eliminate spikes.</li>
-<li><strong>Correlation</strong>: Used alongside IMU for stable vertical state estimation.</li>
-</ul>
-<h3 id="motors">Motors</h3>
+<h3 id="servos">Servos</h3>
 <ul>
 <li><strong>PID Controllers (planned)</strong>: For consistent and smooth motion.</li>
 <li><strong>Encoder Feedback</strong>: To adjust velocity in real time.</li>
@@ -870,8 +848,8 @@
 <p>Sensor data feeds into both short-term (control) and long-term (behavioral) decisions:</p>
 <h3 id="low-level-decisions">Low-Level Decisions</h3>
 <ul>
-<li>Set PWM/motor speeds based on position errors</li>
-<li>Adjust throttle for altitude using barometer</li>
+<li>Set PWM/servo speeds based on position errors</li>
+<li>Adjust throttle for altitude</li>
 <li>Stabilize yaw using IMU orientation</li>
 <li>Apply real-time filters for smoother control</li>
 </ul>
@@ -888,7 +866,6 @@
     Camera --&gt;|/image_raw| YOLOv5_Detector
     YOLOv5_Detector --&gt;|/blimp/detected_position| QuadrantLogic
     IMU --&gt;|/imu/data_raw| Stabilizer
-    Barometer --&gt;|/barometer/pressure| Stabilizer
     QuadrantLogic --&gt; MotionPlanner
     Stabilizer --&gt; MotionPlanner
     MotionPlanner --&gt; Actuators</code></pre>
@@ -899,7 +876,7 @@
 <li>Detect and track a balloon in real time</li>
 <li>Move toward the object using differential drive</li>
 <li>Halt autonomously when a success zone is reached</li>
-<li>Publish and use filtered sensor data from IMU and barometer</li>
+<li>Publish and use filtered sensor data from IMU</li>
 </ul>
 <p>Next Goals:</p>
 <ul>
