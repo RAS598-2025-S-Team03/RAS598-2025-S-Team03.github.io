@@ -54,10 +54,15 @@ Sensor data feeds into both short-term (control) and long-term (behavioral) deci
 graph TD
     Camera -->|/image_raw| YOLOv5_Detector
     YOLOv5_Detector -->|/blimp/detected_position| QuadrantLogic
-    IMU -->|/imu/data_raw| Stabilizer
-    QuadrantLogic --> MotionPlanner
-    Stabilizer --> MotionPlanner
-    MotionPlanner --> Actuators
+    IMU -->|/imu_data| InvKine
+    Barometer -->|/barometer_data| InvKine
+    QuadrantLogic -->|/balloon_input| InvKine
+    InvKine -->|/forces| F_to_ESC
+    F_to_ESC -->|/ESC_balloon_input| ModeSwitch
+    Joy -->|/ESC_Manual_input| ModeSwitch
+    ModeSwitch -->|/ESC_input| ESC_Driver
+    ESC_Driver --> Actuators
+
 ```
 ## Data Visualization Examples
 
