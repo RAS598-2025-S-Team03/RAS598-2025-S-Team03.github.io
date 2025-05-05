@@ -15,10 +15,8 @@
         <link rel="canonical" href="https://RAS598-2025-S-Team03.github.io/gantt/">
       
       
-        <link rel="prev" href="..">
+        <link rel="prev" href="../Data/">
       
-      
-        <link rel="next" href="../second-page/">
       
       
       <link rel="icon" href="../static/logo.png">
@@ -29,7 +27,7 @@
 
     
       
-        <title>Gantt Chart - AeroFusion: Autonomous BLIMP Navigation and Sensor Integration Platform</title>
+        <title>ROS Integration - AeroFusion: Autonomous BLIMP Navigation and Sensor Integration Platform</title>
       
     
     
@@ -96,6 +94,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#code-repository" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -127,7 +130,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Gantt Chart
+              ROS Integration
             
           </span>
         </div>
@@ -226,16 +229,14 @@
         
   
   
-    
   
-  
-    <li class="md-tabs__item md-tabs__item--active">
-      <a href="./" class="md-tabs__link">
+    <li class="md-tabs__item">
+      <a href="../Data/" class="md-tabs__link">
         
   
     
   
-  Gantt Chart
+  Data
 
       </a>
     </li>
@@ -245,14 +246,16 @@
         
   
   
+    
   
-    <li class="md-tabs__item">
-      <a href="../second-page/" class="md-tabs__link">
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
         
   
     
   
-  Current Project Status
+  ROS Integration
 
       </a>
     </li>
@@ -332,6 +335,25 @@
       
   
   
+  
+    <li class="md-nav__item">
+      <a href="../Data/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Data
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
     
   
   
@@ -341,35 +363,148 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    ROS Integration
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
-    Gantt Chart
+    ROS Integration
   </span>
   
 
       </a>
       
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../second-page/" class="md-nav__link">
         
-  
-  <span class="md-ellipsis">
-    Current Project Status
-  </span>
-  
 
-      </a>
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#code-repository" class="md-nav__link">
+    Code Repository
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#overview-of-code" class="md-nav__link">
+    Overview of Code:
+  </a>
+  
+    <nav class="md-nav" aria-label="Overview of Code:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#detect_cpp" class="md-nav__link">
+    Detect_cpp:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#esc_driver" class="md-nav__link">
+    Esc_driver:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#f_to_esc" class="md-nav__link">
+    F_to_esc:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#game_controller_node" class="md-nav__link">
+    Game_controller_node:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inv_kine" class="md-nav__link">
+    Inv_kine:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#joy_to_esc" class="md-nav__link">
+    Joy_to_esc:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mode_switch" class="md-nav__link">
+    Mode_switch:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pi_controller" class="md-nav__link">
+    Pi_controller:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#read_altitude" class="md-nav__link">
+    Read_altitude:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#read_imu" class="md-nav__link">
+    Read_imu:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-setup-guide" class="md-nav__link">
+    Quick Setup Guide
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-prerequisites" class="md-nav__link">
+    1. Prerequisites
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -392,6 +527,118 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#code-repository" class="md-nav__link">
+    Code Repository
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#overview-of-code" class="md-nav__link">
+    Overview of Code:
+  </a>
+  
+    <nav class="md-nav" aria-label="Overview of Code:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#detect_cpp" class="md-nav__link">
+    Detect_cpp:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#esc_driver" class="md-nav__link">
+    Esc_driver:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#f_to_esc" class="md-nav__link">
+    F_to_esc:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#game_controller_node" class="md-nav__link">
+    Game_controller_node:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inv_kine" class="md-nav__link">
+    Inv_kine:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#joy_to_esc" class="md-nav__link">
+    Joy_to_esc:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mode_switch" class="md-nav__link">
+    Mode_switch:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pi_controller" class="md-nav__link">
+    Pi_controller:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#read_altitude" class="md-nav__link">
+    Read_altitude:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#read_imu" class="md-nav__link">
+    Read_imu:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-setup-guide" class="md-nav__link">
+    Quick Setup Guide
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-prerequisites" class="md-nav__link">
+    1. Prerequisites
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -413,30 +660,274 @@
   
 
 
-  <h1>Gantt Chart</h1>
+  <h1>ROS Integration</h1>
 
-<pre class="mermaid"><code>%%{init: {'themeVariables': {'opacity': '1'}}}%%
-gantt
-    title Simplified Project Timeline (March - May)
-    dateFormat  YYYY-MM-DD
-
-    section Hardware &amp; Sensors
-    Hardware setup &amp; testing       :done,   2025-03-04, 21d
-    System wiring &amp; integration    :done,   2025-03-25, 7d
-    Flight tests &amp; optimization    :active, 2025-04-01, 14d
-    Final refinements &amp; demo prep  :active, 2025-04-17, 14d
-
-    section Software &amp; Interface
-    GUI design &amp; mockups           :done,   2025-03-24, 14d
-    ROS integration &amp; visualization:done,   2025-03-10, 20d
-    UI development &amp; testing       :active, 2025-04-08, 14d
-    Documentation &amp; finalization   :planned, 2025-04-22, 10d
-
-    section Controls &amp; Autonomy
-    Manual control &amp; tuning        :done,   2025-03-04, 14d
-    Stability &amp; trajectory planning:done,   2025-03-18, 14d
-    Autonomy &amp; path following      :active, 2025-04-08, 14d
-    Final optimization &amp; demo      :planned, 2025-04-24, 10d</code></pre>
+<h2 id="code-repository">Code Repository</h2>
+<p>https://github.com/RAS598-2025-S-Team03/BLIMP-Packages</p>
+<h2 id="overview-of-code">Overview of Code:</h2>
+<h3 id="detect_cpp">Detect_cpp:</h3>
+<ul>
+<li><strong>Location:</strong></li>
+<li>wvu_blimps_ros2_src/sensors_cpp/src/detect_node.cpp</li>
+<li><strong>File Type:</strong></li>
+<li>C++</li>
+<li><strong>Executable Name:</strong></li>
+<li>detect_cpp</li>
+<li><strong>Dependencies:</strong> </li>
+<li>rclcpp.hpp: ROS 2 C++ communication package</li>
+<li>camera_coord.hpp: custom interface from blimp_interfaces to publish the camera coordinates</li>
+<li>joy.hpp: interfaces from sensor_msgs/msg to subscribe to the /joy topic and read controller inputs.</li>
+<li>opencv.hpp: Package to use OpenCV </li>
+<li>vector: Package to use vectors and vector math</li>
+<li><strong>Parameters:</strong> </li>
+<li>None</li>
+<li><strong>Subscriptions:</strong> </li>
+<li>/joy</li>
+<li><strong>Publications:</strong></li>
+<li>/cam_data</li>
+<li><strong>Descriptions:</strong></li>
+<li>
+<p>This node captures an image from the camera every time it runs. It has two modes: detect balloon or detect goal. To change between these modes, the pilot needs to press the X button on the Xbox controller. In balloon detection mode, the program will use the defined range of HSV values and look for the area with the highest density of those values. The program will then draw a circle around the detected density. If the circle is bigger than the minimum radius, the center coordinates of the circle are sent to an averaging function. This function will publish the center coordinates for every number of detections we define.</p>
+</li>
+<li>
+<p>In goal detection, the program works similarly to balloon detection. We define a set range of HSV values to focus on the colors we need. From there, we find the edges of the color detected using cv2.canny. Using those edges, the OpenCV method, HoughLinesP, finds probabilistic lines and saves their x1, y1, x2, and y2. Using these 2 points, we find the midpoints of the line. Taking the max and min X of the midpoints(meaning the 2 vertical sides of the goal) and the max and min Y(meaning the 2 horizontal sides of the goal), we find the average of those to give us the center of the detected goal.  </p>
+</li>
+</ul>
+<h3 id="esc_driver">Esc_driver:</h3>
+<ul>
+<li><strong>Location:</strong> </li>
+<li>wvu_blimps_ros2_src/controls/controls/esc_driver.py  </li>
+<li><strong>File Type:</strong> </li>
+<li>python3  </li>
+<li><strong>Executable Name:</strong> </li>
+<li>esc_driver  </li>
+<li><strong>Dependencies:</strong> </li>
+<li>rclpy: ROS 2 Python communications package</li>
+<li>EscInput: custom interface from blimp_interfaces/msg for publishing and reading PWM inputs.</li>
+<li>Joy: interfaces from sensor_msgs/msg to subscribe to the /joy topic and read controller inputs.</li>
+<li>pigpio: library used to change the PWM signals on the specified pins.</li>
+<li>os: Allows the program to run a command in the terminal</li>
+<li>time: used for sleep or getting the local time</li>
+<li>subprocess: used to access the Bluetooth stuff</li>
+<li><strong>Parameters:</strong> </li>
+<li>MAC: import the MAC address of the current controller.  </li>
+<li><strong>Subscriptions:</strong> </li>
+<li>/joy  </li>
+<li><strong>Publications:</strong> </li>
+<li>None  </li>
+<li><strong>Descriptions:</strong></li>
+<li>This program is used to take in an ESC input and apply it to the motors using pigpio. The ESC inputs come from subscribing to the mode switcher.</li>
+</ul>
+<h3 id="f_to_esc">F_to_esc:</h3>
+<ul>
+<li><strong>Location:</strong> </li>
+<li>wvu_blimps_ros2_src/sensors_cpp/src/force_to_ESC_input.cpp  </li>
+<li><strong>File Type:</strong> </li>
+<li>C++  </li>
+<li><strong>Executable Name:</strong> </li>
+<li>F_to_esc  </li>
+<li><strong>Dependencies:</strong> </li>
+<li>rclcpp.hpp: ROS 2 C++ communication package</li>
+<li>cart_coord.hpp: custom interface from blimp_interfaces/msg for publishing and reading Cartesian.</li>
+<li>esc_input.hpp: custom interface from blimp_interfaces/msg for publishing and reading pwm inputs.</li>
+<li>Eigen/Dense: for doing matrix math in C++</li>
+<li>cmath: For more math functionality in C++</li>
+<li><strong>Parameters:</strong> </li>
+<li>None  </li>
+<li><strong>Subscriptions:</strong> </li>
+<li>/force  </li>
+<li><strong>Publications:</strong> </li>
+<li>/ESC_balloon_input  </li>
+<li><strong>Descriptions:</strong></li>
+<li>This program subscribes to the forces imported from the inv_kine nodes and uses a pseudo-inverse method to convert the forces from the blimp's body frame to motor inputs.  </li>
+</ul>
+<h3 id="game_controller_node">Game_controller_node:</h3>
+<ul>
+<li><strong>Subscriptions:</strong> </li>
+<li>/joyfeedback  </li>
+<li><strong>Publications:</strong> </li>
+<li>/joy  </li>
+<li><strong>Description:</strong> </li>
+<li>This node is from the Joy package install. It is used to read the inputs from the Xbox controller and publish to the /joy topic. For more information, please visit the documentation websites. https://index.ros.org/p/joy/   </li>
+</ul>
+<h3 id="inv_kine">Inv_kine:</h3>
+<ul>
+<li>**Location: </li>
+<li>wvu_blimps_ros2_src/sensors_cpp/src/inv_kine.cpp  </li>
+<li><strong>File Type:</strong> </li>
+<li>C++  </li>
+<li><strong>Executable Name:</strong>  </li>
+<li>dynamic_model</li>
+<li><strong>Dependencies:</strong> </li>
+<li>rclcpp.hpp: ros2 cpp communication package</li>
+<li>imu_data.hpp: custom package</li>
+<li>cart_coord.hpp</li>
+<li>baro_data.hpp</li>
+<li>esc_input.hpp: custom interface from blimp_interfaces/msg for publishing and reading pwm inputs.</li>
+<li>Eigen/Dense: for doing matrix math in C++</li>
+<li>cmath: For more math functionality in C++</li>
+<li>String: library to include string data type in C++</li>
+<li><strong>Parameters:</strong> </li>
+<li>rho_air; default = 1.225: Air density used to find the buoyancy of the balloon</li>
+<li>buoyancy; default = Weight of Blimp</li>
+<li><strong>Subscriptions:</strong> </li>
+<li>/imu_data</li>
+<li>/barometer_data</li>
+<li>/balloon_input</li>
+<li><strong>Publications:</strong> </li>
+<li>/forces</li>
+<li><strong>Descriptions:</strong></li>
+<li>Uses information from IMU, barometer, and balloon input to model the vehicle's state. IMU data includes orientation, angular velocity, and linear acceleration. Barometer data is used to approximate vertical velocity. Balloon input is used to determine vertical acceleration and yaw acceleration. This information is run through the dynamic model, and forces and moments are published.</li>
+</ul>
+<h3 id="joy_to_esc">Joy_to_esc:</h3>
+<ul>
+<li><strong>Location:</strong> </li>
+<li>wvu_blimps_ros2_src/controls/controls/joy_to_esc_input.py</li>
+<li><strong>File Type:</strong> </li>
+<li>python3</li>
+<li><strong>Executable Name:</strong> </li>
+<li>joy_to_esc</li>
+<li><strong>Dependencies:</strong> </li>
+<li>rclpy: ROS 2 Python communications package</li>
+<li>Joy: interfaces from sensor_msgs/msg to subscribe to the /joy topic and read controller inputs.</li>
+<li>EscInput: custom interface from blimp_interfaces/msg for publishing and reading PWM inputs.</li>
+<li>time: used for sleep or getting the local time</li>
+<li><strong>Parameters:</strong></li>
+<li><strong>Subscriptions:</strong></li>
+<li><strong>Publications:</strong></li>
+<li><strong>Descriptions:</strong></li>
+<li>This program is used to take in an ESC input and apply it to the motors using pigpio. The ESC inputs come from subscribing to the mode switcher.</li>
+</ul>
+<h3 id="mode_switch">Mode_switch:</h3>
+<ul>
+<li><strong>Location:</strong> </li>
+<li>wvu_blimps_ros2_src/controls/controls</li>
+<li><strong>File Type:</strong> </li>
+<li>python3</li>
+<li><strong>Executable Name:</strong> </li>
+<li>mode_switch</li>
+<li><strong>Dependencies:</strong></li>
+<li>ESCInput</li>
+<li>CameraCoord: </li>
+<li>Joy</li>
+<li>time: used for sleep or getting the local time</li>
+<li><strong>Parameters:</strong> </li>
+<li>None</li>
+<li><strong>Subscriptions:</strong> </li>
+<li>/ESC_Manual_input</li>
+<li>/ESC_balloon_input</li>
+<li>/joy</li>
+<li><strong>Publications:</strong> </li>
+<li>/ESC_input</li>
+<li><strong>Descriptions:</strong></li>
+</ul>
+<h3 id="pi_controller">Pi_controller:</h3>
+<ul>
+<li><strong>Location:</strong> </li>
+<li>wvu_blimps_ros2_src/sensors_cpp/src/test.cpp</li>
+<li><strong>File Type:</strong> </li>
+<li>C++</li>
+<li><strong>Executable Name:</strong> </li>
+<li>pi_controller</li>
+<li><strong>Dependencies:</strong> </li>
+<li>rclcpp.hp: ROS 2 C++ communication package</li>
+<li>cart_coord.hpp</li>
+<li>camera_coord.hpp: custom interface from blimp_interfaces to publish the camera coordinates</li>
+<li>baro_data.hpp</li>
+<li>vector: Package to use vectors and vector math</li>
+<li>cmath: For more math functionality in C++</li>
+<li><strong>Parameters:</strong> </li>
+<li>iheight: Initial height of barometer when program starts</li>
+<li>kpx: Proportional gain for yaw acceleration </li>
+<li>kix: Integral gain for yaw acceleration</li>
+<li>kpyu: Proportional gain for vertical acceleration (in the upward direction)</li>
+<li>kpyd: Proportional gain for vertical acceleration (in the downward direction)</li>
+<li>kiy: Integral gain for vertical acceleration</li>
+<li>x_goal: Goal coordinates of camera center, x_center of camera frame (320)</li>
+<li>y_goal: Goal coordinates of camera center, y_center of camera frame (240)</li>
+<li>
+<p>kpb: Proportional gain for barometer</p>
+</li>
+<li>
+<p><strong>Subscriptions:</strong> </p>
+</li>
+<li>/cam_data</li>
+<li>
+<p>/barometer_data</p>
+</li>
+<li>
+<p><strong>Publications:</strong> </p>
+</li>
+<li>
+<p>/balloon_input</p>
+</li>
+<li>
+<p>**Descriptions:</p>
+</li>
+<li>Uses Raspberry Pi camera v2.1 to approximate the center of a target via Hue Saturation Values (HSVs). Based on the x and y directional error between the target and the camera center (goal position). Vertical and yaw accelerations are tuned and sent to the inverse kinematic model.</li>
+</ul>
+<h3 id="read_altitude">Read_altitude:</h3>
+<ul>
+<li><strong>Location:</strong> </li>
+<li>wvu_blimps_ros2_src/sensors/sensors/barometer.py </li>
+<li><strong>File Type:</strong> </li>
+<li>python3</li>
+<li><strong>Executable Name:</strong> </li>
+<li>read_altitude</li>
+<li><strong>Dependencies:</strong> </li>
+<li>time: used for sleep or getting the local time</li>
+<li>board</li>
+<li>adafruit_bmp3xx</li>
+<li>BaroData</li>
+<li><strong>Parameters:</strong> </li>
+<li>sea_level_pressure: pressure at sea level on a given day </li>
+<li><strong>Subscriptions:</strong> </li>
+<li>None </li>
+<li><strong>Publications:</strong> </li>
+<li>barometer_data</li>
+<li><strong>Descriptions:</strong></li>
+<li>Approximates the current altitude of the blimp in meters based on atmospheric conditions of the day. The barometer used in the current system is an Adafruit BMP390.</li>
+</ul>
+<h3 id="read_imu">Read_imu:</h3>
+<ul>
+<li><strong>Location:</strong> </li>
+<li>wvu_blimps_ros2_src/sensors_cpp/src/inv_kine.cpp</li>
+<li><strong>File Type:</strong> </li>
+<li>python3</li>
+<li><strong>Executable Name:</strong> </li>
+<li>read_imu</li>
+<li><strong>Dependencies:</strong> </li>
+<li>rclpy: ROS 2 Python communications package</li>
+<li>time: used for sleep or getting the local time</li>
+<li>board</li>
+<li>busio</li>
+<li>adafruit_bno055</li>
+<li>numpy</li>
+<li>math</li>
+<li>ImuData</li>
+<li><strong>Parameters:</strong> </li>
+<li>None</li>
+<li><strong>Subscriptions:</strong> </li>
+<li>None</li>
+<li><strong>Publications:</strong> </li>
+<li>/imu_data</li>
+<li><strong>Descriptions:</strong></li>
+<li>Uses an Adafruit BNO055 absolute orientation sensor to record Euler angles, linear acceleration, and angular velocity, which is used in the dynamic model for an estimation of vehicle state.</li>
+</ul>
+<h2 id="quick-setup-guide">Quick Setup Guide</h2>
+<p>There are 3 commands to run this autonomous mobile blimp.
+1. Go inside the workspace’s launch file. In my case:
+   - Ros2_ws → src → wvu_blimps_ros2_src→ launch
+2. Now there are 3 commands to run sequentially after connecting the joystick via Bluetooth to the RPi.
+   - Ros2 runs joy game_controller_node → To check if the Joystick is publishing commands.
+   - Python3 Arming.py → To arm the ESCs before flight
+   - Ros2 launch Updated_launch.py → To launch all the nodes together.</p>
+<h2 id="1-prerequisites">1. Prerequisites</h2>
+<ul>
+<li>Several Python Libraries</li>
+<li>Remote SSH to rpi</li>
+<li>Pi GPIO</li>
+</ul>
 
 
 
@@ -464,7 +955,7 @@ gantt
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href=".." class="md-footer__link md-footer__link--prev" aria-label="Previous: Home" rel="prev">
+          <a href="../Data/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Data" rel="prev">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -474,27 +965,11 @@ gantt
                 Previous
               </span>
               <div class="md-ellipsis">
-                Home
+                Data
               </div>
             </div>
           </a>
         
-        
-          
-          <a href="../second-page/" class="md-footer__link md-footer__link--next" aria-label="Next: Current Project Status" rel="next">
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              <div class="md-ellipsis">
-                Current Project Status
-              </div>
-            </div>
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-            </div>
-          </a>
         
       </nav>
     
