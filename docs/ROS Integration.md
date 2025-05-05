@@ -40,17 +40,40 @@ This Python node at `wvu_blimps_ros2_src/sensors/sensors/barometer.py` reads atm
 ### Read_imu
 The `read_imu` node, written in Python, reads data from the Adafruit BNO055 IMU. It measures Euler angles, linear acceleration, and angular velocity, publishing all data to the `/imu_data` topic. This sensor information supports real-time state estimation for the blimp.
 
-## Quick Setup Guide
+## System Prerequisites
 
-There are 3 commands to run this autonomous mobile blimp.
-1. Go inside the workspace’s launch file. In my case:
-   - Ros2_ws → src → wvu_blimps_ros2_src→ launch
-2. Now there are 3 commands to run sequentially after connecting the joystick via Bluetooth to the RPi.
-   - Ros2 runs joy game_controller_node → To check if the Joystick is publishing commands.
-   - Python3 Arming.py → To arm the ESCs before flight
-   - Ros2 launch Updated_launch.py → To launch all the nodes together.
-## 1. Prerequisites
-- Several Python Libraries
-- Remote SSH to rpi
-- Pi GPIO
+Before deploying the autonomous blimp system, ensure the following hardware and software components are properly installed and configured:
+
+- A Raspberry Pi (with SSH access enabled)
+- Required Python libraries including `rclpy`, `pigpio`, `adafruit_bno055`, `adafruit_bmp3xx`, `numpy`, and related dependencies
+- `pigpio` daemon running for motor PWM control
+- ROS 2 Humble (or compatible ROS 2 distribution) fully set up
+- Xbox controller paired to the Raspberry Pi via Bluetooth
+- Access to the `BLIMP-Packages` ROS 2 workspace cloned from the repository:
+  [https://github.com/RAS598-2025-S-Team03/BLIMP-Packages](https://github.com/RAS598-2025-S-Team03/BLIMP-Packages)
+
+---
+
+## Deployment and Launch Instructions
+
+To run the complete autonomous system on the Raspberry Pi:
+
+1. **Navigate to the launch directory** within the ROS 2 workspace:  
+```cd ~/ros2_ws/src/wvu_blimps_ros2_src/launch```
+
+
+2. **Initialize the game controller node** to verify that joystick inputs are being received:
+```ros2 run joy game_controller_node```
+
+
+3. **Arm the ESCs before flight** using the custom arming script:
+```python3 Arming.py```
+
+
+4. **Launch all nodes together using the master launch file:**
+```ros2 launch Updated_launch.py```
+
+
+These steps start all relevant ROS 2 nodes for sensor input, control logic, mode switching, and actuator commands. Be sure to confirm that each node is publishing correctly by checking the appropriate topics using `ros2 topic list` or `rqt_graph`.
+
 
