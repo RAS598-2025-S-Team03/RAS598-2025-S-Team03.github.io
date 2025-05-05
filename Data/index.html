@@ -678,10 +678,15 @@
 <pre class="mermaid"><code>graph TD
     Camera --&gt;|/image_raw| YOLOv5_Detector
     YOLOv5_Detector --&gt;|/blimp/detected_position| QuadrantLogic
-    IMU --&gt;|/imu/data_raw| Stabilizer
-    QuadrantLogic --&gt; MotionPlanner
-    Stabilizer --&gt; MotionPlanner
-    MotionPlanner --&gt; Actuators</code></pre>
+    IMU --&gt;|/imu_data| InvKine
+    Barometer --&gt;|/barometer_data| InvKine
+    QuadrantLogic --&gt;|/balloon_input| InvKine
+    InvKine --&gt;|/forces| F_to_ESC
+    F_to_ESC --&gt;|/ESC_balloon_input| ModeSwitch
+    Joy --&gt;|/ESC_Manual_input| ModeSwitch
+    ModeSwitch --&gt;|/ESC_input| ESC_Driver
+    ESC_Driver --&gt; Actuators
+</code></pre>
 <h2 id="data-visualization-examples">Data Visualization Examples</h2>
 <p>The current graphical user interface (GUI) is designed using a ROS 2 WebSocket-based architecture to enable real-time monitoring and control of the aerial robot. This approach was selected due to performance limitations observed during early tests, particularly latency and bandwidth issues with direct streaming from the onboard Raspberry Pi using tools like RQT or VNC.  </p>
 <p>To overcome these constraints, the team developed a lightweight, browser-accessible GUI that interfaces with ROS 2 via rosbridge_server and roslibjs. This setup allows for JSON-based communication over WebSockets, facilitating seamless interaction with ROS topics, services, and messages.  </p>
