@@ -247,7 +247,8 @@ The code utilizes a hierarchical data processing pipeline:
 2. **Filtering Layer**: Applies Kalman filtering and other noise reduction techniques.
 3. **Fusion Layer**: Combines multiple sensor inputs for comprehensive state estimation.
 4. **Decision Layer**: Processes fused data to inform navigation and control decisions.
-### 3.2 Data Collection Process
+
+### 3.3 Data Collection Process
 
 During testing, the team will validate individual sensor outputs using ROS2 tools like rqt_plot and ros2 topic echo. This methodical approach ensures each sensor is correctly calibrated and operating within expected parameters. The testing protocol includes:
 
@@ -269,7 +270,7 @@ In the final demonstration, real-time integration of sensor data will be paramou
 ![Sensor Block Diagram](./figures/blimp_block_diagram.png)  
 *Figure 2: BLIMP Sensor Connection Block Diagram*
 
-### 3.3 Object Detection and Model Fitting
+### 3.4 Object Detection and Model Fitting
 The team trained a custom **YOLOv5s** model to detect olive-colored balloons, which are the objects of interest.  
 
 **Training details:**  
@@ -287,7 +288,7 @@ The team used the object's position relative to the center to command differenti
 
 ---
 
-### 3.5 Validation and Success Metrics
+### 3.6 Validation and Success Metrics
 
 #### GUI Mockup for ROS-based Sensor Visualization
 
@@ -304,7 +305,7 @@ The GUI is built using a ROSBridge Websocket that subscribes to all the sensor d
 These updates ensure that the sensor fusion and autonomy modules operate efficiently, providing real-time insights into the BLIMP's state during both testing and deployment.  
 
 This comprehensive sensor array will drive the autonomous control loops, enabling adaptive trajectory planning and responsive mode switching between manual and autonomous control. The demonstration will showcase how the fusion algorithms synthesize this diverse data to create a cohesive understanding of the environment, allowing the BLIMP to navigate reliably in dynamic, real-world scenarios.  
-### 3.6 Interface Development
+### 3.7 Interface Development
 
 #### How do you plan on influencing the behavior of the robot?
 
