@@ -34,7 +34,7 @@ Spring 2025
 ---
 
 
-## 3. Description & Scope
+## 3. Introduction
 The project aims to develop an integrated, sensor-driven framework that enables a biologically inspired, lighter-than-air, Instructional, Mechatronics Program (BLIMP) UAV to operate autonomously and identify and track objects of interest in dynamic and uncertain environments.  
 
 The central research question is: **"How effectively can sensor data from various sensors (such as Time-of-Flight Sensor, IMU, Barometer, Camera) be fused to enhance trajectory planning and autonomous navigation and tracking capabilities of a hybrid robotic blimp system in dynamic environments?"**  
@@ -45,6 +45,18 @@ The central research question is: **"How effectively can sensor data from variou
 The system aforementioned is an unmanned aerial system (UAS) that is used in the Defend the Republic competition. The UAS vehicles used resemble conventional airship profiles with similarities in maneuverability and control. While the problem of trajectory tracking is well researched, difficulties arise with lighter-than-air vehicles (LTAVs) and similar vehicles, as highly nonlinear behavior greatly defines the behavior of the system. Likewise, environmental disturbances can also influence system response. Prior research in the area has dealt with implementing PID and force-predictive controller strategies [1]. In terms of LTA vehicles specifically, the implementation of Linear Quadratic Regulator (LQR) control was explored utilizing conventional airship dynamics to represent the system behavior [6]. With the growing interest in autonomous technology, the use of smaller unmanned vehicles for research, academia, and military applications is an ongoing research topic. Consequently, effective and safe control strategies for such vehicles are of particular importance.  
 
 For this project, and an invested interest in the coordination of unmanned underwater vehicles (UUVs), it was chosen to implement conventional UUV dynamics using an LTAV as the test bed vehicle. Using various methods, model parameters were identified, and the similarities in the model were proven. Different control strategies were investigated, including those aforementioned; however, it was observed that such control strategies were not sufficient for the system, due to high nonlinearities and the need to optimize trajectory tracking controls online to follow multiple trajectories. Consequently, a model predictive controller (MPC) was chosen for the system due to its effectiveness in producing online optimal control inputs and its efficiency at handling highly nonlinear systems.  
+
+### Updated Project Goals
+
+The project's original goal was to enable an autonomous blimp platform capable of detecting, tracking, and approaching an olive-colored balloon using computer vision and onboard sensors. Since the last update, we have refined our objectives to focus more explicitly on:
+- Reliable balloon detection using a trained YOLOv5 model.
+- Quadrant-based navigation logic based on object centroid position.
+- Sensor fusion using the IMU and barometer for stabilized flight control.
+- Differential drive-based motion to minimize hardware complexity.
+
+- Real-time object tracking and task success based on position proximity to the image center.
+These refinements helped narrow our scope and allowed us to focus efforts on perception-control integration while still meeting the autonomy requirements.
+
 
 ## 3.1 Project Scoping and Evolution
 
@@ -170,7 +182,7 @@ Applying the above equations, the added mass values can be found and are represe
 
 Using the identified values from both the CAD model and the theoretical calculations, the mass, Coriolis, and centripetal matrices were accounted for. Thus, the only remaining parameters left to be identified are the thrust coefficient matrix and the damping matrix.  
 
-3.6 Experimental Calculations
+### Experimental Calculations
 
 The thrust coefficient matrix can be calculated directly from thrust stand data. In this test, a known PWM (pulse width modulation) signal is sent to the motor, which is attached to a stationary stand that measures the thrust force of the motor configuration. The current vehicle configuration uses a Park 180 motor for the left and right thrusters and a Park 250 motor for the up and down motors. A step test was performed for each motor in which the PWM signal was varied from 1100 to 1800 in increments of 50, and the resulting data is shown in Table 4 below.
 
@@ -304,19 +316,7 @@ The team is developing a comprehensive GUI based on ROS that serves multiple fun
 This integrated interface will not only enable immediate interaction during operation but also support detailed post-mission analysis and system refinement.
 
 
-## 4. Updated Project Goals
-
-The project's original goal was to enable an autonomous blimp platform capable of detecting, tracking, and approaching an olive-colored balloon using computer vision and onboard sensors. Since the last update, we have refined our objectives to focus more explicitly on:
-- Reliable balloon detection using a trained YOLOv5 model.
-- Quadrant-based navigation logic based on object centroid position.
-- Sensor fusion using the IMU and barometer for stabilized flight control.
-- Differential drive-based motion to minimize hardware complexity.
-
-- Real-time object tracking and task success based on position proximity to the image center.
-These refinements helped narrow our scope and allowed us to focus efforts on perception-control integration while still meeting the autonomy requirements.
-
-
-## 5. Project Process/Workflow
+## 4. Project Process/Workflow
 The workflow involved weekly iteration and testing across three verticals: hardware integration, software development, and sensor-based control logic.
 Key workflow highlights:
 - Early-stage testing of sensors: IMU, barometer, and camera modules.
@@ -330,7 +330,7 @@ We followed a tight loop of code-deploy-test-debug with each sensor modality unt
 
 ---
 
-## 6. System Tradeoffs & Technical Considerations
+## 5. System Tradeoffs & Technical Considerations
 
 - **YOLOv5 vs. Color Thresholding:** We opted for a trained YOLOv5 model instead of simple blob detection. While this required more up-front work (data collection and training), it provided robustness in variable lighting.
 
@@ -343,7 +343,7 @@ We followed a tight loop of code-deploy-test-debug with each sensor modality unt
 ---
 
 
-## 7. What did we learn?
+## 6. What did we learn?
 
 - **Sensor Fusion:** Hands-on experience fusing noisy sensor data taught us the importance of calibration and filtering. We learned to work with real-world imperfections in IMU/barometer readings.
 - **Training Computer Vision Models:** We developed a better understanding of labeling strategies, data augmentation, and how inference performance varies between GPU and CPU.
@@ -352,7 +352,7 @@ We followed a tight loop of code-deploy-test-debug with each sensor modality unt
 
 ---
 
-## 8. Future Considerations
+## 7. Future Considerations
 
 - **PID Control for Smoothness:** Our current control is reactive. Adding PID loops will help dampen overshoot and allow finer movement.
 - **3D Localization:** Incorporating a forward-facing range sensor could allow for estimating object depth, enabling true 3D navigation.
@@ -363,7 +363,7 @@ We followed a tight loop of code-deploy-test-debug with each sensor modality unt
 ---
 
 
-## 9. Project Timeline
+## 8. Project Timeline
 
 | Week | Hardware                            | Software                          | Testing                              | Status |
 |------|-------------------------------------|-----------------------------------|--------------------------------------|--------|
