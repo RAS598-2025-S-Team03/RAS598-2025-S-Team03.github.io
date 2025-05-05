@@ -250,7 +250,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="gantt/" class="md-tabs__link">
+      <a href="ROS%20Integration/" class="md-tabs__link">
         
   
     
@@ -594,7 +594,7 @@
   
   
     <li class="md-nav__item">
-      <a href="gantt/" class="md-nav__link">
+      <a href="ROS%20Integration/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -948,7 +948,7 @@ The control input is a vector of forces and moments. The produced forces are dep
 <p>It should be noted that the MPC controller developed calculates an optimized control input to each motor using a different methodology than described above. However, if tuning the system via PID control, equation (30) can be used to calculate the control input based upon some error that is tuned by the control gains.  </p>
 <p>3.3 Linearization<br />
 For practical purposes, it is necessary to discretize and linearize the dynamic model. As previously noted, the vehicle dynamics are highly nonlinear. Therefore, to handle this issue a state space model was developed which provides a convenient platform for handling multiple-input-multiple-output (MIMO) systems. The state vector [12x1] and control input vector [4x1] were identified and are shown below.  </p>
-<p><a class="glightbox" href="./figures/eq_32.jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Eq 31" src="./figures/eq_32.jpg" /></a> </p>
+<p><a class="glightbox" href="figures/eq_31_32.jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Eq 31 32" src="figures/eq_31_32.jpg" /></a> </p>
 <p>At this point, the general form of the nonlinear state space model can be developed per the following equations.  </p>
 <p><a class="glightbox" href="figures/eq_33_34.jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Eq 33 34" src="figures/eq_33_34.jpg" /></a> </p>
 <p>For the proposed model, it is assumed that the output of the state space model, 𝑦(𝑡), is equivalent to the current state of the system 𝑥(𝑡). Expressing the kinetic equation in terms of the highest order state (acceleration) gives.  </p>
