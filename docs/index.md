@@ -65,17 +65,22 @@ These refinements helped narrow our scope and allowed us to focus efforts on per
 3.1 Modeling  
 To properly implement the control system, a dynamic model of the blimp had to be developed. Per [2], the following equations (1) and (2) can be used to represent the dynamics of the LTA. The dynamic model includes both the kinematics (1) and the kinetics of the system (2). The kinematics of the system deals with how the object moves through space, while the kinetics of the system deals with how forces affect the motion of the vehicle. Before jumping to specific dynamic equations of the LTA, it is important to first define the reference frames and symbolic meaning of the variables used throughout the report. Two reference frames were used in developing the dynamic model: the inertial (Earth) reference frame and the fixed body frame. Figure 1 illustrates the reference frames that were considered.  
 
+![Fig1_Airship_Reference_Frames.](./figures/Fig1_Airship_Reference_Frames.jpg)  
 
 The inertial reference frame is “fixed” concerning the Earth. In most applications, it is assumed to be inertial, meaning the reference frame is subject to no acceleration. The body reference frame on the other hand is defined based on non-collinear points along the airship as illustrated above, with the x-axis pointing in the direction of forward motion, y-axis pointed towards the starboard (right) side of the airship, and the z-axis perpendicular to the plane produced by pointing downward through the hull. The 6 DOF model is used to represent the system.  
 
+![Eq 1 2](./figures/eq_1_2.jpg) 
+
 In the kinematic and kinetic equations above, subscript E denotes the inertial frame while subscript b denotes the body frame. Due to the complexity of the model, matrix notation was adopted for ease of calculation and representation. In the model 𝑥𝑏,𝑥̇𝑏,𝑥̈𝑏 are [6x1] vectors representing the vehicle's position, velocity, and acceleration in the body frame, respectively, while 𝑥𝐸 is a [6x1] vector representing the position of the vehicle in the Earth coordinate system. Vector notation is described as follows.  
+
+![Eq 3 5](./figures/eq_3_5.jpg) 
 
 In the equations above, the first three vector elements represent linear positions, velocities, and accelerations, while the last three vector elements represent angular positions, velocities, and accelerations in their respective coordinate systems. Inertial properties of the vehicle are accounted for by the [6x6] mass matrix, M. Coriolis and centripetal effects are accounted for by the [6x6] matrix, C. Damping effects are accounted for by the [6x6] damping matrix, D, and restoring forces and moments are accounted for by the [1x6] vector, 𝑔. The propulsive forces and moment acting on the vehicle are described by the [6x1] vector,𝜏𝑏. The aforementioned values will be described in detail in the succeeding sections.  
 
 3.1.1 Kinematic Equation  
 Euler angles can be used to transform both linear and angular velocities between the body frame and the inertial (NED) frame. The transformation for linear velocities from the body reference frame to the Earth reference frame is given by the following equation.  
 
-
+![Eq 6 13](./figures/eq_6_13.jpg) 
 
 Also, if it is warranted to transform the system from an inertial frame to the body frame, the transpose of the above equation is adopted 𝐽𝑇(Θ). Another important realization is that a pitch angle, 𝜃, equivalent to 90°, produces a singularity as there is no unique solution for angles 𝜑 and 𝜓. In such a case quaternion can be used to represent the orientation; however, it is not expected for the system to pitch at an angle close to 90°, so the Euler angle representation was considered to be sufficient for the model.  
 
@@ -84,87 +89,109 @@ Also, if it is warranted to transform the system from an inertial frame to the b
 3.2.1 Mass Matrix  
 The mass matrix consists of the masses due to the rigid body and added or virtual masses. The added or virtual masses and inertia are usually not considered in conventional aircraft dynamics but can arise in the case of LTA vehicles and underwater vehicles due to the vehicle mass being the same order of magnitude as the displaced fluid. Therefore, the additional force resulting from the fluid acting on the structure must also be considered. The rigid body mass matrix is described in (14).  
 
+![Eq 14](./figures/eq_14.jpg) 
+
 In the matrix above, symbolic variable notation is as follows. 𝑚 is the mass of the vehicle. 𝐼𝑥, 𝐼𝑦, and 𝐼𝑧 are the moments of inertia about the 𝑥𝑏, 𝑦𝑏, and 𝑧𝑏 axes in the body reference frame. 𝐼𝑥𝑦=𝐼𝑦𝑥, 𝐼𝑥𝑧=𝐼𝑧𝑥, and 𝐼𝑦𝑧=𝐼𝑧𝑦 are the products of the moments of inertia, and 𝑟𝑔=[𝑥𝑔,𝑦𝑔,𝑧𝑔]𝑇 is the position of the COG (center of gravity) relative to the COB (center of buoyancy of the vehicle). Following this notation, a few assumptions can be made regarding the vehicle. At a base level, an assumption can be made that the vehicle is symmetric about all axes. Thus, the products of the moments of inertia can be simplified such that 𝐼𝑥𝑦=𝐼𝑦𝑧=𝐼𝑧𝑥=0. It can also be assumed that the position of the COG relative to the center of buoyancy is equivalent in both the x and y directions. Thus, 𝑥𝑔=𝑦𝑔=0. However, due to the presence of the gondola, which holds a significant amount of weight about the vehicle, 𝑧𝑔≠0. This will reduce (14) to (15) below.  
 
+![Eq 1 2](./figures/eq_15_17.jpg) 
 
+![Eq 1 2](./figures/eq_18.jpg) 
 
 3.2.2 Coriolis and Centripetal Matrix  
 
 The Coriolis and centripetal matrix contains the dynamic terms associated with the linear and angular velocities in the body reference frame. The Coriolis matrix is derived directly from the rigid body and added mass matrix. The Coriolis force is an inertial force that acts on objects in motion that rotate within a frame of reference (body reference frame) to an inertial frame. Centripetal force accounts for objects moving along circular paths. Matrix (19) below was used to account for these phenomena in the system [7].  
 
-
+![Eq 19](./figures/eq_19.jpg) 
 
 3.2.3 Damping Matrix  
 The aerodynamic damping matrix is caused by friction effects, which are a function of the velocity of the vehicle. Two fundamental friction regions are considered: linear friction due to the laminar boundary layer and quadratic friction due to the turbulent boundary layer. This matrix also contains the effects of vortex shedding along the flow line. As indicated in [7], nondiagonal terms are relatively small and can be ignored. As such, a diagonal structure is developed for the damping matrix and can be approximated per (20).  
 
+![Eq 20](./figures/eq_20.jpg) 
 
 With the assumption that the vehicle will be in an indoor environment and operating at low speeds, a laminar boundary layer can be considered. Thus, the quadrating damping terms can be ignored, leaving only the linear skin friction coefficient.  
 
+![Eq 21](./figures/eq_21.jpg) 
 
 The coefficients presented above for the damping matrix can be estimated from wind-tunnel testing or system identification tools.  
 
 3.2.4 Restoring Forces and Moments Vector  
 The restoring forces and moments term is a combination of gravity and buoyancy forces and moments. The buoyancy force is an aerostatic lift force acting on the vehicle and is derived from Archimedes' principle, which states that the buoyancy force is equivalent to the weight of the displaced fluid occupied by the volume of the vehicle. The two forces can be described as follows.  
 
-
+![Eq 22 23](./figures/eq_22_23.jpg) 
 
 In the above formula, the volume, 𝑉, of an ellipsoidal balloon can be described by 𝑉=4/3𝜋𝑎𝑏^2. Expressing these above terms in the inertial reference frame using Euler angle transformation yields (24).  
 
+![Eq 24](./figures/eq_24.jpg) 
+
 As aforementioned, the center of buoyancy is assumed to be located at the origin of the body. Thus, 𝑟𝑏=[𝑥𝑏 𝑦𝑏 𝑧𝑏]𝑇=[0 0 0]𝑇, and it is assumed that the x and y center of gravity positions coincide with the origin of the vehicle; however, due to the weight of the gondola, the z-directional center of gravity does not. Thus, 𝑟𝑔=[𝑥𝑔 𝑦𝑔 𝑧𝑔], 𝑇=[0 0 𝑧𝑔]𝑇. Therefore, the restoring forces and moments vector is reduced to the following.  
 
+![Eq 25](./figures/eq_25.jpg) 
 
 3.2.5 Propulsion Forces and Moments  
 The control input is a vector of forces and moments. The produced forces are dependent on the number of thrusters, the mounting position, and the orientation of the thrusters. The general notation for the propulsion forces and moments is described by (26).  
 
+![Eq 26](./figures/eq_26.jpg) 
 
 In terms of control inputs, the propulsion forces and moments can be written per the following.  
 
+![Eq 27](./figures/eq_27.jpg) 
+
 In the above equation, 𝑇 is the thrust configuration matrix. In the case of the current vehicle setup, there are a total of four thrusters producing 𝑇=[𝑇1 𝑇2 𝑇3 𝑇4]. The forces and moments produced by each thruster can be calculated per the following equation.  
-
-
 
 As noted in (27), the force is a function of the control input (PWM) signal and the thrust coefficient matrix, K, which describes how the PWM signals relate to the thrust force for a specific motor setup. These values can be experimentally calculated and will be described in a later section.  
 
-3.2.6 Control Allocation  
+### Controls  
 Control allocation allows the computation of the input signal, 𝑢, to apply to the thrusters for the propulsive forces and moments to be produced.  
 
+![Eq 29](./figures/eq_29.jpg) 
+
 It should be noted that the thruster allocation matrix is non-square due to there being a total of four thrusters and 6 DOF. Consequently, an alternative method to find the inverse is needed, such as the Moore-Penrose pseudo-inverse. Therefore, the control input vector, 𝑢, can be determined by the following equation.  
+
+![Eq 30](./figures/eq_30.jpg) 
 
 It should be noted that the MPC controller developed calculates an optimized control input to each motor using a different methodology than described above. However, if tuning the system via PID control, equation (30) can be used to calculate the control input based upon some error that is tuned by the control gains.  
 
 3.3 Linearization  
 For practical purposes, it is necessary to discretize and linearize the dynamic model. As previously noted, the vehicle dynamics are highly nonlinear. Therefore, to handle this issue a state space model was developed which provides a convenient platform for handling multiple-input-multiple-output (MIMO) systems. The state vector [12x1] and control input vector [4x1] were identified and are shown below.  
 
+![Eq 31](./figures/eq_32.jpg) 
+
 At this point, the general form of the nonlinear state space model can be developed per the following equations.  
 
+![Eq 33 34](./figures/eq_33_34.jpg) 
 
 For the proposed model, it is assumed that the output of the state space model, 𝑦(𝑡), is equivalent to the current state of the system 𝑥(𝑡). Expressing the kinetic equation in terms of the highest order state (acceleration) gives.  
 
+![Eq 35](./figures/eq_35.jpg) 
 
 Solving this equation allows us to write the continuous-time state-space formulation as described in (36) and (37).  
 
+![Eq 36 37](./figures/eq_36_37.jpg) 
+
 In order to find the state transition matrix, 𝐴, and the input matrix, 𝐵, the Jacobian matrix is needed to make a linear approximation of the nonlinear system. The Jacobian makes a linear approximation of the nonlinear function around a point of interest using a first order Taylor Series expansion. The general form of the Jacobian linearization matrix is presented below.  
 
+![Eq 36](./figures/eq_36.jpg) 
 
 Thus, the state transition matrix, 𝐴, and input matrix, 𝐵, can be described by the Jacobian linearization such that.  
 
+![Eq 38_39](./figures/eq_38_39.jpg) 
 
 **System Identification**  
 
-
 The dynamic model of the vehicle described above requires the identification of the system parameters listed below.  
 
+![Eq ModeltobeIdentified](./figures/Table1.ModeltobeIdentified.jpg) 
 
 There are various ways to go about calculating the unknown parameters in the system. For the purposes of the project SolidWorks CAD modeling, theoretical calculations, and experimental tests were performed to identify and validate the model.  
 
 3.5.1 CAD Model Measurements  
 Due to the various vehicle prototypes being developed throughout the course of the semester, a CAD model was employed to find inertial and geometrical characteristics that could easily be updated to represent the current configuration of the vehicle.  
 
-
+![Eq Fig3CADModel](./figures/Fig3CADModel.jpg) 
 
 The CAD model in Figure 3 provides a framework to reassess the geometrical and inertial parameters with different envelope sizes, motors, gondola and net configurations. Using this model the following parameters were identified.  
 
-
+![Eq IdentifiedParametersfromCADModel](./figures/Table2.IdentifiedParametersfromCADModel.jpg) 
 
 Particularly interesting in the results are the rigid body mass matrix and center of gravity matrix. In the modeling section, it was noted that, due to symmetry, off-diagonal terms in the rigid body mass matrix were negligible, and that the weight of the gondola would affect only the center of gravity in the z-direction. This assumption is reflected in the results for the SolidWorks CAD model of the vehicle.  
 
@@ -172,13 +199,15 @@ Particularly interesting in the results are the rigid body mass matrix and cente
 
 To calculate the virtual/added mass factors, a theoretical method is utilized that uses the geometry of the vehicle and the kinetic energy of an ideal fluid volume around the moving vehicle. Virtual mass calculations are equivalent to the density of the surrounding fluid multiplied by a volume that depends on the geometric shape of the body. Lamb’s k-factor method was utilized to calculate the added mass of the balloon. Whereas the ellipsoid equation in the body frame is represented by (41).  
 
+![Eq 41](./figures/eq_41.jpg) 
 
 Applying symmetry and Lamba k-factors to the vehicle, the added mass factors can be calculated using Lamb’s k-factor coefficients.  
 
+![Eq 41](./figures/eq_42_52.jpg) 
 
 Applying the above equations, the added mass values can be found and are represented in Table 3 below.  
 
-
+![Identified Parameters from Theoretical Calculations](./figures/Table3.jpg) 
 
 Using the identified values from both the CAD model and the theoretical calculations, the mass, Coriolis, and centripetal matrices were accounted for. Thus, the only remaining parameters left to be identified are the thrust coefficient matrix and the damping matrix.  
 
@@ -186,11 +215,15 @@ Using the identified values from both the CAD model and the theoretical calculat
 
 The thrust coefficient matrix can be calculated directly from thrust stand data. In this test, a known PWM (pulse width modulation) signal is sent to the motor, which is attached to a stationary stand that measures the thrust force of the motor configuration. The current vehicle configuration uses a Park 180 motor for the left and right thrusters and a Park 250 motor for the up and down motors. A step test was performed for each motor in which the PWM signal was varied from 1100 to 1800 in increments of 50, and the resulting data is shown in Table 4 below.
 
+![Thrust Stand Data](./figures/Table4.jpg) 
 
 The data above was then plotted for each motor. As Figures 4 and 5 below illustrate, Thrust vs. PWM exhibits a near-linear relationship. Thus, a linear equation was fit to the data to be used in the thrust coefficient matrix.  
 
+![Park 250 Thrust vs. PWM.](./figures/Figure4_5.jpg) 
+
 Unlike previously identified parameters, damping effects are less straightforward to calculate. Wind tunnel testing or computer-aided computational fluid dynamics tests can be used to identify the parameters. Another option, and the chosen one for this project, is dynamic testing. For this test, the MoCap Lab and the Vicon System in the lab ( TECH 189) are used to accurately track the vehicle's state during flight tests. The Vicon system uses a series of infrared cameras and, when properly calibrated, can accurately provide dynamic measurements down to 0.017 mm on average [source]. During testing, motor inputs were recorded alongside Vicon data measurements. After running multiple free-flight test trials, the data reduction was performed using MATLAB to calculate the damping coefficient at each time step. The median of this data was then used to represent the damping coefficient for a singular test, and then the average of all trials was taken. This experiment resulted in the following data for the damping coefficient.  
 
+![Damping Coefficient Data](./figures/Table5.jpg) 
 
 It should also be noted that, ideally, single DOF tests would be performed at constant velocities. Thus, eliminating acceleration and thereby mass effects, and also minimizing any potential coupling effects between the parameters. However, due to limited control, all 6 DOF cannot be independently controlled and achieving a constant velocity in an enclosed space can be difficult. Therefore, it was assumed that various flight tests would be sufficient for the calculation.  
 
@@ -198,7 +231,9 @@ It should also be noted that, ideally, single DOF tests would be performed at co
 
 Experimental tests were performed to validate the identified model. In these tests simple trajectory experiments were performed in the Lab and Vicon data was recorded alongside motor inputs. The motor inputs were then extracted and used as inputs to the dynamic model. Making use of the forward kinematics of the system, the theoretical calculation of position was compared to the experimental position measurement. Figure 6 illustrates theoretical and experimental measurements for a ‘forward only’ motion, while Figure 7 illustrates the results for a ‘vertical only’ motion.
 
+![SingleDOFTest(X-axis)](./figures/SingleDOFTest(X-axis).jpg) 
 
+![SingleDOFTest(Z-axis)](./figures/SingleDOFTest(Z-axis).jpg) 
 
 
 Model validation through experimentation authenticates the similarities between LTAVs and UUVs. As such, it can be reasonably stated that conventional UUV dynamic equations can be used to represent the behavior of an LTAV.  
