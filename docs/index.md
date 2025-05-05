@@ -392,7 +392,7 @@ We followed a tight loop of code-deploy-test-debug with each sensor modality unt
 
 - **PID Control for Smoothness:** Our current control is reactive. Adding PID loops will help dampen overshoot and allow finer movement.
 - **3D Localization:** Incorporating a forward-facing range sensor could allow for estimating object depth, enabling true 3D navigation.
-- **Fallback Strategies: Implementing lost-object recovery and search behavior would make the system more resilient.
+- **Fallback Strategies:** Implementing lost-object recovery and search behavior would make the system more resilient.
 - **State Machine Architecture:** Transitioning from basic logic to a hierarchical state machine could improve scalability and robustness.
 - **Model Optimization:** Quantization or pruning of YOLOv5 could allow faster inference on low-power devices.
 - **Outdoor Capability:** With GPS integration and larger test environments, we could extend the system for outdoor deployments.
