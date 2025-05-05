@@ -62,15 +62,15 @@ To run the complete autonomous system on the Raspberry Pi:
 ```cd ~/ros2_ws/src/wvu_blimps_ros2_src/launch```
 
 
-2. **Initialize the game controller node** to verify that joystick inputs are being received:
+2. **Initialize the game controller node** to verify that joystick inputs are being received:  
 ```ros2 run joy game_controller_node```
 
 
-3. **Arm the ESCs before flight** using the custom arming script:
+3. **Arm the ESCs before flight** using the custom arming script:  
 ```python3 Arming.py```
 
 
-4. **Launch all nodes together using the master launch file:**
+4. **Launch all nodes together using the master launch file:**  
 ```ros2 launch Updated_launch.py```
 
 
