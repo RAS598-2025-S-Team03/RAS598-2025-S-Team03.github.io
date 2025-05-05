@@ -663,8 +663,9 @@
   <h1>ROS Integration</h1>
 
 <h2 id="code-repository">Code Repository</h2>
-<p>https://github.com/RAS598-2025-S-Team03/BLIMP-Packages</p>
+<p><a href="https://github.com/RAS598-2025-S-Team03/BLIMP-Packages">https://github.com/RAS598-2025-S-Team03/BLIMP-Packages</a></p>
 <h2 id="overview-of-code">Overview of Code:</h2>
+<p><a class="glightbox" href="../figures/RQT_Graph.jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="RQT Graph" src="../figures/RQT_Graph.jpg" /></a>  </p>
 <h3 id="detect_cpp">Detect_cpp</h3>
 <p>The <code>detect_cpp</code> node is located at <code>wvu_blimps_ros2_src/sensors_cpp/src/detect_node.cpp</code> and is implemented in C++. It subscribes to the <code>/joy</code> topic and publishes camera-based detections to <code>/cam_data</code>. This node captures images from the onboard camera and operates in two modes: balloon detection and goal detection, toggled using the Xbox controller. Balloon detection uses HSV color space to find the densest region matching the target color. If the region exceeds a minimum radius, the center is averaged over several frames before publishing. Goal detection uses Canny edge detection and Hough line transforms to calculate the goal’s midpoint based on detected vertical and horizontal edges.</p>
 <h3 id="esc_driver">Esc_driver</h3>
