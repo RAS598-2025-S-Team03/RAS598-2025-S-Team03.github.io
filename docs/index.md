@@ -154,7 +154,7 @@ It should be noted that the MPC controller developed calculates an optimized con
 3.3 Linearization  
 For practical purposes, it is necessary to discretize and linearize the dynamic model. As previously noted, the vehicle dynamics are highly nonlinear. Therefore, to handle this issue a state space model was developed which provides a convenient platform for handling multiple-input-multiple-output (MIMO) systems. The state vector [12x1] and control input vector [4x1] were identified and are shown below.  
 
-![Eq 31](./figures/eq_32.jpg) 
+![Eq 31 32](./figures/eq_31_32.jpg) 
 
 At this point, the general form of the nonlinear state space model can be developed per the following equations.  
 
