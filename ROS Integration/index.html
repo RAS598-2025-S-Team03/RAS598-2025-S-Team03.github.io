@@ -488,15 +488,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#quick-setup-guide" class="md-nav__link">
-    Quick Setup Guide
+  <a href="#system-prerequisites" class="md-nav__link">
+    System Prerequisites
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#1-prerequisites" class="md-nav__link">
-    1. Prerequisites
+  <a href="#deployment-and-launch-instructions" class="md-nav__link">
+    Deployment and Launch Instructions
   </a>
   
 </li>
@@ -624,15 +624,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#quick-setup-guide" class="md-nav__link">
-    Quick Setup Guide
+  <a href="#system-prerequisites" class="md-nav__link">
+    System Prerequisites
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#1-prerequisites" class="md-nav__link">
-    1. Prerequisites
+  <a href="#deployment-and-launch-instructions" class="md-nav__link">
+    Deployment and Launch Instructions
   </a>
   
 </li>
@@ -686,20 +686,39 @@
 <p>This Python node at <code>wvu_blimps_ros2_src/sensors/sensors/barometer.py</code> reads atmospheric pressure using an Adafruit BMP390 and estimates altitude. It publishes data on the <code>barometer_data</code> topic and accounts for sea level pressure calibration to improve accuracy.</p>
 <h3 id="read_imu">Read_imu</h3>
 <p>The <code>read_imu</code> node, written in Python, reads data from the Adafruit BNO055 IMU. It measures Euler angles, linear acceleration, and angular velocity, publishing all data to the <code>/imu_data</code> topic. This sensor information supports real-time state estimation for the blimp.</p>
-<h2 id="quick-setup-guide">Quick Setup Guide</h2>
-<p>There are 3 commands to run this autonomous mobile blimp.
-1. Go inside the workspace’s launch file. In my case:
-   - Ros2_ws → src → wvu_blimps_ros2_src→ launch
-2. Now there are 3 commands to run sequentially after connecting the joystick via Bluetooth to the RPi.
-   - Ros2 runs joy game_controller_node → To check if the Joystick is publishing commands.
-   - Python3 Arming.py → To arm the ESCs before flight
-   - Ros2 launch Updated_launch.py → To launch all the nodes together.</p>
-<h2 id="1-prerequisites">1. Prerequisites</h2>
+<h2 id="system-prerequisites">System Prerequisites</h2>
+<p>Before deploying the autonomous blimp system, ensure the following hardware and software components are properly installed and configured:</p>
 <ul>
-<li>Several Python Libraries</li>
-<li>Remote SSH to rpi</li>
-<li>Pi GPIO</li>
+<li>A Raspberry Pi (with SSH access enabled)</li>
+<li>Required Python libraries including <code>rclpy</code>, <code>pigpio</code>, <code>adafruit_bno055</code>, <code>adafruit_bmp3xx</code>, <code>numpy</code>, and related dependencies</li>
+<li><code>pigpio</code> daemon running for motor PWM control</li>
+<li>ROS 2 Humble (or compatible ROS 2 distribution) fully set up</li>
+<li>Xbox controller paired to the Raspberry Pi via Bluetooth</li>
+<li>Access to the <code>BLIMP-Packages</code> ROS 2 workspace cloned from the repository:
+  <a href="https://github.com/RAS598-2025-S-Team03/BLIMP-Packages">https://github.com/RAS598-2025-S-Team03/BLIMP-Packages</a></li>
 </ul>
+<hr />
+<h2 id="deployment-and-launch-instructions">Deployment and Launch Instructions</h2>
+<p>To run the complete autonomous system on the Raspberry Pi:</p>
+<ol>
+<li>
+<p><strong>Navigate to the launch directory</strong> within the ROS 2 workspace:<br />
+<code>cd ~/ros2_ws/src/wvu_blimps_ros2_src/launch</code></p>
+</li>
+<li>
+<p><strong>Initialize the game controller node</strong> to verify that joystick inputs are being received:
+<code>ros2 run joy game_controller_node</code></p>
+</li>
+<li>
+<p><strong>Arm the ESCs before flight</strong> using the custom arming script:
+<code>python3 Arming.py</code></p>
+</li>
+<li>
+<p><strong>Launch all nodes together using the master launch file:</strong>
+<code>ros2 launch Updated_launch.py</code></p>
+</li>
+</ol>
+<p>These steps start all relevant ROS 2 nodes for sensor input, control logic, mode switching, and actuator commands. Be sure to confirm that each node is publishing correctly by checking the appropriate topics using <code>ros2 topic list</code> or <code>rqt_graph</code>.</p>
 
 
 
