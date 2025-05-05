@@ -454,25 +454,25 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#32-data-collection-process" class="md-nav__link">
-    3.2 Data Collection Process
+  <a href="#33-data-collection-process" class="md-nav__link">
+    3.3 Data Collection Process
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#33-object-detection-and-model-fitting" class="md-nav__link">
-    3.3 Object Detection and Model Fitting
+  <a href="#34-object-detection-and-model-fitting" class="md-nav__link">
+    3.4 Object Detection and Model Fitting
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#35-validation-and-success-metrics" class="md-nav__link">
-    3.5 Validation and Success Metrics
+  <a href="#36-validation-and-success-metrics" class="md-nav__link">
+    3.6 Validation and Success Metrics
   </a>
   
-    <nav class="md-nav" aria-label="3.5 Validation and Success Metrics">
+    <nav class="md-nav" aria-label="3.6 Validation and Success Metrics">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -488,11 +488,11 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#36-interface-development" class="md-nav__link">
-    3.6 Interface Development
+  <a href="#37-interface-development" class="md-nav__link">
+    3.7 Interface Development
   </a>
   
-    <nav class="md-nav" aria-label="3.6 Interface Development">
+    <nav class="md-nav" aria-label="3.7 Interface Development">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -724,25 +724,25 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#32-data-collection-process" class="md-nav__link">
-    3.2 Data Collection Process
+  <a href="#33-data-collection-process" class="md-nav__link">
+    3.3 Data Collection Process
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#33-object-detection-and-model-fitting" class="md-nav__link">
-    3.3 Object Detection and Model Fitting
+  <a href="#34-object-detection-and-model-fitting" class="md-nav__link">
+    3.4 Object Detection and Model Fitting
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#35-validation-and-success-metrics" class="md-nav__link">
-    3.5 Validation and Success Metrics
+  <a href="#36-validation-and-success-metrics" class="md-nav__link">
+    3.6 Validation and Success Metrics
   </a>
   
-    <nav class="md-nav" aria-label="3.5 Validation and Success Metrics">
+    <nav class="md-nav" aria-label="3.6 Validation and Success Metrics">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -758,11 +758,11 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#36-interface-development" class="md-nav__link">
-    3.6 Interface Development
+  <a href="#37-interface-development" class="md-nav__link">
+    3.7 Interface Development
   </a>
   
-    <nav class="md-nav" aria-label="3.6 Interface Development">
+    <nav class="md-nav" aria-label="3.7 Interface Development">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -999,7 +999,7 @@ Due to the various vehicle prototypes being developed throughout the course of t
 <li><strong>Fusion Layer</strong>: Combines multiple sensor inputs for comprehensive state estimation.</li>
 <li><strong>Decision Layer</strong>: Processes fused data to inform navigation and control decisions.</li>
 </ol>
-<h3 id="32-data-collection-process">3.2 Data Collection Process</h3>
+<h3 id="33-data-collection-process">3.3 Data Collection Process</h3>
 <p>During testing, the team will validate individual sensor outputs using ROS2 tools like rqt_plot and ros2 topic echo. This methodical approach ensures each sensor is correctly calibrated and operating within expected parameters. The testing protocol includes:</p>
 <ul>
 <li><strong>Sensor Isolation Tests</strong>: Verifying each sensor's accuracy and reliability independently.</li>
@@ -1018,7 +1018,7 @@ Due to the various vehicle prototypes being developed throughout the course of t
 </ul>
 <p><a class="glightbox" href="figures/blimp_block_diagram.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Sensor Block Diagram" src="figures/blimp_block_diagram.png" /></a><br />
 <em>Figure 2: BLIMP Sensor Connection Block Diagram</em></p>
-<h3 id="33-object-detection-and-model-fitting">3.3 Object Detection and Model Fitting</h3>
+<h3 id="34-object-detection-and-model-fitting">3.4 Object Detection and Model Fitting</h3>
 <p>The team trained a custom <strong>YOLOv5s</strong> model to detect olive-colored balloons, which are the objects of interest.  </p>
 <p><strong>Training details:</strong><br />
 - Platform: Roboflow + local training
@@ -1030,7 +1030,7 @@ Due to the various vehicle prototypes being developed throughout the course of t
 <em>Figure 1: Real-time detection of the green target balloon using a custom-trained YOLOv5 model with quadrant-based localization.</em>  </p>
 <p>The team used the object's position relative to the center to command differential drive actions. As the object nears the center, the blimp slows down and halts when it reaches a defined "success zone."  </p>
 <hr />
-<h3 id="35-validation-and-success-metrics">3.5 Validation and Success Metrics</h3>
+<h3 id="36-validation-and-success-metrics">3.6 Validation and Success Metrics</h3>
 <h4 id="gui-mockup-for-ros-based-sensor-visualization">GUI Mockup for ROS-based Sensor Visualization</h4>
 <p>The ROS-based GUI can be enhanced to include real-time streaming of sensor topics, providing a comprehensive visualization tool for debugging and monitoring system performance. The interface should consist of:</p>
 <ul>
@@ -1042,7 +1042,7 @@ Due to the various vehicle prototypes being developed throughout the course of t
 <p>The GUI is built using a ROSBridge Websocket that subscribes to all the sensor data. </p>
 <p>These updates ensure that the sensor fusion and autonomy modules operate efficiently, providing real-time insights into the BLIMP's state during both testing and deployment.  </p>
 <p>This comprehensive sensor array will drive the autonomous control loops, enabling adaptive trajectory planning and responsive mode switching between manual and autonomous control. The demonstration will showcase how the fusion algorithms synthesize this diverse data to create a cohesive understanding of the environment, allowing the BLIMP to navigate reliably in dynamic, real-world scenarios.  </p>
-<h3 id="36-interface-development">3.6 Interface Development</h3>
+<h3 id="37-interface-development">3.7 Interface Development</h3>
 <h4 id="how-do-you-plan-on-influencing-the-behavior-of-the-robot">How do you plan on influencing the behavior of the robot?</h4>
 <p>The behavior of the BLIMP will be influenced through a sophisticated dual-mode control strategy that balances user input with autonomous decision-making. The team has designed:</p>
 <ol>
