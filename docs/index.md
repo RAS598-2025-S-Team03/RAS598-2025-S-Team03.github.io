@@ -214,7 +214,7 @@ Unlike previously identified parameters, damping effects are less straightforwar
 
 It should also be noted that, ideally, single DOF tests would be performed at constant velocities. Thus, eliminating acceleration and thereby mass effects, and also minimizing any potential coupling effects between the parameters. However, due to limited control, all 6 DOF cannot be independently controlled and achieving a constant velocity in an enclosed space can be difficult. Therefore, it was assumed that various flight tests would be sufficient for the calculation.  
 
-#### Result:
+**Results**
 
 Experimental tests were performed to validate the identified model. In these tests simple trajectory experiments were performed in the Lab and Vicon data was recorded alongside motor inputs. The motor inputs were then extracted and used as inputs to the dynamic model. Making use of the forward kinematics of the system, the theoretical calculation of position was compared to the experimental position measurement. Figure 6 illustrates theoretical and experimental measurements for a ‘forward only’ motion, while Figure 7 illustrates the results for a ‘vertical only’ motion.
 
