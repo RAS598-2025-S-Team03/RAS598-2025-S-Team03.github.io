@@ -1,4 +1,4 @@
-# AeroFusion: Autonomous BLIMP Navigation and Sensor Integration Platform
+# Home
 
 <!-- **Project Name:**  
 
