@@ -441,6 +441,20 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#system-prerequisites" class="md-nav__link">
+    System Prerequisites
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deployment-and-launch-instructions" class="md-nav__link">
+    Deployment and Launch Instructions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#overview-of-code" class="md-nav__link">
     Overview of Code:
   </a>
@@ -520,20 +534,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#system-prerequisites" class="md-nav__link">
-    System Prerequisites
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#deployment-and-launch-instructions" class="md-nav__link">
-    Deployment and Launch Instructions
-  </a>
   
 </li>
       
@@ -577,6 +577,20 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#system-prerequisites" class="md-nav__link">
+    System Prerequisites
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deployment-and-launch-instructions" class="md-nav__link">
+    Deployment and Launch Instructions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#overview-of-code" class="md-nav__link">
     Overview of Code:
   </a>
@@ -659,20 +673,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#system-prerequisites" class="md-nav__link">
-    System Prerequisites
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#deployment-and-launch-instructions" class="md-nav__link">
-    Deployment and Launch Instructions
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -700,6 +700,43 @@
 
 <h2 id="code-repository">Code Repository</h2>
 <p><a href="https://github.com/RAS598-2025-S-Team03/BLIMP-Packages">https://github.com/RAS598-2025-S-Team03/BLIMP-Packages</a></p>
+<h2 id="system-prerequisites">System Prerequisites</h2>
+<p>Before deploying the autonomous blimp system, ensure the following hardware and software components are properly installed and configured:</p>
+<ul>
+<li>A Raspberry Pi (with SSH access enabled)</li>
+<li>Required Python libraries including <code>rclpy</code>, <code>pigpio</code>, <code>adafruit_bno055</code>, <code>adafruit_bmp3xx</code>, <code>numpy</code>, and related dependencies</li>
+<li><code>pigpio</code> daemon running for motor PWM control</li>
+<li>ROS 2 Humble (or compatible ROS 2 distribution) fully set up along with additional packages such as <code>ros-humble-web-video-server</code>, <code>ros-humble-rosbridge-server</code> and any other additional packages needed while installing <code>ros-humble-desktop</code></li>
+<li>Xbox controller paired to the Raspberry Pi via Bluetooth and install this package (<code>xboxdrv</code>) via apt repository.</li>
+<li>Access to the <code>BLIMP-Packages</code> ROS 2 workspace cloned from the repository:
+  <a href="https://github.com/RAS598-2025-S-Team03/BLIMP-Packages">https://github.com/RAS598-2025-S-Team03/BLIMP-Packages</a></li>
+</ul>
+<hr />
+<h2 id="deployment-and-launch-instructions">Deployment and Launch Instructions</h2>
+<p>To run the complete autonomous system on the Raspberry Pi:</p>
+<ol>
+<li>
+<p><strong>Create a ROS2 Workspace</strong> :<br />
+<code>mkdir -p ~/blimp_ws/src</code></p>
+</li>
+<li>
+<p><strong>Navigate to the launch directory</strong> within the ROS 2 workspace and clone the repository:<br />
+<code>cd ~/blimp_ws/src/ &amp;&amp; git clone https://github.com/RAS598-2025-S-Team03/BLIMP-Packages.git</code></p>
+</li>
+<li>
+<p><strong>Initialize the game controller node</strong> to verify that joystick inputs are being received:<br />
+<code>ros2 run joy game_controller_node</code></p>
+</li>
+<li>
+<p><strong>Arm the ESCs before flight</strong> using the custom arming script:<br />
+<code>ros2 launch auto_control arming.py</code></p>
+</li>
+<li>
+<p><strong>Launch all nodes together using the master launch file:</strong><br />
+<code>ros2 launch auto_control updated_launch.py</code></p>
+</li>
+</ol>
+<p>These steps start all relevant ROS 2 nodes for sensor input, control logic, mode switching, and actuator commands. Be sure to confirm that each node is publishing correctly by checking the appropriate topics using <code>ros2 topic list</code> or <code>rqt_graph</code>.</p>
 <h2 id="overview-of-code">Overview of Code:</h2>
 <p><a class="glightbox" href="../figures/RQT_Graph.jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="RQT Graph" src="../figures/RQT_Graph.jpg" /></a>  </p>
 <h3 id="detect_cpp">Detect_cpp</h3>
@@ -722,39 +759,6 @@
 <p>This Python node at <code>wvu_blimps_ros2_src/sensors/sensors/barometer.py</code> reads atmospheric pressure using an Adafruit BMP390 and estimates altitude. It publishes data on the <code>barometer_data</code> topic and accounts for sea level pressure calibration to improve accuracy.</p>
 <h3 id="read_imu">Read_imu</h3>
 <p>The <code>read_imu</code> node, written in Python, reads data from the Adafruit BNO055 IMU. It measures Euler angles, linear acceleration, and angular velocity, publishing all data to the <code>/imu_data</code> topic. This sensor information supports real-time state estimation for the blimp.</p>
-<h2 id="system-prerequisites">System Prerequisites</h2>
-<p>Before deploying the autonomous blimp system, ensure the following hardware and software components are properly installed and configured:</p>
-<ul>
-<li>A Raspberry Pi (with SSH access enabled)</li>
-<li>Required Python libraries including <code>rclpy</code>, <code>pigpio</code>, <code>adafruit_bno055</code>, <code>adafruit_bmp3xx</code>, <code>numpy</code>, and related dependencies</li>
-<li><code>pigpio</code> daemon running for motor PWM control</li>
-<li>ROS 2 Humble (or compatible ROS 2 distribution) fully set up</li>
-<li>Xbox controller paired to the Raspberry Pi via Bluetooth</li>
-<li>Access to the <code>BLIMP-Packages</code> ROS 2 workspace cloned from the repository:
-  <a href="https://github.com/RAS598-2025-S-Team03/BLIMP-Packages">https://github.com/RAS598-2025-S-Team03/BLIMP-Packages</a></li>
-</ul>
-<hr />
-<h2 id="deployment-and-launch-instructions">Deployment and Launch Instructions</h2>
-<p>To run the complete autonomous system on the Raspberry Pi:</p>
-<ol>
-<li>
-<p><strong>Navigate to the launch directory</strong> within the ROS 2 workspace:<br />
-<code>cd ~/ros2_ws/src/wvu_blimps_ros2_src/launch</code></p>
-</li>
-<li>
-<p><strong>Initialize the game controller node</strong> to verify that joystick inputs are being received:<br />
-<code>ros2 run joy game_controller_node</code></p>
-</li>
-<li>
-<p><strong>Arm the ESCs before flight</strong> using the custom arming script:<br />
-<code>python3 Arming.py</code></p>
-</li>
-<li>
-<p><strong>Launch all nodes together using the master launch file:</strong><br />
-<code>ros2 launch Updated_launch.py</code></p>
-</li>
-</ol>
-<p>These steps start all relevant ROS 2 nodes for sensor input, control logic, mode switching, and actuator commands. Be sure to confirm that each node is publishing correctly by checking the appropriate topics using <code>ros2 topic list</code> or <code>rqt_graph</code>.</p>
 
 
 
