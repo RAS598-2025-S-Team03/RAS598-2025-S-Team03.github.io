@@ -25,9 +25,11 @@ Before deploying the autonomous blimp system, ensure the following hardware and 
 To run the complete autonomous system on the Raspberry Pi:
 
 **1. Create a ROS2 Workspace :**  
+
 ```mkdir -p ~/blimp_ws/src```
 
 **2. Navigate to the launch directory within the ROS 2 workspace and clone the repository:**  
+
 ```cd ~/blimp_ws/src/ && git clone https://github.com/RAS598-2025-S-Team03/BLIMP-Packages.git ```
 
 **3. Build the blimp_intefaces package first then the rest of the repo**  
@@ -37,6 +39,7 @@ To run the complete autonomous system on the Raspberry Pi:
   - ```source install/setup.bash ```
 
   - ```colcon build ```
+  
 **4. (Optional) Install and build all the necessary packages required for the Oak-D Lite camera within another ROS 2 workspace:**
     
   -  ``` sudo wget -qO- https://raw.githubusercontent.com/luxonis/depthai-ros/main/install_dependencies.sh | sudo bash ```
