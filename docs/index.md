@@ -7,9 +7,9 @@ _AeroFusion: Autonomous BLIMP Navigation and Sensor Integration Platform_   -->
 **Team Number: 03**  
 
 **Team Members:**  
-- [Nihar Masurkar]
-- [Prajjwal Dutta]
-- [Sai Srinivas Tatwik Meesala]
+- Nihar Masurkar
+- Prajjwal Dutta
+- Sai Srinivas Tatwik Meesala
 
 **Semester and Year:**  
 Spring 2025  
