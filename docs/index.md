@@ -30,7 +30,7 @@ The central research question is: **"How effectively can sensor data from variou
 
 <div style="display: flex; flex-direction: column; align-items: center; width: 100%;">
    <div style="max-width: 720px; width: 100%;">
-      <video width="100%" controls autoplay muted loop playsinline>
+      <video width="100%" controls autoplay loop playsinline>
          <source src="../videos/Blimp_Project_Video.mp4" type="video/mp4">
          Your browser does not support the video tag.
       </video>
