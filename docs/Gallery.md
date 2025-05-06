@@ -9,7 +9,7 @@ This gallery showcases various modules of the BLIMP platform including altitude 
 <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 40px; text-align: center;">
 
   <div style="width: 320px;">
-    <video width="100%" controls>
+    <video width="100%" controls autoplay muted loop playsinline>
       <source src="../videos/BLIMP_Altitude_Controller.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
@@ -17,7 +17,7 @@ This gallery showcases various modules of the BLIMP platform including altitude 
   </div>
 
   <div style="width: 320px;">
-    <video width="100%" controls>
+    <video width="100%" controls autoplay muted loop playsinline>
       <source src="../videos/BLIMP_AltitudeControl.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
@@ -33,7 +33,7 @@ This gallery showcases various modules of the BLIMP platform including altitude 
 <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 40px; text-align: center;">
 
   <div style="width: 320px;">
-    <video width="100%" controls>
+    <video width="100%" controls autoplay muted loop playsinline>
       <source src="../videos/BLIMP_GUI_YOLO3D.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
@@ -41,7 +41,7 @@ This gallery showcases various modules of the BLIMP platform including altitude 
   </div>
 
   <div style="width: 320px;">
-    <video width="100%" controls>
+    <video width="100%" controls autoplay muted loop playsinline>
       <source src="../videos/BLIMP_Object_Detection_GUI.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
@@ -57,7 +57,7 @@ This gallery showcases various modules of the BLIMP platform including altitude 
 <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 40px; text-align: center;">
 
   <div style="width: 320px;">
-    <video width="100%" controls>
+    <video width="100%" controls autoplay muted loop playsinline>
       <source src="../videos/BLIMP_ManualControl.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
@@ -65,7 +65,7 @@ This gallery showcases various modules of the BLIMP platform including altitude 
   </div>
 
   <div style="width: 320px;">
-    <video width="100%" controls>
+    <video width="100%" controls autoplay muted loop playsinline>
       <source src="../videos/BLIMP_ObjectDetection_Control.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
