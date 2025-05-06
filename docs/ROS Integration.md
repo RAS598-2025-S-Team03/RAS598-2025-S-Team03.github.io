@@ -14,7 +14,7 @@ Before deploying the autonomous blimp system, ensure the following hardware and 
 - Required Python libraries including `rclpy`, `pigpio`, `adafruit_bno055`, `adafruit_bmp3xx`, `numpy`, and related dependencies
 - `pigpio` daemon running for motor PWM control
 - ROS 2 Humble (or compatible ROS 2 distribution) fully set up along with additional packages such as `ros-humble-web-video-server`, `ros-humble-rosbridge-server` and any other additional packages needed while installing `ros-humble-desktop`
-- Xbox controller paired to the Raspberry Pi via Bluetooth and install this package (`xboxdrv`) via apt repository.
+- Xbox controller paired to the Raspberry Pi via Bluetooth and install this package (`xboxdrv`) via apt repository
 - Access to the `BLIMP-Packages` ROS 2 workspace cloned from the repository:
   [https://github.com/RAS598-2025-S-Team03/BLIMP-Packages](https://github.com/RAS598-2025-S-Team03/BLIMP-Packages)
 
