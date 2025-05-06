@@ -308,23 +308,23 @@ The team is developing a comprehensive GUI based on ROS that serves multiple fun
 
 1. **Real-time Data Visualization**: 
    
-   - Sensor data dashboards displaying IMU, barometer, GPS, camera, sonar, and LiDAR outputs.
-   - Interactive 3D map showing current position, trajectory, and detected obstacles.
-   - System status indicators including battery levels, motor outputs, and connection quality. 
+      - Sensor data dashboards displaying IMU, barometer, GPS, camera, sonar, and LiDAR outputs.
+      - Interactive 3D map showing current position, trajectory, and detected obstacles.
+      - System status indicators including battery levels, motor outputs, and connection quality. 
 
 2. **Control Interface**:
    
-   - Mode selection panel (manual/autonomous).
-   - Manual control input visualization.
-   - Goal setting and waypoint management tools.
-   - Parameter adjustment sliders for tuning control algorithms.
+      - Mode selection panel (manual/autonomous).
+      - Manual control input visualization.
+      - Goal setting and waypoint management tools.
+      - Parameter adjustment sliders for tuning control algorithms.
 
 3. **Data Logging and Analysis**:
    
-   - Comprehensive time-stamped data recording of all sensor inputs.
-   - Performance metrics tracking, including stability measures and navigation accuracy.
-   - Export functionality for post-mission analysis.
-   - Replay capabilities for reviewing flight data.
+      - Comprehensive time-stamped data recording of all sensor inputs.
+      - Performance metrics tracking, including stability measures and navigation accuracy.
+      - Export functionality for post-mission analysis.
+      - Replay capabilities for reviewing flight data.
 
 This integrated interface will not only enable immediate interaction during operation but also support detailed post-mission analysis and system refinement.
 
