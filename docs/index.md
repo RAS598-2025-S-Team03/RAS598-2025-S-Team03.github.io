@@ -307,19 +307,20 @@ This hybrid approach provides flexibility while maintaining safety and mission o
 The team is developing a comprehensive GUI based on ROS that serves multiple functions:
 
 1. **Real-time Data Visualization**: 
+   
    - Sensor data dashboards displaying IMU, barometer, GPS, camera, sonar, and LiDAR outputs.
    - Interactive 3D map showing current position, trajectory, and detected obstacles.
    - System status indicators including battery levels, motor outputs, and connection quality. 
-<br>
-2. **Control Interface**:
 
+2. **Control Interface**:
+   
    - Mode selection panel (manual/autonomous).
    - Manual control input visualization.
    - Goal setting and waypoint management tools.
    - Parameter adjustment sliders for tuning control algorithms.
-<br>
-3. **Data Logging and Analysis**:
 
+3. **Data Logging and Analysis**:
+   
    - Comprehensive time-stamped data recording of all sensor inputs.
    - Performance metrics tracking, including stability measures and navigation accuracy.
    - Export functionality for post-mission analysis.
@@ -330,12 +331,14 @@ This integrated interface will not only enable immediate interaction during oper
 ## 4. **Project Process/Workflow**
 The workflow involved weekly iteration and testing across three verticals: hardware integration, software development, and sensor-based control logic.
 Key workflow highlights:
-- Early-stage testing of sensors: IMU, barometer, and camera modules.
-- Development of a modular ROS 2 architecture.
-- Collection and labeling of balloon images for training.
-- Training of YOLOv5 using Roboflow-annotated data.
-- Integration of detection results into a quadrant mapping logic node.
-- Real-world validation through indoor tethered testing.
+
+   - Early-stage testing of sensors: IMU, barometer, and camera modules.
+   - Development of a modular ROS 2 architecture.
+   - Collection and labeling of balloon images for training.
+   - Training of YOLOv5 using Roboflow-annotated data.
+   - Integration of detection results into a quadrant mapping logic node.
+   - Real-world validation through indoor tethered testing.
+
 We followed a tight loop of code-deploy-test-debug with each sensor modality until full system integration.
 
 ## 5. **System Tradeoffs & Technical Considerations**
