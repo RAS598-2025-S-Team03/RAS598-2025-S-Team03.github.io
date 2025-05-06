@@ -2,11 +2,11 @@
 title: ROS Integration
 ---
 
-## Code Repository
+## 1. **Code Repository**
 
 [https://github.com/RAS598-2025-S-Team03/BLIMP-Packages](https://github.com/RAS598-2025-S-Team03/BLIMP-Packages)
 
-## System Prerequisites
+## 2. **System Prerequisites**
 
 Before deploying the autonomous blimp system, ensure the following hardware and software components are properly installed and configured:
 
@@ -20,7 +20,7 @@ Before deploying the autonomous blimp system, ensure the following hardware and 
 
 ---
 
-## Deployment and Launch Instructions
+## 3. **Deployment and Launch Instructions**
 
 To run the complete autonomous system on the Raspberry Pi:
 
@@ -76,7 +76,7 @@ To run the complete autonomous system on the Raspberry Pi:
 These steps start all relevant ROS 2 nodes for sensor input, control logic, mode switching, and actuator commands. Be sure to confirm that each node is publishing correctly by checking the appropriate topics using `ros2 topic list` or `rqt_graph`.
 
 
-## Overview of Code:
+## 4. **Overview of Code:**
 
 ![RQT Graph](./figures/RQT_Graph.jpg)  
 

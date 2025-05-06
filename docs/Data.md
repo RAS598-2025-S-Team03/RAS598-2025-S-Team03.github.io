@@ -2,7 +2,7 @@
 title: Data
 ---
 
-## Experimental Calculations
+## 1. **Experimental Calculations**
 
 The thrust coefficient matrix can be calculated directly from thrust stand data. In this test, a known PWM (pulse width modulation) signal is sent to the motor, which is attached to a stationary stand that measures the thrust force of the motor configuration. The current vehicle configuration uses a Park 180 motor for the left and right thrusters and a Park 250 motor for the up and down motors. A step test was performed for each motor in which the PWM signal was varied from 1100 to 1800 in increments of 50, and the resulting data is shown in Table 4 below.
 
@@ -18,9 +18,9 @@ Unlike previously identified parameters, damping effects are less straightforwar
 
 It should also be noted that, ideally, single DOF tests would be performed at constant velocities. Thus, eliminating acceleration and thereby mass effects, and also minimizing any potential coupling effects between the parameters. However, due to limited control, all 6 DOF cannot be independently controlled and achieving a constant velocity in an enclosed space can be difficult. Therefore, it was assumed that various flight tests would be sufficient for the calculation.  
 
-## Data Filtering
+## 2. **Data Filtering**
 
-### IMU Data
+### 2.1. IMU Data
 
 The linear acceleration in the X-axis was plotted against time, providing a clear representation of the motion profile over the recorded duration. We have Plotted the raw data using Matplotlib and labeled the axes for clarity.
 
@@ -41,16 +41,16 @@ Steps:
 ![Filterd IMU data](./figures/imu_filtered_data.jpg)
 
 
-### Camera (Vision Input)
+### 2.2. Camera (Vision Input)
 - The camera is used to get the input of the surrounding and train the YOLO model on those inputs
 - As the camera detects some object of interest it gets its location in 3-Dimention (X, Y, Z).
 - Finally based on this input and the position of the detected object with respect to the camera, the controller provides PWM signals to the motors for actuation.
 
-### Electronic Speed Controllers (ESCs)
+### 2.3. Electronic Speed Controllers (ESCs)
 
 The ESCs are given input via PWM pins and the values are calculated based on PID gains. The Kp, Kd, and Ki values help the controller to provide exact PWM signal to the ESCs to move the blimp Manually and Autonomously.
 
-## Updated Sensor Flowchart
+## 3. **Updated Sensor Flowchart**
 
 ```mermaid
 graph TD
@@ -66,7 +66,7 @@ graph TD
     ESC_Driver --> Actuators
 
 ```
-## Data Visualization Examples
+## 4. **Data Visualization Examples**
 
 The current graphical user interface (GUI) is designed using a ROS 2 WebSocket-based architecture to enable real-time monitoring and control of the aerial robot. This approach was selected due to performance limitations observed during early tests, particularly latency and bandwidth issues with direct streaming from the onboard Raspberry Pi using tools like RQT or VNC.  
 
@@ -97,7 +97,7 @@ By offloading the GUI rendering to a browser, onboard compute resources are rese
   <source src="../videos/balloon_detection.mp4" type="video/mp4">
   Your browser does not support the video tag.
 
-## Summary
+## 5. **Summary**
 
 The system is now capable of:  
 
