@@ -724,6 +724,49 @@
 <code>cd ~/blimp_ws/src/ &amp;&amp; git clone https://github.com/RAS598-2025-S-Team03/BLIMP-Packages.git</code></p>
 </li>
 <li>
+<p><strong>Build the blimp_intefaces package first then the rest of the repo</strong>  </p>
+</li>
+<li>
+<p><code>cd ~/blimp_ws/ &amp;&amp; colcon build --packages-select blimp_interfaces</code></p>
+</li>
+<li>
+<p><code>source install/setup.bash</code></p>
+</li>
+<li>
+<p><code>colcon build</code></p>
+</li>
+<li><strong>(Optional) Install and build all the necessary packages required for the Oak-D Lite camera</strong> within another ROS 2 workspace:</li>
+<li>
+<p><code>sudo wget -qO- https://raw.githubusercontent.com/luxonis/depthai-ros/main/install_dependencies.sh | sudo bash</code></p>
+</li>
+<li>
+<p><code>mkdir -p camera_ws/src</code></p>
+</li>
+<li>
+<p><code>rosdep update</code></p>
+</li>
+<li>
+<p><code>cd camera_ws/src</code></p>
+</li>
+<li>
+<p><code>git clone --branch humble https://github.com/luxonis/depthai-ros.git</code></p>
+</li>
+<li>
+<p><code>cd ..</code></p>
+</li>
+<li>
+<p><code>rosdep install --from-paths src --ignore-src -r -y</code></p>
+</li>
+<li>
+<p><code>source /opt/ros/humble/setup.bash</code></p>
+</li>
+<li>
+<p><code>MAKEFLAGS="-j1 -l1" colcon build</code></p>
+</li>
+<li>
+<p><code>source install/setup.bash</code></p>
+</li>
+<li>
 <p><strong>Initialize the game controller node</strong> to verify that joystick inputs are being received:<br />
 <code>ros2 run joy game_controller_node</code></p>
 </li>
@@ -734,6 +777,14 @@
 <li>
 <p><strong>Launch all nodes together using the master launch file:</strong><br />
 <code>ros2 launch auto_control updated_launch.py</code></p>
+</li>
+<li>
+<p><strong>(Optional) Launch the camera nodes for the Oak-D Lite Camera</strong>
+<code>ros2 launch depthai_ros_filters spatial_bb.launch.py</code>  </p>
+</li>
+<li>
+<p><strong>Launch the web visualizer after all the nodes have been launched successfully</strong><br />
+<code>ros2 launch blimp_gui rosbridge_camera_launch.py</code></p>
 </li>
 </ol>
 <p>These steps start all relevant ROS 2 nodes for sensor input, control logic, mode switching, and actuator commands. Be sure to confirm that each node is publishing correctly by checking the appropriate topics using <code>ros2 topic list</code> or <code>rqt_graph</code>.</p>
