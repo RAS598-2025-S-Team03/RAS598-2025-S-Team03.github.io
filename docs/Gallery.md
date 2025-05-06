@@ -6,9 +6,9 @@ This gallery showcases various modules of the BLIMP platform including altitude 
 
 ## 📌 Altitude Control
 
-<div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 40px; text-align: center;">
+<div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 20px; text-align: center;">
 
-  <div style="width: 480px;">
+  <div style="width: 720px;">
     <video width="100%" controls autoplay muted loop playsinline>
       <source src="../videos/BLIMP_Altitude_Controller.mp4" type="video/mp4">
       Your browser does not support the video tag.
@@ -16,7 +16,7 @@ This gallery showcases various modules of the BLIMP platform including altitude 
     <p><strong>Altitude Control UI</strong><br>Maintains vertical position using IMU + Barometer.</p>
   </div>
 
-  <div style="width: 480px;">
+  <div style="width: 720px;">
     <video width="100%" controls autoplay muted loop playsinline>
       <source src="../videos/BLIMP_AltitudeControl.mp4" type="video/mp4">
       Your browser does not support the video tag.
@@ -30,9 +30,9 @@ This gallery showcases various modules of the BLIMP platform including altitude 
 
 ## 📌 Object Detection & GUI Integration
 
-<div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 40px; text-align: center;">
+<div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 20px; text-align: center;">
 
-  <div style="width: 480px;">
+  <div style="width: 720px;">
     <video width="100%" controls autoplay muted loop playsinline>
       <source src="../videos/BLIMP_GUI_YOLO3D.mp4" type="video/mp4">
       Your browser does not support the video tag.
@@ -40,7 +40,7 @@ This gallery showcases various modules of the BLIMP platform including altitude 
     <p><strong>YOLOv5 3D Estimation GUI View</strong><br>Live object detection using a trained YOLO model with 3D Estimation GUI overlays.</p>
   </div>
 
-  <div style="width: 480px;">
+  <div style="width: 720px;">
     <video width="100%" controls autoplay muted loop playsinline>
       <source src="../videos/BLIMP_Object_Detection_GUI.mp4" type="video/mp4">
       Your browser does not support the video tag.
@@ -54,9 +54,9 @@ This gallery showcases various modules of the BLIMP platform including altitude 
 
 ## 📌 Manual and Autonomous Control
 
-<div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 40px; text-align: center;">
+<div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 20px; text-align: center;">
 
-  <div style="width: 480px;">
+  <div style="width: 720px;">
     <video width="100%" controls autoplay muted loop playsinline>
       <source src="../videos/BLIMP_ManualControl.mp4" type="video/mp4">
       Your browser does not support the video tag.
@@ -64,7 +64,7 @@ This gallery showcases various modules of the BLIMP platform including altitude 
     <p><strong>Manual Controller at the DTR Competition</strong><br>Joystick-driven navigation and rotation using ROS2 teleop.</p>
   </div>
 
-  <div style="width: 480px;">
+  <div style="width: 720px;">
     <video width="100%" controls autoplay muted loop playsinline>
       <source src="../videos/BLIMP_ObjectDetection_Control.mp4" type="video/mp4">
       Your browser does not support the video tag.
