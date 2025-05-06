@@ -13,7 +13,7 @@ This gallery showcases various modules of the BLIMP platform including altitude 
       <source src="../videos/BLIMP_Altitude_Controller.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
-    <p><strong>Altitude Controller</strong><br>Maintains vertical position using IMU + Barometer.</p>
+    <p><strong>Altitude Control UI</strong><br>Maintains vertical position using IMU + Barometer.</p>
   </div>
 
   <div style="width: 320px;">
@@ -21,7 +21,7 @@ This gallery showcases various modules of the BLIMP platform including altitude 
       <source src="../videos/BLIMP_AltitudeControl.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
-    <p><strong>Altitude Control UI</strong><br>Real-time visualization of altitude feedback loop.</p>
+    <p><strong>Altitude Controller</strong><br>Real-time visualization of altitude feedback loop.</p>
   </div>
 
 </div>
@@ -45,7 +45,7 @@ This gallery showcases various modules of the BLIMP platform including altitude 
       <source src="../videos/BLIMP_Object_Detection_GUI.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
-    <p><strong>Object Detection + GUI</strong><br>Displays detection output, quadrant logic, and system status.</p>
+    <p><strong>Object Detection of a Custom Object + GUI</strong><br>Displays detection output, quadrant logic, and system status.</p>
   </div>
 
 </div>
@@ -61,7 +61,7 @@ This gallery showcases various modules of the BLIMP platform including altitude 
       <source src="../videos/BLIMP_ManualControl.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
-    <p><strong>Manual Control Test</strong><br>Joystick-driven navigation and rotation using ROS2 teleop.</p>
+    <p><strong>Manual Controller Test</strong><br>Joystick-driven navigation and rotation using ROS2 teleop.</p>
   </div>
 
   <div style="width: 320px;">
@@ -69,7 +69,7 @@ This gallery showcases various modules of the BLIMP platform including altitude 
       <source src="../videos/BLIMP_ObjectDetection_Control.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
-    <p><strong>YOLO + Control Loop</strong><br>BLIMP autonomously tracks and moves toward detected object.</p>
+    <p><strong>YOLO + Control Loop</strong><br>BLIMP altitude controller based on object detection and maintains the altitude based on the detected object.</p>
   </div>
 
 </div>
