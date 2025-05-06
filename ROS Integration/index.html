@@ -716,16 +716,16 @@
 <p>To run the complete autonomous system on the Raspberry Pi:</p>
 <ol>
 <li>
-<p><strong>Create a ROS2 Workspace</strong> :<br />
+<p><strong>Create a ROS2 Workspace :</strong><br />
 <code>mkdir -p ~/blimp_ws/src</code></p>
 </li>
 <li>
-<p><strong>Navigate to the launch directory</strong> within the ROS 2 workspace and clone the repository:<br />
+<p><strong>Navigate to the launch directory within the ROS 2 workspace and clone the repository:</strong><br />
 <code>cd ~/blimp_ws/src/ &amp;&amp; git clone https://github.com/RAS598-2025-S-Team03/BLIMP-Packages.git</code></p>
 </li>
 <li>
 <p><strong>Build the blimp_intefaces package first then the rest of the repo</strong>  </p>
-</li>
+<ul>
 <li>
 <p><code>cd ~/blimp_ws/ &amp;&amp; colcon build --packages-select blimp_interfaces</code></p>
 </li>
@@ -735,7 +735,9 @@
 <li>
 <p><code>colcon build</code></p>
 </li>
-<li><strong>(Optional) Install and build all the necessary packages required for the Oak-D Lite camera</strong> within another ROS 2 workspace:</li>
+<li>
+<p><strong>(Optional) Install and build all the necessary packages required for the Oak-D Lite camera within another ROS 2 workspace:</strong></p>
+</li>
 <li>
 <p><code>sudo wget -qO- https://raw.githubusercontent.com/luxonis/depthai-ros/main/install_dependencies.sh | sudo bash</code></p>
 </li>
@@ -766,12 +768,14 @@
 <li>
 <p><code>source install/setup.bash</code></p>
 </li>
+</ul>
+</li>
 <li>
-<p><strong>Initialize the game controller node</strong> to verify that joystick inputs are being received:<br />
+<p><strong>Initialize the game controller node to verify that joystick inputs are being received:</strong><br />
 <code>ros2 run joy game_controller_node</code></p>
 </li>
 <li>
-<p><strong>Arm the ESCs before flight</strong> using the custom arming script:<br />
+<p><strong>Arm the ESCs before flight using the custom arming script:</strong><br />
 <code>ros2 launch auto_control arming.py</code></p>
 </li>
 <li>
