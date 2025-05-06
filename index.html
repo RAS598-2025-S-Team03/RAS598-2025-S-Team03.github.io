@@ -1082,11 +1082,16 @@ Spring 2025  </p>
 <p>This hybrid approach provides flexibility while maintaining safety and mission objectives.</p>
 <p>The team is developing a comprehensive GUI based on ROS that serves multiple functions:</p>
 <ol>
-<li><strong>Real-time Data Visualization</strong>: </li>
-<li>Sensor data dashboards displaying IMU, barometer, GPS, camera, sonar, and LiDAR outputs.</li>
+<li>
+<p><strong>Real-time Data Visualization</strong>: </p>
+</li>
+<li>
+<p>Sensor data dashboards displaying IMU, barometer, GPS, camera, sonar, and LiDAR outputs.</p>
+</li>
 <li>Interactive 3D map showing current position, trajectory, and detected obstacles.</li>
-<li>System status indicators including battery levels, motor outputs, and connection quality. 
-<br></li>
+<li>
+<p>System status indicators including battery levels, motor outputs, and connection quality. </p>
+</li>
 <li>
 <p><strong>Control Interface</strong>:</p>
 </li>
@@ -1095,8 +1100,9 @@ Spring 2025  </p>
 </li>
 <li>Manual control input visualization.</li>
 <li>Goal setting and waypoint management tools.</li>
-<li>Parameter adjustment sliders for tuning control algorithms.
-<br></li>
+<li>
+<p>Parameter adjustment sliders for tuning control algorithms.</p>
+</li>
 <li>
 <p><strong>Data Logging and Analysis</strong>:</p>
 </li>
@@ -1110,14 +1116,16 @@ Spring 2025  </p>
 <p>This integrated interface will not only enable immediate interaction during operation but also support detailed post-mission analysis and system refinement.</p>
 <h2 id="4-project-processworkflow">4. <strong>Project Process/Workflow</strong></h2>
 <p>The workflow involved weekly iteration and testing across three verticals: hardware integration, software development, and sensor-based control logic.
-Key workflow highlights:
-- Early-stage testing of sensors: IMU, barometer, and camera modules.
-- Development of a modular ROS 2 architecture.
-- Collection and labeling of balloon images for training.
-- Training of YOLOv5 using Roboflow-annotated data.
-- Integration of detection results into a quadrant mapping logic node.
-- Real-world validation through indoor tethered testing.
-We followed a tight loop of code-deploy-test-debug with each sensor modality until full system integration.</p>
+Key workflow highlights:</p>
+<ul>
+<li>Early-stage testing of sensors: IMU, barometer, and camera modules.</li>
+<li>Development of a modular ROS 2 architecture.</li>
+<li>Collection and labeling of balloon images for training.</li>
+<li>Training of YOLOv5 using Roboflow-annotated data.</li>
+<li>Integration of detection results into a quadrant mapping logic node.</li>
+<li>Real-world validation through indoor tethered testing.</li>
+</ul>
+<p>We followed a tight loop of code-deploy-test-debug with each sensor modality until full system integration.</p>
 <h2 id="5-system-tradeoffs-technical-considerations">5. <strong>System Tradeoffs &amp; Technical Considerations</strong></h2>
 <ul>
 <li>
