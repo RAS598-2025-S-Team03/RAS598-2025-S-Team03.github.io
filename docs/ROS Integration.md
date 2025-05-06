@@ -24,20 +24,20 @@ Before deploying the autonomous blimp system, ensure the following hardware and 
 
 To run the complete autonomous system on the Raspberry Pi:
 
-1. **Create a ROS2 Workspace :**  
+**1. Create a ROS2 Workspace :**  
 ```mkdir -p ~/blimp_ws/src```
 
-2. **Navigate to the launch directory within the ROS 2 workspace and clone the repository:**  
+**2. Navigate to the launch directory within the ROS 2 workspace and clone the repository:**  
 ```cd ~/blimp_ws/src/ && git clone https://github.com/RAS598-2025-S-Team03/BLIMP-Packages.git ```
 
-3. **Build the blimp_intefaces package first then the rest of the repo**  
+**3. Build the blimp_intefaces package first then the rest of the repo**  
   
     -  ```cd ~/blimp_ws/ && colcon build --packages-select blimp_interfaces ```
   
     - ```source install/setup.bash ```
 
     - ```colcon build ```
-4. **(Optional) Install and build all the necessary packages required for the Oak-D Lite camera within another ROS 2 workspace:**
+**4. (Optional) Install and build all the necessary packages required for the Oak-D Lite camera within another ROS 2 workspace:**
     
     -  ``` sudo wget -qO- https://raw.githubusercontent.com/luxonis/depthai-ros/main/install_dependencies.sh | sudo bash ```
 
@@ -59,19 +59,19 @@ To run the complete autonomous system on the Raspberry Pi:
 
     -  ```source install/setup.bash```
 
-4. **Initialize the game controller node to verify that joystick inputs are being received:**  
+**4. Initialize the game controller node to verify that joystick inputs are being received:**  
 ```ros2 run joy game_controller_node```
 
-5. **Arm the ESCs before flight using the custom arming script:**  
+**5. Arm the ESCs before flight using the custom arming script:**  
 ```ros2 launch auto_control arming.py```
 
-6. **Launch all nodes together using the master launch file:**  
+**6. Launch all nodes together using the master launch file:**  
 ```ros2 launch auto_control updated_launch.py```
 
-7. **(Optional) Launch the camera nodes for the Oak-D Lite Camera**
+**7. (Optional) Launch the camera nodes for the Oak-D Lite Camera**
 ```ros2 launch depthai_ros_filters spatial_bb.launch.py```  
 
-8. **Launch the web visualizer after all the nodes have been launched successfully**  
+**8. Launch the web visualizer after all the nodes have been launched successfully**  
 ```ros2 launch blimp_gui rosbridge_camera_launch.py```
 
 These steps start all relevant ROS 2 nodes for sensor input, control logic, mode switching, and actuator commands. Be sure to confirm that each node is publishing correctly by checking the appropriate topics using `ros2 topic list` or `rqt_graph`.
