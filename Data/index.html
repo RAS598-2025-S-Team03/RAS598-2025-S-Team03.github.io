@@ -97,7 +97,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#experimental-calculations" class="md-skip">
+        <a href="#1-experimental-calculations" class="md-skip">
           Skip to content
         </a>
       
@@ -398,37 +398,37 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#experimental-calculations" class="md-nav__link">
-    Experimental Calculations
+  <a href="#1-experimental-calculations" class="md-nav__link">
+    1. Experimental Calculations
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#data-filtering" class="md-nav__link">
-    Data Filtering
+  <a href="#2-data-filtering" class="md-nav__link">
+    2. Data Filtering
   </a>
   
-    <nav class="md-nav" aria-label="Data Filtering">
+    <nav class="md-nav" aria-label="2. Data Filtering">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#imu-data" class="md-nav__link">
-    IMU Data
+  <a href="#21-imu-data" class="md-nav__link">
+    2.1. IMU Data
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#camera-vision-input" class="md-nav__link">
-    Camera (Vision Input)
+  <a href="#22-camera-vision-input" class="md-nav__link">
+    2.2. Camera (Vision Input)
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#electronic-speed-controllers-escs" class="md-nav__link">
-    Electronic Speed Controllers (ESCs)
+  <a href="#23-electronic-speed-controllers-escs" class="md-nav__link">
+    2.3. Electronic Speed Controllers (ESCs)
   </a>
   
 </li>
@@ -439,15 +439,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#updated-sensor-flowchart" class="md-nav__link">
-    Updated Sensor Flowchart
+  <a href="#3-updated-sensor-flowchart" class="md-nav__link">
+    3. Updated Sensor Flowchart
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#data-visualization-examples" class="md-nav__link">
-    Data Visualization Examples
+  <a href="#4-data-visualization-examples" class="md-nav__link">
+    4. Data Visualization Examples
   </a>
   
 </li>
@@ -523,37 +523,37 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#experimental-calculations" class="md-nav__link">
-    Experimental Calculations
+  <a href="#1-experimental-calculations" class="md-nav__link">
+    1. Experimental Calculations
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#data-filtering" class="md-nav__link">
-    Data Filtering
+  <a href="#2-data-filtering" class="md-nav__link">
+    2. Data Filtering
   </a>
   
-    <nav class="md-nav" aria-label="Data Filtering">
+    <nav class="md-nav" aria-label="2. Data Filtering">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#imu-data" class="md-nav__link">
-    IMU Data
+  <a href="#21-imu-data" class="md-nav__link">
+    2.1. IMU Data
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#camera-vision-input" class="md-nav__link">
-    Camera (Vision Input)
+  <a href="#22-camera-vision-input" class="md-nav__link">
+    2.2. Camera (Vision Input)
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#electronic-speed-controllers-escs" class="md-nav__link">
-    Electronic Speed Controllers (ESCs)
+  <a href="#23-electronic-speed-controllers-escs" class="md-nav__link">
+    2.3. Electronic Speed Controllers (ESCs)
   </a>
   
 </li>
@@ -564,15 +564,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#updated-sensor-flowchart" class="md-nav__link">
-    Updated Sensor Flowchart
+  <a href="#3-updated-sensor-flowchart" class="md-nav__link">
+    3. Updated Sensor Flowchart
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#data-visualization-examples" class="md-nav__link">
-    Data Visualization Examples
+  <a href="#4-data-visualization-examples" class="md-nav__link">
+    4. Data Visualization Examples
   </a>
   
 </li>
@@ -602,7 +602,7 @@
 
   <h1>Data</h1>
 
-<h2 id="experimental-calculations">Experimental Calculations</h2>
+<h2 id="1-experimental-calculations">1. <strong>Experimental Calculations</strong></h2>
 <p>The thrust coefficient matrix can be calculated directly from thrust stand data. In this test, a known PWM (pulse width modulation) signal is sent to the motor, which is attached to a stationary stand that measures the thrust force of the motor configuration. The current vehicle configuration uses a Park 180 motor for the left and right thrusters and a Park 250 motor for the up and down motors. A step test was performed for each motor in which the PWM signal was varied from 1100 to 1800 in increments of 50, and the resulting data is shown in Table 4 below.</p>
 <p><a class="glightbox" href="../figures/Table4.jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Thrust Stand Data" src="../figures/Table4.jpg" /></a> </p>
 <p>The data above was then plotted for each motor. As Figures 4 and 5 below illustrate, Thrust vs. PWM exhibits a near-linear relationship. Thus, a linear equation was fit to the data to be used in the thrust coefficient matrix.  </p>
@@ -610,8 +610,8 @@
 <p>Unlike previously identified parameters, damping effects are less straightforward to calculate. Wind tunnel testing or computer-aided computational fluid dynamics tests can be used to identify the parameters. Another option, and the chosen one for this project, is dynamic testing. For this test, the MoCap Lab and the Vicon System in the lab ( TECH 189) are used to accurately track the vehicle's state during flight tests. The Vicon system uses a series of infrared cameras and, when properly calibrated, can accurately provide dynamic measurements down to 0.017 mm on average [source]. During testing, motor inputs were recorded alongside Vicon data measurements. After running multiple free-flight test trials, the data reduction was performed using MATLAB to calculate the damping coefficient at each time step. The median of this data was then used to represent the damping coefficient for a singular test, and then the average of all trials was taken. This experiment resulted in the following data for the damping coefficient.  </p>
 <p><a class="glightbox" href="../figures/Table5.jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Damping Coefficient Data" src="../figures/Table5.jpg" /></a> </p>
 <p>It should also be noted that, ideally, single DOF tests would be performed at constant velocities. Thus, eliminating acceleration and thereby mass effects, and also minimizing any potential coupling effects between the parameters. However, due to limited control, all 6 DOF cannot be independently controlled and achieving a constant velocity in an enclosed space can be difficult. Therefore, it was assumed that various flight tests would be sufficient for the calculation.  </p>
-<h2 id="data-filtering">Data Filtering</h2>
-<h3 id="imu-data">IMU Data</h3>
+<h2 id="2-data-filtering">2. <strong>Data Filtering</strong></h2>
+<h3 id="21-imu-data">2.1. IMU Data</h3>
 <p>The linear acceleration in the X-axis was plotted against time, providing a clear representation of the motion profile over the recorded duration. We have Plotted the raw data using Matplotlib and labeled the axes for clarity.</p>
 <p><a class="glightbox" href="../figures/imu_raw_data.jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="IMU raw data" src="../figures/imu_raw_data.jpg" /></a></p>
 <p>The team applied a linear FIR filter to the raw IMU data. This was done to demonstrate how data can be smoothed in real-time. Since the team could not perform forward and backward convolutions in real-time, the team chose a simple FIR filter and applied it to the recorded data. The original and filtered data were plotted on the same graph to compare the effects of the filter.</p>
@@ -623,15 +623,15 @@ Steps:
 - Plotted both the original and filtered data for comparison.
 - Discussed trade-offs regarding the filter window size and the need to truncate time values.</p>
 <p><a class="glightbox" href="../figures/imu_filtered_data.jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Filterd IMU data" src="../figures/imu_filtered_data.jpg" /></a></p>
-<h3 id="camera-vision-input">Camera (Vision Input)</h3>
+<h3 id="22-camera-vision-input">2.2. Camera (Vision Input)</h3>
 <ul>
 <li>The camera is used to get the input of the surrounding and train the YOLO model on those inputs</li>
 <li>As the camera detects some object of interest it gets its location in 3-Dimention (X, Y, Z).</li>
 <li>Finally based on this input and the position of the detected object with respect to the camera, the controller provides PWM signals to the motors for actuation.</li>
 </ul>
-<h3 id="electronic-speed-controllers-escs">Electronic Speed Controllers (ESCs)</h3>
+<h3 id="23-electronic-speed-controllers-escs">2.3. Electronic Speed Controllers (ESCs)</h3>
 <p>The ESCs are given input via PWM pins and the values are calculated based on PID gains. The Kp, Kd, and Ki values help the controller to provide exact PWM signal to the ESCs to move the blimp Manually and Autonomously.</p>
-<h2 id="updated-sensor-flowchart">Updated Sensor Flowchart</h2>
+<h2 id="3-updated-sensor-flowchart">3. <strong>Updated Sensor Flowchart</strong></h2>
 <pre class="mermaid"><code>graph TD
     Camera --&gt;|/image_raw| YOLOv5_Detector
     YOLOv5_Detector --&gt;|/blimp/detected_position| QuadrantLogic
@@ -644,7 +644,7 @@ Steps:
     ModeSwitch --&gt;|/ESC_input| ESC_Driver
     ESC_Driver --&gt; Actuators
 </code></pre>
-<h2 id="data-visualization-examples">Data Visualization Examples</h2>
+<h2 id="4-data-visualization-examples">4. <strong>Data Visualization Examples</strong></h2>
 <p>The current graphical user interface (GUI) is designed using a ROS 2 WebSocket-based architecture to enable real-time monitoring and control of the aerial robot. This approach was selected due to performance limitations observed during early tests, particularly latency and bandwidth issues with direct streaming from the onboard Raspberry Pi using tools like RQT or VNC.  </p>
 <p>To overcome these constraints, the team developed a lightweight, browser-accessible GUI that interfaces with ROS 2 via rosbridge_server and roslibjs. This setup allows for JSON-based communication over WebSockets, facilitating seamless interaction with ROS topics, services, and messages.  </p>
 <p><strong>Technologies used:</strong>  </p>
@@ -669,7 +669,7 @@ Steps:
   <source src="../videos/balloon_detection.mp4" type="video/mp4">
   Your browser does not support the video tag.
 
-## Summary
+## 5. **Summary**
 
 The system is now capable of:  
 

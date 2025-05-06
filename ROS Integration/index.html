@@ -95,7 +95,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#code-repository" class="md-skip">
+        <a href="#1-code-repository" class="md-skip">
           Skip to content
         </a>
       
@@ -434,32 +434,32 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#code-repository" class="md-nav__link">
-    Code Repository
+  <a href="#1-code-repository" class="md-nav__link">
+    1. Code Repository
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#system-prerequisites" class="md-nav__link">
-    System Prerequisites
+  <a href="#2-system-prerequisites" class="md-nav__link">
+    2. System Prerequisites
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#deployment-and-launch-instructions" class="md-nav__link">
-    Deployment and Launch Instructions
+  <a href="#3-deployment-and-launch-instructions" class="md-nav__link">
+    3. Deployment and Launch Instructions
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#overview-of-code" class="md-nav__link">
-    Overview of Code:
+  <a href="#4-overview-of-code" class="md-nav__link">
+    4. Overview of Code:
   </a>
   
-    <nav class="md-nav" aria-label="Overview of Code:">
+    <nav class="md-nav" aria-label="4. Overview of Code:">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -570,32 +570,32 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#code-repository" class="md-nav__link">
-    Code Repository
+  <a href="#1-code-repository" class="md-nav__link">
+    1. Code Repository
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#system-prerequisites" class="md-nav__link">
-    System Prerequisites
+  <a href="#2-system-prerequisites" class="md-nav__link">
+    2. System Prerequisites
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#deployment-and-launch-instructions" class="md-nav__link">
-    Deployment and Launch Instructions
+  <a href="#3-deployment-and-launch-instructions" class="md-nav__link">
+    3. Deployment and Launch Instructions
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#overview-of-code" class="md-nav__link">
-    Overview of Code:
+  <a href="#4-overview-of-code" class="md-nav__link">
+    4. Overview of Code:
   </a>
   
-    <nav class="md-nav" aria-label="Overview of Code:">
+    <nav class="md-nav" aria-label="4. Overview of Code:">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -698,9 +698,9 @@
 
   <h1>ROS Integration</h1>
 
-<h2 id="code-repository">Code Repository</h2>
+<h2 id="1-code-repository">1. <strong>Code Repository</strong></h2>
 <p><a href="https://github.com/RAS598-2025-S-Team03/BLIMP-Packages">https://github.com/RAS598-2025-S-Team03/BLIMP-Packages</a></p>
-<h2 id="system-prerequisites">System Prerequisites</h2>
+<h2 id="2-system-prerequisites">2. <strong>System Prerequisites</strong></h2>
 <p>Before deploying the autonomous blimp system, ensure the following hardware and software components are properly installed and configured:</p>
 <ul>
 <li>A Raspberry Pi (with SSH access enabled)</li>
@@ -712,7 +712,7 @@
   <a href="https://github.com/RAS598-2025-S-Team03/BLIMP-Packages">https://github.com/RAS598-2025-S-Team03/BLIMP-Packages</a></li>
 </ul>
 <hr />
-<h2 id="deployment-and-launch-instructions">Deployment and Launch Instructions</h2>
+<h2 id="3-deployment-and-launch-instructions">3. <strong>Deployment and Launch Instructions</strong></h2>
 <p>To run the complete autonomous system on the Raspberry Pi:</p>
 <ol>
 <li>
@@ -788,7 +788,7 @@
 </li>
 </ol>
 <p>These steps start all relevant ROS 2 nodes for sensor input, control logic, mode switching, and actuator commands. Be sure to confirm that each node is publishing correctly by checking the appropriate topics using <code>ros2 topic list</code> or <code>rqt_graph</code>.</p>
-<h2 id="overview-of-code">Overview of Code:</h2>
+<h2 id="4-overview-of-code">4. <strong>Overview of Code:</strong></h2>
 <p><a class="glightbox" href="../figures/RQT_Graph.jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="RQT Graph" src="../figures/RQT_Graph.jpg" /></a>  </p>
 <h3 id="detect_cpp">Detect_cpp</h3>
 <p>The <code>detect_cpp</code> node is located at <code>blimp_ws/BLIMP-Packages/sensors_cpp/src/detect_node.cpp</code> and is implemented in C++. It subscribes to the <code>/joy</code> topic and publishes camera-based detections to <code>/cam_data</code>. This node captures images from the onboard camera and operates in two modes: balloon detection and goal detection, toggled using the Xbox controller. Balloon detection uses HSV color space to find the densest region matching the target color. If the region exceeds a minimum radius, the center is averaged over several frames before publishing. Goal detection uses Canny edge detection and Hough line transforms to calculate the goal’s midpoint based on detected vertical and horizontal edges.</p>
