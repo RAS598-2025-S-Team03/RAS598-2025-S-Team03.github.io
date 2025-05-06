@@ -2,51 +2,53 @@
 title: Data
 ---
 
-## Experimental Data
-(calibrations….)
-## Data Format and Content
+## Experimental Calculations
+
+The thrust coefficient matrix can be calculated directly from thrust stand data. In this test, a known PWM (pulse width modulation) signal is sent to the motor, which is attached to a stationary stand that measures the thrust force of the motor configuration. The current vehicle configuration uses a Park 180 motor for the left and right thrusters and a Park 250 motor for the up and down motors. A step test was performed for each motor in which the PWM signal was varied from 1100 to 1800 in increments of 50, and the resulting data is shown in Table 4 below.
+
+![Thrust Stand Data](./figures/Table4.jpg) 
+
+The data above was then plotted for each motor. As Figures 4 and 5 below illustrate, Thrust vs. PWM exhibits a near-linear relationship. Thus, a linear equation was fit to the data to be used in the thrust coefficient matrix.  
+
+![Park 250 Thrust vs. PWM.](./figures/Figure4_5.jpg) 
+
+Unlike previously identified parameters, damping effects are less straightforward to calculate. Wind tunnel testing or computer-aided computational fluid dynamics tests can be used to identify the parameters. Another option, and the chosen one for this project, is dynamic testing. For this test, the MoCap Lab and the Vicon System in the lab ( TECH 189) are used to accurately track the vehicle's state during flight tests. The Vicon system uses a series of infrared cameras and, when properly calibrated, can accurately provide dynamic measurements down to 0.017 mm on average [source]. During testing, motor inputs were recorded alongside Vicon data measurements. After running multiple free-flight test trials, the data reduction was performed using MATLAB to calculate the damping coefficient at each time step. The median of this data was then used to represent the damping coefficient for a singular test, and then the average of all trials was taken. This experiment resulted in the following data for the damping coefficient.  
+
+![Damping Coefficient Data](./figures/Table5.jpg) 
+
+It should also be noted that, ideally, single DOF tests would be performed at constant velocities. Thus, eliminating acceleration and thereby mass effects, and also minimizing any potential coupling effects between the parameters. However, due to limited control, all 6 DOF cannot be independently controlled and achieving a constant velocity in an enclosed space can be difficult. Therefore, it was assumed that various flight tests would be sufficient for the calculation.  
 
 ## Data Filtering
-Effective autonomy depends on reliable sensor input. Here’s how the team will manage each:
+
+### IMU Data
+
+The linear acceleration in the X-axis was plotted against time, providing a clear representation of the motion profile over the recorded duration. We have Plotted the raw data using Matplotlib and labeled the axes for clarity.
+
+![IMU raw data](./figures/imu_raw_data.jpg)
+
+The team applied a linear FIR filter to the raw IMU data. This was done to demonstrate how data can be smoothed in real-time. Since the team could not perform forward and backward convolutions in real-time, the team chose a simple FIR filter and applied it to the recorded data. The original and filtered data were plotted on the same graph to compare the effects of the filter.
+
+Mathematically, the output y[n] of an FIR filter is given by the following equation:
+
+![Eq](./figures/Filter%20Equation.jpg)
+
+The filter coefficients 𝑏𝑘 are derived to minimize the difference between the actual and desired responses in the frequency domain.
+Steps:
+- Selected an FIR filter and applied it to the raw data.
+- Plotted both the original and filtered data for comparison.
+- Discussed trade-offs regarding the filter window size and the need to truncate time values.
+
+![Filterd IMU data](./figures/imu_filtered_data.jpg)
+
 
 ### Camera (Vision Input)
+- The camera is used to get the input of the surrounding and train the YOLO model on those inputs
+- As the camera detects some object of interest it gets its location in 3-Dimention (X, Y, Z).
+- Finally based on this input and the position of the detected object with respect to the camera, the controller provides PWM signals to the motors for actuation.
 
-- **Contrast Enhancement**: Histogram equalization and HSV color space for better robustness under changing lighting.
-- **Filtering**: Median filtering and Gaussian blurring to suppress noise.
-- **Region of Interest (ROI)**: Focus processing on the central region to improve performance.
+### Electronic Speed Controllers (ESCs)
 
-### IMU
-
-- **Sensor Fusion**: Combining gyro, accel, and mag data using complementary filters.
-- **Filtering**: Low-pass filtering for accel and magnetometer data; high-pass to correct gyro drift.
-
-### Servos
-
-- **PID Controllers (planned)**: For consistent and smooth motion.
-- **Encoder Feedback**: To adjust velocity in real time.
-- **Noise Filtering**: Reduce jitter in encoder readings via smoothing.
-
----
-## Decision-Making Overview
-
-Sensor data feeds into both short-term (control) and long-term (behavioral) decisions:
-
-### Low-Level Decisions
-
-- Set PWM/servo speeds based on position errors
-- Adjust the throttle for altitude
-- Stabilize yaw using IMU orientation
-- Apply real-time filters for smoother control
-
-### High-Level Decisions
-
-- Use YOLO to detect and localize the balloon
-- Estimate relative direction and command movement
-- Track proximity to frame center and decide when to stop
-- Manage behavioral states: searching → tracking → stop
-
----
-
+The ESCs are given input via PWM pins and the values are calculated based on PID gains. The Kp, Kd, and Ki values help the controller to provide exact PWM signal to the ESCs to move the blimp Manually and Autonomously.
 
 ## Updated Sensor Flowchart
 
