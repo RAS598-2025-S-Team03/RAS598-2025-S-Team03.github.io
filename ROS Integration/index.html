@@ -714,10 +714,10 @@
 <hr />
 <h2 id="3-deployment-and-launch-instructions">3. <strong>Deployment and Launch Instructions</strong></h2>
 <p>To run the complete autonomous system on the Raspberry Pi:</p>
-<p><strong>1. Create a ROS2 Workspace :</strong><br />
-<code>mkdir -p ~/blimp_ws/src</code></p>
-<p><strong>2. Navigate to the launch directory within the ROS 2 workspace and clone the repository:</strong><br />
-<code>cd ~/blimp_ws/src/ &amp;&amp; git clone https://github.com/RAS598-2025-S-Team03/BLIMP-Packages.git</code></p>
+<p><strong>1. Create a ROS2 Workspace :</strong>  </p>
+<p><code>mkdir -p ~/blimp_ws/src</code></p>
+<p><strong>2. Navigate to the launch directory within the ROS 2 workspace and clone the repository:</strong>  </p>
+<p><code>cd ~/blimp_ws/src/ &amp;&amp; git clone https://github.com/RAS598-2025-S-Team03/BLIMP-Packages.git</code></p>
 <p><strong>3. Build the blimp_intefaces package first then the rest of the repo</strong>  </p>
 <ul>
 <li>
@@ -727,9 +727,11 @@
 <p><code>source install/setup.bash</code></p>
 </li>
 <li>
-<p><code>colcon build</code>
-<strong>4. (Optional) Install and build all the necessary packages required for the Oak-D Lite camera within another ROS 2 workspace:</strong></p>
+<p><code>colcon build</code></p>
 </li>
+</ul>
+<p><strong>4. (Optional) Install and build all the necessary packages required for the Oak-D Lite camera within another ROS 2 workspace:</strong></p>
+<ul>
 <li>
 <p><code>sudo wget -qO- https://raw.githubusercontent.com/luxonis/depthai-ros/main/install_dependencies.sh | sudo bash</code></p>
 </li>
