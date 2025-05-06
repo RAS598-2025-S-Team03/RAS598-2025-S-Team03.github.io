@@ -714,83 +714,48 @@
 <hr />
 <h2 id="3-deployment-and-launch-instructions">3. <strong>Deployment and Launch Instructions</strong></h2>
 <p>To run the complete autonomous system on the Raspberry Pi:</p>
-<ol>
-<li>
-<p><strong>Create a ROS2 Workspace :</strong><br />
+<p><strong>1. Create a ROS2 Workspace :</strong><br />
 <code>mkdir -p ~/blimp_ws/src</code></p>
-</li>
-<li>
-<p><strong>Navigate to the launch directory within the ROS 2 workspace and clone the repository:</strong><br />
+<p><strong>2. Navigate to the launch directory within the ROS 2 workspace and clone the repository:</strong><br />
 <code>cd ~/blimp_ws/src/ &amp;&amp; git clone https://github.com/RAS598-2025-S-Team03/BLIMP-Packages.git</code></p>
-</li>
-<li>
-<p><strong>Build the blimp_intefaces package first then the rest of the repo</strong>  </p>
-<ul>
-<li>
-<p><code>cd ~/blimp_ws/ &amp;&amp; colcon build --packages-select blimp_interfaces</code></p>
-</li>
-<li>
-<p><code>source install/setup.bash</code></p>
-</li>
-<li>
-<p><code>colcon build</code></p>
-</li>
-<li>
-<p><strong>(Optional) Install and build all the necessary packages required for the Oak-D Lite camera within another ROS 2 workspace:</strong></p>
-</li>
-<li>
-<p><code>sudo wget -qO- https://raw.githubusercontent.com/luxonis/depthai-ros/main/install_dependencies.sh | sudo bash</code></p>
-</li>
-<li>
-<p><code>mkdir -p camera_ws/src</code></p>
-</li>
-<li>
-<p><code>rosdep update</code></p>
-</li>
-<li>
-<p><code>cd camera_ws/src</code></p>
-</li>
-<li>
-<p><code>git clone --branch humble https://github.com/luxonis/depthai-ros.git</code></p>
-</li>
-<li>
-<p><code>cd ..</code></p>
-</li>
-<li>
-<p><code>rosdep install --from-paths src --ignore-src -r -y</code></p>
-</li>
-<li>
-<p><code>source /opt/ros/humble/setup.bash</code></p>
-</li>
-<li>
-<p><code>MAKEFLAGS="-j1 -l1" colcon build</code></p>
-</li>
-<li>
-<p><code>source install/setup.bash</code></p>
-</li>
-</ul>
-</li>
-<li>
-<p><strong>Initialize the game controller node to verify that joystick inputs are being received:</strong><br />
+<p><strong>3. Build the blimp_intefaces package first then the rest of the repo</strong>  </p>
+<pre><code>-  ```cd ~/blimp_ws/ &amp;&amp; colcon build --packages-select blimp_interfaces ```
+
+- ```source install/setup.bash ```
+
+- ```colcon build ```
+</code></pre>
+<p><strong>4. (Optional) Install and build all the necessary packages required for the Oak-D Lite camera within another ROS 2 workspace:</strong></p>
+<pre><code>-  ``` sudo wget -qO- https://raw.githubusercontent.com/luxonis/depthai-ros/main/install_dependencies.sh | sudo bash ```
+
+-  ``` mkdir -p camera_ws/src ```
+
+- ``` rosdep update ```
+
+-  ```cd camera_ws/src```
+
+-  ```git clone --branch humble https://github.com/luxonis/depthai-ros.git```
+
+-  ```cd ..```
+
+-  ```rosdep install --from-paths src --ignore-src -r -y```
+
+-  ```source /opt/ros/humble/setup.bash```
+
+-  ```MAKEFLAGS="-j1 -l1" colcon build```
+
+-  ```source install/setup.bash```
+</code></pre>
+<p><strong>4. Initialize the game controller node to verify that joystick inputs are being received:</strong><br />
 <code>ros2 run joy game_controller_node</code></p>
-</li>
-<li>
-<p><strong>Arm the ESCs before flight using the custom arming script:</strong><br />
+<p><strong>5. Arm the ESCs before flight using the custom arming script:</strong><br />
 <code>ros2 launch auto_control arming.py</code></p>
-</li>
-<li>
-<p><strong>Launch all nodes together using the master launch file:</strong><br />
+<p><strong>6. Launch all nodes together using the master launch file:</strong><br />
 <code>ros2 launch auto_control updated_launch.py</code></p>
-</li>
-<li>
-<p><strong>(Optional) Launch the camera nodes for the Oak-D Lite Camera</strong>
+<p><strong>7. (Optional) Launch the camera nodes for the Oak-D Lite Camera</strong>
 <code>ros2 launch depthai_ros_filters spatial_bb.launch.py</code>  </p>
-</li>
-<li>
-<p><strong>Launch the web visualizer after all the nodes have been launched successfully</strong><br />
+<p><strong>8. Launch the web visualizer after all the nodes have been launched successfully</strong><br />
 <code>ros2 launch blimp_gui rosbridge_camera_launch.py</code></p>
-</li>
-</ol>
 <p>These steps start all relevant ROS 2 nodes for sensor input, control logic, mode switching, and actuator commands. Be sure to confirm that each node is publishing correctly by checking the appropriate topics using <code>ros2 topic list</code> or <code>rqt_graph</code>.</p>
 <h2 id="4-overview-of-code">4. <strong>Overview of Code:</strong></h2>
 <p><a class="glightbox" href="../figures/RQT_Graph.jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="RQT Graph" src="../figures/RQT_Graph.jpg" /></a>  </p>
