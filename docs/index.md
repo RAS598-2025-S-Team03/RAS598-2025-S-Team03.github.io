@@ -28,10 +28,21 @@ The project aims to develop an integrated, sensor-driven framework that enables 
 
 The central research question is: **"How effectively can sensor data from various sensors (such as IMU, Barometer and Camera) be fused to enhance the control systems and tracking capabilities of a hybrid robotic blimp system in dynamic environments?"**  
 
-![High-Level System Concept](./figures/blimp_model.JPG)  
-*Figure 1: CAD Rendering of Biologically-inspired, Lighter-than-air, Instructional, Mechatronics Program (BLIMP) UAV*  
+<div style="display: flex; flex-direction: column; align-items: center; width: 100%;">
+   <div style="max-width: 720px; width: 100%;">
+      <video width="100%" controls autoplay muted loop playsinline>
+         <source src="../videos/Blimp_Project_Video.mp4" type="video/mp4">
+         Your browser does not support the video tag.
+      </video>
+   <p style="text-align: center;"><strong>Elevator Pitch of the Overall Project</strong></p>
+   </div>
+</div>
+
 
 The system aforementioned is an unmanned aerial system (UAS) that is used in the Defend the Republic competition. The UAS vehicles used resemble conventional airship profiles with similarities in maneuverability and control. While the problem of trajectory tracking is well researched, difficulties arise with lighter-than-air vehicles (LTAVs) and similar vehicles, as highly nonlinear behavior greatly defines the behavior of the system. Likewise, environmental disturbances can also influence system response. Prior research in the area has dealt with implementing PID and force-predictive controller strategies [1]. In terms of LTA vehicles specifically, the implementation of Linear Quadratic Regulator (LQR) control was explored utilizing conventional airship dynamics to represent the system behavior [6]. With the growing interest in autonomous technology, the use of smaller unmanned vehicles for research, academia, and military applications is an ongoing research topic. Consequently, effective and safe control strategies for such vehicles are of particular importance.  
+
+![High-Level System Concept](./figures/blimp_model.JPG)  
+*Figure 1: CAD Rendering of Biologically-inspired, Lighter-than-air, Instructional, Mechatronics Program (BLIMP) UAV*
 
 For this project, and an invested interest in the coordination of unmanned underwater vehicles (UUVs), it was chosen to implement conventional UUV dynamics using an LTAV as the test bed vehicle. Using various methods, model parameters were identified, and the similarities in the model were proven. Different control strategies were investigated, including those aforementioned; however, it was observed that such control strategies were not sufficient for the system, due to high nonlinearities and the need to optimize trajectory tracking controls online to follow multiple trajectories. Consequently, a model predictive controller (MPC) was chosen for the system due to its effectiveness in producing online optimal control inputs and its efficiency at handling highly nonlinear systems.  
 
